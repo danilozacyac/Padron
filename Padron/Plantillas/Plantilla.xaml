@@ -1,0 +1,463 @@
+﻿<UserControl x:Class="Padron.Plantillas.Plantilla"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Converter="clr-namespace:PadronApi.Converter;assembly=PadronApi"
+             xmlns:UIControls="clr-namespace:UIControls;assembly=UIControls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             d:DesignHeight="700"
+             d:DesignWidth="800"
+             Background="White"
+             Loaded="UserControl_Loaded"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Converter:DistribucionConverter x:Key="distriConv" />
+    </UserControl.Resources>
+
+    <telerik:RadBusyIndicator x:Name="BusyIndicator" IsIndeterminate="True">
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label x:Name="LblTitulo"
+                   Margin="10,10,150,0"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Top"
+                   Content="Label"
+                   FontSize="16"
+                   FontWeight="Bold" />
+            <Label x:Name="LblEjemplares"
+                   Margin="0,10,10,10"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Content="Label"
+                   FontSize="16"
+                   FontWeight="Bold" />
+            <UIControls:SearchTextBox Width="370"
+                                      Margin="10,48,0,0"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top"
+                                      LabelText="Buscar titular u organismo..."
+                                      Search="SearchTextBox_Search"
+                                      TextWrapping="Wrap" />
+
+
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="300" />
+                </Grid.ColumnDefinitions>
+
+                <GroupBox Grid.Column="1"
+                          Height="175"
+                          Margin="5,27,5,0"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Top"
+                          Header="Por zona">
+                    <Grid>
+                        <Label Margin="10,5,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="SCJN:"
+                               FontSize="13" />
+                        <Label Margin="145,5,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="San Lázaro:"
+                               FontSize="13" />
+                        <Label Margin="10,36,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="A. Metrop.:"
+                               FontSize="13" />
+                        <Label Margin="145,36,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Foraneos:"
+                               FontSize="13" />
+                        <TextBox x:Name="TxtCorte"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="87,5,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <TextBox x:Name="TxtSanL"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="225,5,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <TextBox x:Name="TxtAMetr"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="88,40,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <TextBox x:Name="TxtForan"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="225,40,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <Label Margin="9,70,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Almacén:"
+                               FontSize="13" />
+                        <TextBox x:Name="TxtAlmacen"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="88,74,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <Label Margin="165,98,0,-3"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Total:"
+                               FontSize="13"
+                               FontWeight="Bold" />
+                        <TextBox x:Name="TxtTotalZona"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="225,98,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+
+                    </Grid>
+                </GroupBox>
+                <Label Grid.Column="1"
+                       Margin="10,2,0,0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Content="Totales distribución:"
+                       FontWeight="Bold" />
+                <GroupBox Grid.Column="1"
+                          Height="175"
+                          Margin="5,215,5,0"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Top"
+                          Header="Por propiedad">
+                    <Grid>
+                        <Label Margin="10,8,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Particular:"
+                               FontSize="13" />
+                        <Label Margin="145,8,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Personal:"
+                               FontSize="13" />
+                        <Label Margin="10,37,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Oficina:"
+                               FontSize="13" />
+                        <Label Margin="145,37,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Biblioteca:"
+                               FontSize="13" />
+                        <Label Margin="10,67,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Resguardo:"
+                               FontSize="13" />
+                        <Label Margin="145,67,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Autores:"
+                               FontSize="13" />
+
+                        <TextBox x:Name="TxtParticular"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="88,12,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <TextBox x:Name="TxtPersonal"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="225,12,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <TextBox x:Name="TxtOficina"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="88,42,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <TextBox x:Name="TxtBiblioteca"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="225,42,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <TextBox x:Name="TxtResguardo"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="88,71,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <TextBox x:Name="TxtAutores"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="225,71,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <Label Margin="165,110,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Total:"
+                               FontSize="13"
+                               FontWeight="Bold" />
+                        <TextBox x:Name="TxtTotalPropi"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="225,110,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+
+                    </Grid>
+                </GroupBox>
+                <GroupBox Grid.Column="1"
+                          Height="175"
+                          Margin="5,400,5,0"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Top"
+                          Header="Totales">
+                    <Grid>
+                        <Label Margin="10,6,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Distribución:"
+                               FontSize="13" />
+                        <Label Margin="145,6,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="R. Histórico:"
+                               FontSize="13" />
+                        <Label Margin="10,35,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="A. Zaragoza:"
+                               FontSize="13" />
+                        <Label Margin="145,35,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="A. Sede:"
+                               FontSize="13" />
+                        <TextBox x:Name="TxtTotDistr"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="90,10,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <TextBox x:Name="TxtTotHist"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="225,10,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <TextBox x:Name="TxtTotZara"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="90,39,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <TextBox x:Name="TxtTotSede"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="225,39,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <Label Margin="10,65,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Ventas:"
+                               FontSize="13" />
+                        <TextBox x:Name="TxtTotVenta"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="90,69,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+                        <Label Margin="175,101,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Total:"
+                               FontSize="13"
+                               FontWeight="ExtraBold" />
+                        <TextBox x:Name="TxtTotal"
+                                 Width="43"
+                                 Height="23"
+                                 Margin="225,101,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 IsEnabled="False" />
+
+                    </Grid>
+                </GroupBox>
+
+
+                <telerik:RadGridView x:Name="GPlantilla"
+                                     Grid.Row="1"
+                                     HorizontalAlignment="Stretch"
+                                     VerticalAlignment="Stretch"
+                                     AutoExpandGroups="True"
+                                     AutoGenerateColumns="False"
+                                     EnableRowVirtualization="True"
+                                     FontSize="14"
+                                     GroupRenderMode="Flat"
+                                     IsFilteringAllowed="False"
+                                     ItemsSource="{Binding}"
+                                     SelectionChanged="GPlantilla_SelectionChanged"
+                                     ShowGroupPanel="False">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn Width="450"
+                                                    DataMemberBinding="{Binding Nombre}"
+                                                    Header="Nombre"
+                                                    IsReadOnly="True" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding TipoDistribucion,
+                                                                                Converter={StaticResource distriConv}}"
+                                                    Header="Distribución"
+                                                    IsVisible="False" />
+                        <telerik:GridViewDataColumn Width="100"
+                                                    DataMemberBinding="{Binding Particular}"
+                                                    Header="Particular">
+                            <telerik:GridViewDataColumn.CellEditTemplate>
+                                <DataTemplate>
+                                    <telerik:RadNumericUpDown x:Name="NudPart"
+                                                              IsEditable="False"
+                                                              IsInteger="True"
+                                                              Maximum="1000"
+                                                              Minimum="0"
+                                                              UpdateValueEvent="PropertyChanged"
+                                                              ValueChanged="RadNumericUpDown_ValueChanged"
+                                                              Value="{Binding Particular,
+                                                                              Mode=TwoWay,
+                                                                              UpdateSourceTrigger=Explicit}" />
+                                </DataTemplate>
+                            </telerik:GridViewDataColumn.CellEditTemplate>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn Width="100"
+                                                    DataMemberBinding="{Binding Personal}"
+                                                    Header="Integrantes">
+                            <telerik:GridViewDataColumn.CellEditTemplate>
+                                <DataTemplate>
+                                    <telerik:RadNumericUpDown x:Name="NudPers"
+                                                              IsEditable="False"
+                                                              IsInteger="True"
+                                                              Maximum="1000"
+                                                              Minimum="0"
+                                                              UpdateValueEvent="PropertyChanged"
+                                                              ValueChanged="RadNumericUpDown_ValueChanged"
+                                                              Value="{Binding Personal,
+                                                                              Mode=TwoWay,
+                                                                              UpdateSourceTrigger=Explicit}" />
+                                </DataTemplate>
+                            </telerik:GridViewDataColumn.CellEditTemplate>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn Width="100"
+                                                    DataMemberBinding="{Binding Oficina}"
+                                                    Header="Oficina">
+                            <telerik:GridViewDataColumn.CellEditTemplate>
+                                <DataTemplate>
+                                    <telerik:RadNumericUpDown x:Name="NudOfic"
+                                                              IsEditable="False"
+                                                              IsInteger="True"
+                                                              Maximum="1000"
+                                                              Minimum="0"
+                                                              UpdateValueEvent="PropertyChanged"
+                                                              ValueChanged="RadNumericUpDown_ValueChanged"
+                                                              Value="{Binding Oficina,
+                                                                              Mode=TwoWay,
+                                                                              UpdateSourceTrigger=Explicit}" />
+                                </DataTemplate>
+                            </telerik:GridViewDataColumn.CellEditTemplate>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn Width="100"
+                                                    DataMemberBinding="{Binding Biblioteca}"
+                                                    Header="Biblioteca">
+                            <telerik:GridViewDataColumn.CellEditTemplate>
+                                <DataTemplate>
+                                    <telerik:RadNumericUpDown x:Name="NudBiblio"
+                                                              IsEditable="False"
+                                                              IsInteger="True"
+                                                              Maximum="1000"
+                                                              Minimum="0"
+                                                              UpdateValueEvent="PropertyChanged"
+                                                              ValueChanged="RadNumericUpDown_ValueChanged"
+                                                              Value="{Binding Biblioteca,
+                                                                              Mode=TwoWay,
+                                                                              UpdateSourceTrigger=Explicit}" />
+                                </DataTemplate>
+                            </telerik:GridViewDataColumn.CellEditTemplate>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn Width="100"
+                                                    DataMemberBinding="{Binding Resguardo}"
+                                                    Header="Resguardo"
+                                                    IsReadOnly="True">
+                            <telerik:GridViewDataColumn.CellEditTemplate>
+                                <DataTemplate>
+                                    <telerik:RadNumericUpDown x:Name="NudResg"
+                                                              IsEditable="False"
+                                                              IsInteger="True"
+                                                              Maximum="1000"
+                                                              Minimum="0"
+                                                              UpdateValueEvent="PropertyChanged"
+                                                              ValueChanged="RadNumericUpDown_ValueChanged"
+                                                              Value="{Binding Resguardo,
+                                                                              Mode=TwoWay,
+                                                                              UpdateSourceTrigger=Explicit}" />
+                                </DataTemplate>
+                            </telerik:GridViewDataColumn.CellEditTemplate>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn Width="100"
+                                                    DataMemberBinding="{Binding Autor}"
+                                                    Header="Autor">
+                            <telerik:GridViewDataColumn.CellEditTemplate>
+                                <DataTemplate>
+                                    <telerik:RadNumericUpDown x:Name="NudAutor"
+                                                              IsEditable="False"
+                                                              IsInteger="True"
+                                                              Maximum="1000"
+                                                              Minimum="0"
+                                                              UpdateValueEvent="PropertyChanged"
+                                                              ValueChanged="RadNumericUpDown_ValueChanged"
+                                                              Value="{Binding Autor,
+                                                                              Mode=TwoWay,
+                                                                              UpdateSourceTrigger=Explicit}" />
+                                </DataTemplate>
+                            </telerik:GridViewDataColumn.CellEditTemplate>
+                        </telerik:GridViewDataColumn>
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+
+            </Grid>
+        </Grid>
+    </telerik:RadBusyIndicator>
+</UserControl>

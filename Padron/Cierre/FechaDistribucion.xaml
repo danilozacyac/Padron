@@ -1,0 +1,40 @@
+﻿<telerik:RadWindow x:Class="Padron.Cierre.FechaDistribucion"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                   Width="234.335"
+                   Height="193.133"
+                   Header="Fecha de Distribución"
+                   Loaded="Window_Loaded"
+                   ResizeMode="NoResize"
+                   WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Margin="10,39,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Fecha de distribución y del oficio:" />
+
+        <telerik:RadDatePicker x:Name="DtpFechaDis"
+                               Width="187"
+                               Margin="10,70,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top" />
+        <Button x:Name="BtnCancelar"
+                Width="86"
+                Margin="111,110,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="BtnCancelar_Click"
+                Content="Cancelar"
+                Style="{StaticResource BlueButton}" />
+        <Button x:Name="BtnAceptar"
+                Width="81"
+                Margin="25,110,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="BtnAceptar_Click"
+                Content="Aceptar"
+                Style="{StaticResource BlueButton}" />
+
+    </Grid>
+</telerik:RadWindow>

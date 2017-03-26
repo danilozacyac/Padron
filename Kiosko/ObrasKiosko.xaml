@@ -1,0 +1,505 @@
+﻿<telerik:RadWindow
+    x:Class="Kiosko.ObrasKiosko"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Converters="clr-namespace:PadronApi.Converter;assembly=PadronApi"
+    xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:Globalization="clr-namespace:System.Globalization;assembly=mscorlib"
+    xmlns:ImagePathConverter="clr-namespace:Kiosko.Converter"
+    xmlns:UserControls="clr-namespace:Kiosko.UserControls"
+    xmlns:local="clr-namespace:Kiosko"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    Width="1030"
+    Height="850"
+    Header="Información de la obra"
+    Loaded="RadWindow_Loaded"
+    WindowStartupLocation="CenterScreen">
+    <telerik:RadWindow.Resources>
+        <Converters:TextValConverter x:Key="textConv" />
+        <ImagePathConverter:ImagePathConverter x:Key="imageConv" />
+    </telerik:RadWindow.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="DatosObra">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="256" />
+                <RowDefinition Height="75" />
+                <RowDefinition Height="75" />
+                <RowDefinition Height="75" />
+                <RowDefinition Height="250" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="256" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image
+                x:Name="ImBook"
+                Margin="15,20,15,25"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Source="{Binding ImagePath, Mode=TwoWay, Converter={StaticResource imageConv}}"
+                Stretch="Fill" />
+            <Button
+                x:Name="BtnImagePath"
+                Width="29"
+                Height="25"
+                Margin="15,0,0,10"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Click="BtnImagePath_Click"
+                ToolTip="Asigna o modifica la imagen asociada a esta obra">
+                <Image Source="Resources/search_32.png" />
+            </Button>
+            <Button
+                x:Name="BtnDelImagePath"
+                Width="29"
+                Height="25"
+                Margin="0,0,25,10"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Click="BtnDelImagePath_Click"
+                ToolTip="Elimina la imagen asociada a esta obra"
+                Visibility="Hidden">
+                <Image Source="Resources/trash.png" />
+            </Button>
+
+
+            <Label
+                Grid.Column="1"
+                Margin="10,21,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Título:"
+                FontWeight="Bold" />
+            <TextBox
+                x:Name="TxTitulo"
+                Grid.Column="1"
+                Height="50"
+                Margin="10,52,15,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                AcceptsReturn="True"
+                IsReadOnly="{Binding IsReadOnly}"
+                Text="{Binding Titulo, Converter={StaticResource textConv}, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                TextWrapping="Wrap" />
+            <Label
+                Grid.Column="1"
+                Margin="10,121,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Sintesis:"
+                FontWeight="Bold" />
+            <TextBox
+                Grid.Column="1"
+                Margin="10,152,15,10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                AcceptsReturn="True"
+                IsReadOnly="{Binding IsReadOnly}"
+                Text="{Binding Sintesis, Converter={StaticResource textConv}, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                TextWrapping="Wrap" />
+            <Label
+                Grid.Row="1"
+                Margin="15,8,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Orden:" />
+            <TextBox
+                x:Name="TxtOrden"
+                Grid.Row="1"
+                Width="120"
+                Height="23"
+                Margin="15,39,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsReadOnly="{Binding IsReadOnly}"
+                PreviewKeyDown="Txt_PreviewKeyDown"
+                PreviewTextInput="Txt_PreviewTextInput"
+                Text="{Binding Orden}"
+                TextWrapping="Wrap" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="17,5,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Núm. de material:" />
+            <TextBox
+                x:Name="TxtNumMaterial"
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="140"
+                Height="23"
+                Margin="17,36,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsReadOnly="{Binding IsReadOnly}"
+                PreviewKeyDown="Txt_PreviewKeyDown"
+                PreviewTextInput="Txt_PreviewTextInput"
+                Text="{Binding NumMaterial, Mode=TwoWay}"
+                TextWrapping="Wrap" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="217,6,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Núm. de volúmenes:" />
+            <TextBox
+                x:Name="TxtIsbn"
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="140"
+                Height="23"
+                Margin="411,36,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsReadOnly="{Binding IsReadOnly}"
+                Text="{Binding Isbn, Mode=TwoWay}" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="411,5,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="ISBN:" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="589,5,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Año de publicación:" />
+            <telerik:RadNumericUpDown
+                x:Name="NudYear"
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="140"
+                Margin="589,38,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsInteger="True"
+                ValueFormat="Numeric"
+                Value="{Binding AnioPublicacion, Mode=TwoWay}">
+                <telerik:RadNumericUpDown.NumberFormatInfo>
+                    <Globalization:NumberFormatInfo NumberDecimalDigits="0" NumberGroupSeparator="" />
+                </telerik:RadNumericUpDown.NumberFormatInfo>
+            </telerik:RadNumericUpDown>
+            <telerik:RadNumericUpDown
+                x:Name="NudVolumenes"
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="140"
+                Margin="217,36,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsInteger="True"
+                Maximum="15"
+                Minimum="1"
+                Value="{Binding NumLibros, Mode=TwoWay}" />
+            <Image
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="29"
+                Height="20"
+                Margin="449,11,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Source="Resources/question_64.png"
+                ToolTip="El formato de ISBN para 10 digitos es XXX-XXX-XXX-XXX-X para 13 dígitos es 978-XXX-XXX-XXX-X" />
+            <Label
+                Grid.Row="2"
+                Margin="15,6,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="País:" />
+            <ComboBox
+                x:Name="CbxPais"
+                Grid.Row="2"
+                Width="140"
+                Margin="15,39,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                DisplayMemberPath="PaisDesc"
+                IsReadOnly="{Binding IsReadOnly}"
+                ItemsSource="{Binding}"
+                SelectedValuePath="IdPais" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="416,8,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Edición:" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="222,7,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Núm. Páginas" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="594,8,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Precio:" />
+            <TextBox
+                x:Name="TxtPrecio"
+                Grid.Row="2"
+                Grid.Column="1"
+                Width="140"
+                Height="23"
+                Margin="594,39,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsReadOnly="{Binding IsReadOnly}"
+                Text="{Binding Precio, Mode=TwoWay}" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="22,9,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Tiraje:" />
+            <telerik:RadNumericUpDown
+                x:Name="NudTiraje"
+                Grid.Row="2"
+                Grid.Column="1"
+                Width="140"
+                Margin="22,39,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsInteger="True"
+                Value="{Binding Tiraje, Mode=TwoWay}" />
+            <telerik:RadNumericUpDown
+                x:Name="NudPaginas"
+                Grid.Row="2"
+                Grid.Column="1"
+                Width="140"
+                Margin="222,39,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsInteger="True"
+                Minimum="0"
+                Value="{Binding Paginas, Mode=TwoWay}" />
+            <telerik:RadNumericUpDown
+                x:Name="NudEdicion"
+                Grid.Row="2"
+                Grid.Column="1"
+                Width="140"
+                Margin="416,39,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsInteger="True"
+                Minimum="1"
+                Value="{Binding Edicion, Mode=TwoWay}" />
+            <Label
+                Grid.Row="3"
+                Margin="15,5,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Idioma:" />
+            <ComboBox
+                x:Name="CbxIdioma"
+                Grid.Row="3"
+                Width="140"
+                Margin="15,37,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                DisplayMemberPath="Descripcion"
+                IsReadOnly="{Binding IsReadOnly}"
+                ItemsSource="{Binding}"
+                SelectedValuePath="IdElemento" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="25,11,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Presentación:" />
+            <ComboBox
+                x:Name="CbxPresentacion"
+                Grid.Row="3"
+                Grid.Column="1"
+                Width="138"
+                Margin="24,37,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                DisplayMemberPath="Descripcion"
+                IsReadOnly="{Binding IsReadOnly}"
+                ItemsSource="{Binding}"
+                SelectedValuePath="IdElemento" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="222,11,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Tipo de obra:" />
+            <ComboBox
+                x:Name="CbxTipoObra"
+                Grid.Row="3"
+                Grid.Column="1"
+                Width="140"
+                Margin="222,37,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                DisplayMemberPath="Descripcion"
+                IsReadOnly="{Binding IsReadOnly}"
+                ItemsSource="{Binding}"
+                SelectedValuePath="IdElemento" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="425,11,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Tipo de Publicación:" />
+            <ComboBox
+                x:Name="CbxTipoPub"
+                Grid.Row="3"
+                Grid.Column="1"
+                Width="132"
+                Margin="424,37,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                DisplayMemberPath="Descripcion"
+                IsReadOnly="{Binding IsReadOnly}"
+                ItemsSource="{Binding}"
+                SelectedValuePath="IdElemento" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="594,11,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Medio de publicación:" />
+            <ComboBox
+                x:Name="CbxMedioPub"
+                Grid.Row="3"
+                Grid.Column="1"
+                Width="140"
+                Margin="594,37,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                DisplayMemberPath="Descripcion"
+                IsReadOnly="{Binding IsReadOnly}"
+                ItemsSource="{Binding}"
+                SelectedValuePath="IdElemento" />
+
+            <Custom:ToggleSwitch
+                Grid.Row="4"
+                Margin="15,34,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="¿Incluir en catálogo?"
+                FontSize="12"
+                IsChecked="{Binding MuestraEnKiosko, Mode=TwoWay}" />
+            <Custom:ToggleSwitch
+                Grid.Row="4"
+                Margin="15,88,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="                ¿Agotado?"
+                FontSize="12"
+                IsChecked="{Binding Agotado, Mode=TwoWay}" />
+
+            <Button
+                x:Name="BtnAutores"
+                Grid.Row="4"
+                Grid.Column="1"
+                Width="75"
+                Margin="15,5,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="BtnAutores_Click"
+                Content="Autores"
+                Style="{StaticResource BlueButton}" />
+
+            <UserControls:SetAutorObra
+                x:Name="GAutores"
+                Grid.Row="4"
+                Grid.Column="1"
+                Margin="15,40,10,10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                IsEnabled="True" />
+            <Label
+                Grid.Row="4"
+                Margin="15,152,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Ficha catalográfica:"
+                FontWeight="Bold" />
+
+            <StackPanel
+                Grid.Row="4"
+                Margin="15,188,0,-69"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Orientation="Vertical">
+                <Button
+                    x:Name="BtnAddCatalografica"
+                    Margin="10"
+                    Click="BtnAddCatalografica_Click"
+                    Content="Agregar ficha"
+                    Style="{StaticResource BlueButton}" />
+                <Button
+                    x:Name="BtnVerCatalografica"
+                    Margin="10"
+                    Click="BtnVerCatalografica_Click"
+                    Content="Ver ficha"
+                    Style="{StaticResource BlueButton}" />
+                <Button
+                    x:Name="BtnDelCatalografica"
+                    Margin="10"
+                    Click="BtnDelCatalografica_Click"
+                    Content="Eliminar ficha"
+                    Style="{StaticResource BlueButton}" />
+            </StackPanel>
+            <Button
+                x:Name="BtnTipcolabora"
+                Grid.Row="4"
+                Grid.Column="1"
+                Width="150"
+                Margin="95,5,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="BtnTipcolabora_Click"
+                Content="Tipo Colaboración"
+                Style="{StaticResource BlueButton}" />
+
+
+
+        </Grid>
+        <Button
+            x:Name="BtnCancelar"
+            Grid.Row="1"
+            Width="80"
+            Margin="0,20,10,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Click="BtnCancelar_Click"
+            Content="Cancelar"
+            IsCancel="True"
+            Style="{StaticResource BlueButton}" />
+        <Button
+            x:Name="BtnGuardar"
+            Grid.Row="1"
+            Width="80"
+            Margin="0,20,95,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Click="BtnGuardar_Click"
+            Content="Guardar"
+            IsDefault="True"
+            Style="{StaticResource BlueButton}" />
+    </Grid>
+</telerik:RadWindow>

@@ -1,0 +1,174 @@
+﻿<UserControl x:Class="Kiosko.Autores.ListadoAutores"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Converter="clr-namespace:Kiosko.Converter"
+             xmlns:CustomColumn="clr-namespace:Kiosko"
+             xmlns:UIControls="clr-namespace:UIControls;assembly=UIControls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             Background="White"
+             Loaded="UserControl_Loaded"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Converter:TipoAutorConverter x:Key="tipoConv" />
+        <Converter:ImagePathConverter x:Key="imageConv"/>
+    </UserControl.Resources>
+    <telerik:RadBusyIndicator x:Name="BusyIndicator" IsIndeterminate="True">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".3*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <UIControls:SearchTextBox Height="23"
+                                      Margin="75,15,10,0"
+                                      HorizontalAlignment="Stretch"
+                                      VerticalAlignment="Top"
+                                      LabelText="Buscar por nombre o apellido..."
+                                      Search="SearchTextBox_Search"
+                                      TextWrapping="Wrap" />
+
+            <Label x:Name="LblTotales"
+                   Margin="0,10,20,0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Content=" "
+                   FontSize="14"
+                   FontWeight="Bold" />
+
+            <Label Margin="10,10,0,5"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="Buscar:"
+                   FontSize="14"
+                   FontWeight="Black" />
+            <telerik:RadTabControl x:Name="TabAutores"
+                                   Grid.Row="1"
+                                   Margin="0,0,0,0"
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch">
+                <telerik:RadTabItem x:Name="RtabPersonas"
+                                    Width="Auto"
+                                    Height="30"
+                                    Header="Autores">
+                    <Grid Background="Transparent">
+                        <telerik:RadListBox x:Name="RlstAutores"
+                                            Grid.RowSpan="2"
+                                            Margin="10,0,0,0"
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Stretch"
+                                            DisplayMemberPath="NombreCompleto"
+                                            ItemsSource="{Binding}"
+                                            SelectionChanged="RlstAutores_SelectionChanged" />
+                    </Grid>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem x:Name="RtabOrganismos" Header="Instituciones">
+                    <Grid>
+                        <telerik:RadListBox x:Name="RlstInstituciones"
+                                            Grid.RowSpan="2"
+                                            Margin="10,0,0,0"
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Stretch"
+                                            DisplayMemberPath="NombreCompleto"
+                                            ItemsSource="{Binding}"
+                                            SelectionChanged="RlstInstituciones_SelectionChanged" />
+                    </Grid>
+                </telerik:RadTabItem>
+            </telerik:RadTabControl>
+
+            <telerik:RadGridView x:Name="GObras"
+                                 Grid.Row="1"
+                                 Grid.Column="1"
+                                 HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Stretch"
+                                 AutoGenerateColumns="False"
+                                 EnableRowVirtualization="True"
+                                 IsReadOnly="True"
+                                 ItemsSource="{Binding}"
+                                 RowIndicatorVisibility="Collapsed"
+                                 ShowGroupPanel="False"
+                                 ValidatesOnDataErrors="None">
+                <telerik:RadGridView.Columns>
+                    <CustomColumn:MyColumnNumber Width="30"
+                                                 CellStyle="{StaticResource ColumnaNumerica}"
+                                                 Header="#" />
+                    <telerik:GridViewImageColumn Width="100"
+                                                 DataMemberBinding="{Binding ImagePath,Converter={StaticResource imageConv}}"
+                                                 Header="Portada"
+                                                 IsFilterable="False">
+                        <telerik:GridViewImageColumn.CellStyle>
+                            <Style TargetType="{x:Type telerik:GridViewCell}">
+                                <Setter Property="VerticalContentAlignment" Value="Top" />
+                            </Style>
+                        </telerik:GridViewImageColumn.CellStyle>
+                    </telerik:GridViewImageColumn>
+                    <telerik:GridViewDataColumn Width="*"
+                                                Header="Título"
+                                                IsFilterable="False">
+                        <telerik:GridViewDataColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock VerticalAlignment="Top"
+                                           FontSize="12"
+                                           Text="{Binding Titulo}"
+                                           TextAlignment="Justify"
+                                           TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </telerik:GridViewDataColumn.CellTemplate>
+                    </telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn Width="1.5*"
+                                                Header="Sintesis"
+                                                IsFilterable="False">
+                        <telerik:GridViewDataColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock MaxHeight="150"
+                                           FontSize="12"
+                                           Text="{Binding Sintesis}"
+                                           TextAlignment="Justify"
+                                           TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </telerik:GridViewDataColumn.CellTemplate>
+                    </telerik:GridViewDataColumn>
+
+                    <telerik:GridViewDataColumn Width="100"
+                                                DataMemberBinding="{Binding NumMaterial}"
+                                                Header="Núm. Material"
+                                                IsFilterable="False" />
+                    <telerik:GridViewDataColumn Width="100"
+                                                DataMemberBinding="{Binding AnioPublicacion}"
+                                                Header="Año Publicación"
+                                                IsFilterable="True" />
+                    <telerik:GridViewDataColumn Width="90"
+                                                DataMemberBinding="{Binding Precio}"
+                                                Header="Precio"
+                                                ShowDistinctFilters="False" />
+                    <telerik:GridViewDataColumn Width="150"
+                                                DataMemberBinding="{Binding Isbn}"
+                                                Header="ISBN"
+                                                IsFilterable="False" />
+                    <telerik:GridViewDataColumn Width="90"
+                                                DataMemberBinding="{Binding Paginas}"
+                                                Header="Págs."
+                                                IsFilterable="True"
+                                                ShowDistinctFilters="False" />
+
+                </telerik:RadGridView.Columns>
+                <telerik:RadGridView.RowStyle>
+                    <Style TargetType="{x:Type telerik:GridViewRow}">
+                        <Setter Property="Background" Value="{Binding IdIdioma, Converter={StaticResource tipoConv}}" />
+                    </Style>
+                </telerik:RadGridView.RowStyle>
+
+            </telerik:RadGridView>
+        </Grid>
+
+
+    </telerik:RadBusyIndicator>
+</UserControl>

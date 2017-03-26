@@ -1,0 +1,39 @@
+﻿<telerik:RadWindow x:Class="Funcionarios.Trayectoria"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:CustomColumn="clr-namespace:Funcionarios"
+                   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                   Width="800"
+                   Height="450"
+                   Header="Trayectoria"
+                   Loaded="RadWindow_Loaded"
+                   WindowStartupLocation="CenterScreen">
+    <Grid>
+        <telerik:RadGridView x:Name="GTrayectoria"
+                             HorizontalAlignment="Stretch"
+                             VerticalAlignment="Stretch"
+                             AutoGenerateColumns="False"
+                             IsFilteringAllowed="False"
+                             IsReadOnly="True"
+                             ItemsSource="{Binding}"
+                             ShowGroupPanel="False">
+            <telerik:RadGridView.Columns>
+                <CustomColumn:MyColumnNumber Width="30"
+                                             CellStyle="{StaticResource ColumnaNumerica}"
+                                             Header="#" />
+                <telerik:GridViewDataColumn Width="*"
+                                            DataMemberBinding="{Binding Organismo.OrganismoDesc}"
+                                            Header="Organismo" />
+                <telerik:GridViewDataColumn Width=".3*"
+                                            DataFormatString="{} {0:dd/MM/yyyy}"
+                                            DataMemberBinding="{Binding FechaAlta}"
+                                            Header="Fecha de alta" />
+                <telerik:GridViewDataColumn Width=".3*"
+                                            DataFormatString="{} {0:dd/MM/yyyy}"
+                                            DataMemberBinding="{Binding FechaBaja}"
+                                            Header="Fecha de baja" />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+
+    </Grid>
+</telerik:RadWindow>

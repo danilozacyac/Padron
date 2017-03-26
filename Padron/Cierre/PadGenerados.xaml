@@ -1,0 +1,78 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:CustomColumn="clr-namespace:Organismos;assembly=Organismos"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:UIControls="clr-namespace:UIControls;assembly=UIControls" x:Class="Padron.Cierre.PadGenerados"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             Background="White"
+             Loaded="UserControl_Loaded"
+             mc:Ignorable="d">
+    <telerik:RadBusyIndicator x:Name="BusyIndicator" IsIndeterminate="True">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <telerik:RadGridView x:Name="GPadrones"
+				Grid.Row="1"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"
+				AutoGenerateColumns="False"
+				EnableRowVirtualization="True"
+				FontSize="14"
+				IsReadOnly="True"
+				ItemsSource="{Binding}"
+				RowIndicatorVisibility="Collapsed"
+				SelectionChanged="GPadrones_SelectionChanged"
+				ShowGroupPanel="False">
+                <telerik:RadGridView.Columns>
+                    <CustomColumn:MyColumnNumber Width="30"
+						CellStyle="{StaticResource ColumnaNumerica}"
+						Header="#" />
+                    <telerik:GridViewDataColumn Width="*"
+						DataMemberBinding="{Binding TituloObra}"
+						Header="Obra"
+						IsFilterable="False" />
+                    <telerik:GridViewDataColumn Width="100"
+						DataMemberBinding="{Binding NumAcuerdo}"
+						Header="Acuerdo" />
+                    <telerik:GridViewDataColumn Width="100"
+						DataMemberBinding="{Binding AnioAcuerdo}"
+						Header="Año" />
+                    <telerik:GridViewDataColumn Width="100"
+						DataMemberBinding="{Binding Tiraje}"
+						Header="Tiraje" />
+                    <telerik:GridViewDataColumn Width="120"
+						DataFormatString=" {0:dd/MM/yyyy}"
+						DataMemberBinding="{Binding FechaGenerado}"
+						Header="Generado"
+						ShowDistinctFilters="False" />
+                    <telerik:GridViewDataColumn Width="120"
+						DataFormatString=" {0:dd/MM/yyyy}"
+						DataMemberBinding="{Binding FechaDistribucion}"
+						Header="Distribuido"
+						ShowDistinctFilters="False" />
+                    <telerik:GridViewDataColumn Width="100"
+						DataMemberBinding="{Binding OficioInicial}"
+						Header="Of. Inicial"
+						ShowDistinctFilters="False" />
+                    <telerik:GridViewDataColumn Width="100"
+						DataMemberBinding="{Binding OficioFinal}"
+						Header="Of. Final"
+						ShowDistinctFilters="False" />
+                </telerik:RadGridView.Columns>
+
+            </telerik:RadGridView>
+
+            <UIControls:SearchTextBox HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" LabelText="Buscar padrón por obra..." VerticalAlignment="Top" Width="300" Search="SearchTextBox_Search"/>
+
+        </Grid>
+    </telerik:RadBusyIndicator>
+</UserControl>

@@ -1,0 +1,62 @@
+﻿<telerik:RadWindow x:Class="Padron.Cierre.AcuseOficina"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                   Width="239"
+                   Height="284"
+                   Header="Acuse de la oficina"
+                   Loaded="Window_Loaded"
+                   PreviewClosed="RadWindow_PreviewClosed"
+                   ResizeMode="NoResize"
+                   WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Margin="27,19,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Fecha de Recepción:" />
+
+        <telerik:RadDatePicker x:Name="DpAcuse"
+                               Width="183"
+                               Margin="27,50,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               SelectedValue="{Binding FechaRecAcuse}" />
+        <Label Margin="27,102,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Archivo de soporte:" />
+        <TextBox x:Name="TxtArchivoPaq"
+                 Width="166"
+                 Height="23"
+                 Margin="27,137,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 IsEnabled="False"
+                 Text="{Binding ArchivoAcuse,
+                                Mode=TwoWay}" />
+        <Button x:Name="BtnArchivoGuia"
+                Width="25"
+                Margin="193,137,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="BtnArchivoGuia_Click"
+                Content="..." />
+        <Button x:Name="BtnCancelar"
+                Width="81"
+                Margin="137,205,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="BtnCancelar_Click"
+                Content="Cancelar"
+                Style="{StaticResource BlueButton}" />
+        <Button x:Name="BtnGuardar"
+                Width="80"
+                Margin="52,205,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="BtnGuardar_Click"
+                Content="Guardar"
+                Style="{StaticResource BlueButton}" />
+
+    </Grid>
+</telerik:RadWindow>

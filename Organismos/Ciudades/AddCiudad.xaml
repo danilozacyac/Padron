@@ -1,0 +1,78 @@
+﻿<telerik:RadWindow x:Class="Organismos.Ciudades.AddCiudad"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:converter="clr-namespace:PadronApi.Converter;assembly=PadronApi"
+                   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                   Width="315"
+                   Height="348"
+                   Header="Agregar Ciudad"
+                   Loaded="Window_Loaded"
+                   PreviewClosed="RadWindow_PreviewClosed"
+                   ResizeMode="NoResize"
+                   WindowStartupLocation="CenterScreen">
+    <telerik:RadWindow.Resources>
+        <converter:TextValConverter x:Key="textConv" />
+    </telerik:RadWindow.Resources>
+    <Grid>
+        <Label Margin="27,34,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="País:" />
+        <ComboBox x:Name="CbxPais"
+                  Width="255"
+                  Margin="27,65,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  DisplayMemberPath="PaisDesc"
+                  IsEnabled="False"
+                  ItemsSource="{Binding}"
+                  SelectedValuePath="IdPais"
+                  SelectionChanged="CbxPais_SelectionChanged" />
+        <Label Margin="27,117,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Estado:" />
+        <ComboBox x:Name="CbxEstado"
+                  Width="255"
+                  Margin="27,148,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  DisplayMemberPath="EstadoDesc"
+                  IsEnabled="False"
+                  ItemsSource="{Binding}"
+                  SelectedValuePath="IdEstado" />
+        <Label Margin="27,196,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Ciudad" />
+        <TextBox x:Name="TxtCiudad"
+                 Width="255"
+                 Height="23"
+                 Margin="27,227,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 LostFocus="TxtCiudad_LostFocus"
+                 Text="{Binding CiudadDesc,
+                                Converter={StaticResource textConv}}"
+                 TextWrapping="Wrap" />
+        <Button x:Name="BtnSalir"
+                Width="80"
+                Margin="202,277,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="BtnSalir_Click"
+                Content="Cancelar"
+                IsCancel="True"
+                Style="{StaticResource BlueButton}" />
+        <Button x:Name="BtnGuardar"
+                Width="80"
+                Margin="117,277,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="BtnGuardar_Click"
+                Content="Guardar"
+                IsDefault="True"
+                Style="{StaticResource BlueButton}" />
+
+    </Grid>
+</telerik:RadWindow>

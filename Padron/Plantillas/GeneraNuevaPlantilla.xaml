@@ -1,0 +1,247 @@
+﻿<telerik:RadWindow
+    x:Class="Padron.Plantillas.GeneraNuevaPlantilla"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    Width="600"
+    Height="460"
+    Header="Crear Plantilla"
+    Loaded="RadWindow_Loaded"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label
+            Margin="32,27,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Tiraje Base:" />
+        <ComboBox
+            x:Name="CbxAcuerdos"
+            Width="143"
+            Margin="32,58,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="AcDescripcion"
+            ItemsSource="{Binding}"
+            SelectedValuePath="IdAcuerdo"
+            SelectionChanged="CbxAcuerdos_SelectionChanged" />
+        <Label
+            Margin="33,190,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Reserva histórica:" />
+        <TextBox
+            x:Name="TxtDistrBase"
+            Width="120"
+            Height="23"
+            Margin="161,156,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsEnabled="False"
+            TextWrapping="Wrap" />
+        <Label
+            Margin="33,223,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Almacén E. Sede:" />
+        <Label
+            Margin="33,257,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Almacén Zaragoza:" />
+        <Label
+            Margin="33,288,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Ventas:" />
+        <Label
+            Margin="33,154,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Distribución:" />
+        <TextBox
+            x:Name="TxtReservaBase"
+            Width="120"
+            Height="23"
+            Margin="161,190,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsEnabled="False"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="TxtSedeBase"
+            Width="120"
+            Height="23"
+            Margin="161,226,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsEnabled="False"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="TxtZaragozaBase"
+            Width="120"
+            Height="23"
+            Margin="161,259,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsEnabled="False"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="TxtVentasBase"
+            Width="120"
+            Height="23"
+            Margin="161,291,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsEnabled="False"
+            TextWrapping="Wrap" />
+        <Label
+            Grid.Column="1"
+            Margin="39,27,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Nuevo Tiraje:" />
+        <telerik:RadNumericUpDown
+            x:Name="NudNuevoTiraje"
+            Grid.Column="1"
+            Width="152"
+            Margin="39,58,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsInteger="True"
+            Minimum="1000" />
+        <Label
+            Grid.Column="1"
+            Margin="23,190,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Reserva histórica:" />
+        <TextBox
+            x:Name="TxtDistrNueva"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            Margin="151,156,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsEnabled="False"
+            TextWrapping="Wrap" />
+        <Label
+            Grid.Column="1"
+            Margin="23,223,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Almacén E. Sede:" />
+        <Label
+            Grid.Column="1"
+            Margin="23,257,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Almacén Zaragoza:" />
+        <Label
+            Grid.Column="1"
+            Margin="23,288,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Ventas:" />
+        <Label
+            Grid.Column="1"
+            Margin="23,154,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Distribución:" />
+        <TextBox
+            x:Name="TxtReservaNueva"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            Margin="151,190,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsEnabled="False"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="TxtSedeNueva"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            Margin="151,226,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsEnabled="False"
+            TextWrapping="Wrap" />
+        <Button
+            x:Name="BtnSalir"
+            Grid.Column="1"
+            Width="75"
+            Margin="196,367,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="BtnSalir_Click"
+            Content="Salir"
+            Style="{StaticResource BlueButton}" />
+        <Button
+            x:Name="BtnGenera"
+            Grid.Column="1"
+            Width="121"
+            Margin="70,367,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="BtnGenera_Click"
+            Content="Generar Plantilla"
+            IsEnabled="False"
+            Style="{StaticResource BlueButton}" />
+        <telerik:RadNumericUpDown
+            x:Name="NudZaragoza"
+            Grid.Column="1"
+            Width="120"
+            Margin="151,257,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsInteger="True"
+            ValueChanged="NudZaragoza_ValueChanged" />
+        <telerik:RadNumericUpDown
+            x:Name="NudVentas"
+            Grid.Column="1"
+            Width="120"
+            Margin="151,291,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsInteger="True"
+            ValueChanged="NudVentas_ValueChanged" />
+        <Label
+            x:Name="LblTotales"
+            Grid.Column="1"
+            Margin="0,327,19,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Content="0"
+            Foreground="Red" />
+        <Label
+            Grid.Column="1"
+            Margin="0,327,89,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Content="Total:"
+            Foreground="Red" />
+        <Label
+            Grid.Column="1"
+            Margin="39,89,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Descripción"
+            FontWeight="Bold" />
+        <TextBox
+            x:Name="TxtDescripcion"
+            Grid.Column="1"
+            Width="152"
+            Height="23"
+            Margin="39,115,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+    </Grid>
+</telerik:RadWindow>

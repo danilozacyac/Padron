@@ -1,0 +1,112 @@
+﻿<UserControl
+    x:Class="Funcionarios.ListaFuncionarios"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:CustomColumn="clr-namespace:Funcionarios"
+    xmlns:UIControls="clr-namespace:UIControls;assembly=UIControls"
+    xmlns:converter="clr-namespace:PadronApi.Converter;assembly=PadronApi"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:funcConverter="clr-namespace:Funcionarios.FuncConverter"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    d:DesignHeight="300"
+    d:DesignWidth="600"
+    Background="White"
+    Loaded="UserControl_Loaded"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <converter:TituloConverter x:Key="tituloConv" />
+        <funcConverter:AdsConverter x:Key="totAds" />
+        <funcConverter:AuthPicConverter x:Key="authConv" />
+    </UserControl.Resources>
+    <telerik:RadBusyIndicator x:Name="BusyIndicator" IsIndeterminate="True">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <UIControls:SearchTextBox
+                Width="382"
+                Height="23"
+                Margin="75,15,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                LabelText="Buscar por nombre o apellido..."
+                Search="SearchTextBox_Search"
+                TextWrapping="Wrap" />
+
+            <Label
+                x:Name="LblTotales"
+                Margin="0,10,20,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Content=" "
+                FontSize="14"
+                FontWeight="Bold" />
+
+            <Label
+                Margin="10,10,0,5"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Buscar:"
+                FontSize="14"
+                FontWeight="Black" />
+
+            <telerik:RadGridView
+                x:Name="GTitulares"
+                Grid.Row="1"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                AutoGenerateColumns="False"
+                EnableRowVirtualization="True"
+                Filtered="GTitulares_Filtered"
+                FontSize="16"
+                IsReadOnly="True"
+                ItemsSource="{Binding}"
+                RowIndicatorVisibility="Collapsed"
+                SelectionChanged="GTitulares_SelectionChanged"
+                ShowGroupPanel="False">
+                <telerik:RadGridView.Columns>
+                    <CustomColumn:MyColumnNumber
+                        Width="30"
+                        CellStyle="{StaticResource ColumnaNumerica}"
+                        Header="#" />
+                    <telerik:GridViewDataColumn
+                        Width="80"
+                        DataMemberBinding="{Binding IdTitulo, Converter={StaticResource tituloConv}}"
+                        Header="Título"
+                        IsFilterable="True" />
+                    <telerik:GridViewDataColumn
+                        Width=".7*"
+                        DataMemberBinding="{Binding Nombre}"
+                        Header="Nombre"
+                        IsFilterable="False" />
+                    <telerik:GridViewDataColumn
+                        Width=".8*"
+                        DataMemberBinding="{Binding Apellidos}"
+                        Header="Apellidos"
+                        IsFilterable="False" />
+                    <telerik:GridViewImageColumn
+                        Width="32"
+                        DataMemberBinding="{Binding HaPublicado, Converter={StaticResource authConv}}"
+                        Header=""
+                        IsFilterable="False">
+                        <telerik:GridViewImageColumn.CellStyle>
+                            <Style TargetType="{x:Type telerik:GridViewCell}">
+                                <Setter Property="VerticalContentAlignment" Value="Top" />
+                            </Style>
+                        </telerik:GridViewImageColumn.CellStyle>
+                    </telerik:GridViewImageColumn>
+                </telerik:RadGridView.Columns>
+                <telerik:RadGridView.RowStyle>
+                    <Style TargetType="{x:Type telerik:GridViewRow}">
+                        <Setter Property="Background" Value="{Binding TotalAdscripciones, Converter={StaticResource totAds}}" />
+                    </Style>
+                </telerik:RadGridView.RowStyle>
+            </telerik:RadGridView>
+        </Grid>
+
+    </telerik:RadBusyIndicator>
+</UserControl>

@@ -1,0 +1,682 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BB4B9FB7-31E1-4EB8-A532-DF6E0E0B6066}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Padron</RootNamespace>
+    <AssemblyName>Padron</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\ctedi-25086-mgo\Padron2016\UpdatesPadron\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Padrón</ProductName>
+    <PublisherName>CCST</PublisherName>
+    <SuiteName>Distribución del Semanario Judicial de la Federación</SuiteName>
+    <ApplicationRevision>67</ApplicationRevision>
+    <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>rocket.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>26B6711538A554444C198DBB17B75C37591C3069</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Padron_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\..\MahApps.Metro\MahApps.Metro\bin\Debug\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ScjnUtilities">
+      <HintPath>..\..\ScjnUtilities\ScjnUtilities\bin\Debug\ScjnUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WPF Q2 2014\Binaries\WPF45\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Docking">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WPF Q2 2014\Binaries\WPF45\Telerik.Windows.Controls.Docking.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WPF Q2 2014\Binaries\WPF45\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WPF Q2 2014\Binaries\WPF45\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WPF Q2 2014\Binaries\WPF45\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WPF Q2 2014\Binaries\WPF45\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WPF Q2 2014\Binaries\WPF45\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="uicontrols">
+      <HintPath>..\..\..\DLLs\SearchTextBox\uicontrols.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Cierre\AcuSanMetrop.xaml.cs">
+      <DependentUpon>AcuSanMetrop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cierre\AcuseOficina.xaml.cs">
+      <DependentUpon>AcuseOficina.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cierre\AcusePaqueteria.xaml.cs">
+      <DependentUpon>AcusePaqueteria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cierre\Acuses.xaml.cs">
+      <DependentUpon>Acuses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cierre\Devolucion.xaml.cs">
+      <DependentUpon>Devolucion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cierre\ExportarKiosko.xaml.cs">
+      <DependentUpon>ExportarKiosko.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cierre\FechaAcuses.xaml.cs">
+      <DependentUpon>FechaAcuses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cierre\FechaDistribucion.xaml.cs">
+      <DependentUpon>FechaDistribucion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cierre\MultAcuseOficina.xaml.cs">
+      <DependentUpon>MultAcuseOficina.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cierre\PadGenerados.xaml.cs">
+      <DependentUpon>PadGenerados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Historial\HistorialFuncionarioObras.xaml.cs">
+      <DependentUpon>HistorialFuncionarioObras.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Historial\HistorialOrganismoObra.xaml.cs">
+      <DependentUpon>HistorialOrganismoObra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManttoCatalogos\AcuerdosCatal.xaml.cs">
+      <DependentUpon>AcuerdosCatal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManttoCatalogos\Funciones.xaml.cs">
+      <DependentUpon>Funciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManttoCatalogos\TitulosControl.xaml.cs">
+      <DependentUpon>TitulosControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PadronModel.cs" />
+    <Compile Include="PadConverter\CancelaConverter.cs" />
+    <Compile Include="PadConverter\GenderConverter.cs" />
+    <Compile Include="PadConverter\MyColumnNumber.cs" />
+    <Compile Include="PadConverter\TipoDevConverter.cs" />
+    <Compile Include="PermisosFolder\PermisosWin.xaml.cs">
+      <DependentUpon>PermisosWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Plantillas\GeneraNuevaPlantilla.xaml.cs">
+      <DependentUpon>GeneraNuevaPlantilla.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Plantillas\IncluyeFuncionario.xaml.cs">
+      <DependentUpon>IncluyeFuncionario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Plantillas\Plantilla.xaml.cs">
+      <DependentUpon>Plantilla.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Plantillas\SeleccionaTiraje.xaml.cs">
+      <DependentUpon>SeleccionaTiraje.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Cierre\AcuSanMetrop.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Cierre\AcuseOficina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Cierre\AcusePaqueteria.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Cierre\Acuses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Cierre\Devolucion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Cierre\ExportarKiosko.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Cierre\FechaAcuses.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Cierre\FechaDistribucion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Cierre\MultAcuseOficina.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Cierre\PadGenerados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Historial\HistorialFuncionarioObras.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Historial\HistorialOrganismoObra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ManttoCatalogos\AcuerdosCatal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ManttoCatalogos\Funciones.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ManttoCatalogos\TitulosControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PadronWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PermisosFolder\PermisosWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Plantillas\GeneraNuevaPlantilla.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Plantillas\IncluyeFuncionario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Plantillas\Plantilla.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Plantillas\SeleccionaTiraje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Plantillas\VentanaChecaDistr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\Padrontheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PadronWin.xaml.cs">
+      <DependentUpon>PadronWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Plantillas\VentanaChecaDistr.xaml.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Padron_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Author_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Author_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Author_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Author.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Building.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Building_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Building_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Building_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\schedule_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Books_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Books_128_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Books_128_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Books_128_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\search_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\aguila vertical.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\rocket.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rocket.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\titular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\saveArrow_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\catObras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\catTitulares.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ImaPadron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\delivery_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\acuse_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\repeat_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\map_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\error_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pencil_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\world_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\word_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\excel_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pdf_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\word_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\excel_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pdf_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\devolution_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\devCal_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\auditor_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\contraloria_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\paperConfig_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\label.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\devolution.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\function.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\duplicate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\escoba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\detail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lines_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\old_256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lawyers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\boygirl_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\calDate_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\calRecip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\searchtable_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1405447864_mail_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\guia_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\deliv_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mailp_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1425495851_lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mexico_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\descargaComprobante_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AcuerdoCancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PorObra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ibooks-icon-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bookshelf_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pantone_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\user1_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObraInfoEdit_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObraInfo_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tree_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\author_plus_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\author_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\author_edit_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\multipleDocs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SelectSencilla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SinSintesis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ConSintesis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SelectMultiple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Boy_Girl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cadenaControl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mantenimiento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\degree_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\male_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\female_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dfMetroPol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\exportarKiosko.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\straTrophy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\deleteAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Author_books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\brush_clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\number_128_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tree2_128_cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Funcionarios\Funcionarios.csproj">
+      <Project>{dd619e9c-873b-4a9b-a611-b51f1c2101eb}</Project>
+      <Name>Funcionarios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kiosko\Kiosko.csproj">
+      <Project>{6dca742e-bb4a-432b-8062-4b66214a9fc4}</Project>
+      <Name>Kiosko</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Obras\Obras.csproj">
+      <Project>{a1556f31-f0d3-4158-9141-46e54e8353bf}</Project>
+      <Name>Obras</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Organismos\Organismos.csproj">
+      <Project>{25251c12-7d0f-4525-886d-bbdf0d32b57f}</Project>
+      <Name>Organismos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PadronApi\PadronApi.csproj">
+      <Project>{94d9b299-2078-4757-9024-f7910f5713a5}</Project>
+      <Name>PadronApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="fr\System.Windows.Interactivity.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

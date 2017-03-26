@@ -1,0 +1,61 @@
+﻿<telerik:RadWindow x:Class="Padron.ManttoCatalogos.Funciones"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                   Width="500"
+                   Height="550"
+                   Header="Funciones"
+                   Loaded="RadWindow_Loaded"
+                   WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+        <Button x:Name="BtnSubir"
+                Width="65"
+                Height="49"
+                Margin="407,177,10,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Click="BtnSubir_Click">
+            <Image Source="/Padron;component/Resources/up.png" />
+        </Button>
+        <Button x:Name="BtnBajar"
+                Width="65"
+                Height="49"
+                Margin="407,231,10,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Click="BtnBajar_Click">
+            <Image Source="/Padron;component/Resources/down.png" />
+        </Button>
+        <telerik:RadListBox x:Name="LstFunciones"
+                            Margin="15,15,90,20"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            DisplayMemberPath="Descripcion"
+                            ItemsSource="{Binding}"
+                            SelectedValuePath="IdElemento"
+                            SelectionChanged="LstFunciones_SelectionChanged" />
+        <Button x:Name="BtnGuardar"
+                Grid.Row="1"
+                Width="81"
+                Margin="389,5,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="BtnGuardar_Click"
+                Content="Guardar"
+                Style="{StaticResource BlueButton}" />
+
+        <Button x:Name="BtnModificar"
+                Grid.Row="1"
+                Width="90"
+                Margin="15,5,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Modificar"
+                Style="{StaticResource BlueButton}" Click="BtnModificar_Click" />
+
+    </Grid>
+</telerik:RadWindow>

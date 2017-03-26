@@ -1,0 +1,178 @@
+﻿<UserControl
+    x:Class="Kiosko.EstructuraKiosko.ArbolKiosko"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:UIControls="clr-namespace:UIControls;assembly=UIControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:example="clr-namespace:Kiosko.EstructuraKiosko.Behavior"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    d:DesignHeight="1300"
+    d:DesignWidth="1000"
+    Background="#1ba1e2"
+    mc:Ignorable="d">
+    <telerik:RadBusyIndicator
+        x:Name="BusyIndicator"
+        telerik:StyleManager.Theme="Windows8Touch"
+        IsIndeterminate="True">
+        <Grid x:Name="LayoutRoot" Margin="8">
+            <Grid.Resources>
+                <!--<DataTemplate x:Key="WishlistProduct">
+                    <StackPanel Orientation="Horizontal">
+                        <Image
+                            Width="64"
+                            Height="64"
+                            Source="{Binding ImagePath}" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                FontSize="12"
+                                Foreground="#FF000000"
+                                Text="{Binding Titulo}"
+                                TextWrapping="Wrap" />
+                            <TextBlock Foreground="#FF000000" Text=", (" />
+                            <TextBlock Foreground="#FF000000" Text="{Binding NumMaterial}" />
+                            <TextBlock Foreground="#FF000000" Text=")" />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>-->
+                <DataTemplate x:Key="ProductTemplate">
+                    <telerik:RadDockPanel MaxWidth="200" Margin="2">
+                        <TextBlock
+                            telerik:RadDockPanel.Dock="Top"
+                            Foreground="{telerik:Windows8Resource ResourceKey=MarkerBrush}"
+                            Text="{Binding Titulo}" />
+                        <TextBlock
+                            telerik:RadDockPanel.Dock="Left"
+                            Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"
+                            Text="{Binding Precio}" />
+                        <TextBlock
+                            Margin="2,0,0,0"
+                            telerik:RadDockPanel.Dock="Left"
+                            Foreground="{telerik:Windows8Resource ResourceKey=StrongBrush}"
+                            Text="{Binding Description}"
+                            TextWrapping="Wrap" />
+                    </telerik:RadDockPanel>
+                </DataTemplate>
+
+                <HierarchicalDataTemplate x:Key="ObrasChildTemplate" ItemsSource="{Binding ObraChild}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Titulo}" TextWrapping="Wrap" />
+                        <TextBlock
+                            Margin="2"
+                            VerticalAlignment="Center"
+                            Foreground="Red"
+                            Text="{Binding Orden}" />
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+
+                <HierarchicalDataTemplate
+                    x:Key="CategoryTemplate"
+                    ItemTemplate="{StaticResource ObrasChildTemplate}"
+                    ItemsSource="{Binding ObraChild}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image
+                            Width="32"
+                            Height="32"
+                            Margin="3"
+                            VerticalAlignment="Center"
+                            Source="{Binding ImagePath}" />
+                        <TextBlock
+                            Margin="2"
+                            VerticalAlignment="Center"
+                            Foreground="{telerik:Windows8Resource ResourceKey=MarkerBrush}"
+                            Text="{Binding Titulo}" />
+
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+                <!--  Note: With this style we make the ListBoxItems draggable:  -->
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="telerik:DragDropManager.AllowCapturedDrag" Value="True" />
+                </Style>
+
+                <Style TargetType="{x:Type telerik:RadTreeViewItem}">
+                    <Setter Property="IsExpanded" Value="False" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".4*" />
+            </Grid.ColumnDefinitions>
+
+            <ListBox
+                x:Name="wishlistView"
+                Grid.Column="1"
+                Margin="5,80,0,0"
+                Padding="5"
+                example:ListBoxDragDropBehavior.IsEnabled="True"
+                AllowDrop="True"
+                DisplayMemberPath="Titulo"
+                FontSize="14"
+                SelectionChanged="wishlistView_SelectionChanged"
+                SelectionMode="Single">
+                <ListBox.Resources>
+                    <DataTemplate x:Key="DraggedItemTemplate">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Dragging:" />
+                                <TextBlock FontWeight="Bold" Text="{Binding CurrentDraggedItem.Titulo}" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+                                    MinWidth="45"
+                                    FontWeight="Bold"
+                                    Text="{Binding CurrentDropPosition}" />
+                                <TextBlock Foreground="Gray" Text=", (" />
+                                <TextBlock Text="{Binding CurrentDraggedOverItem.Titulo}" />
+                                <TextBlock Foreground="Gray" Text=")" />
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.Resources>
+            </ListBox>
+            <telerik:RadTreeView
+                x:Name="allProductsView"
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Grid.Column="0"
+                Margin="0,80,15,0"
+                Padding="5"
+                Background="White"
+                FontSize="16"
+                IsDragDropEnabled="True"
+                ItemTemplate="{StaticResource CategoryTemplate}"
+                SelectionChanged="allProductsView_SelectionChanged"
+                TextDropAfter="Después de:"
+                TextDropBefore="Antes de:"
+                TextDropIn="Como hijo de:" />
+            <UIControls:SearchTextBox
+                Grid.ColumnSpan="2"
+                Width="729"
+                Height="30"
+                Margin="10,45,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                LabelText="Buscar por obra"
+                Search="SearchTextBox_Search"
+                TextWrapping="Wrap" />
+            <TextBlock
+                Grid.Column="1"
+                Margin="10,10,10,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                FontSize="14"
+                FontWeight="Bold"
+                Text="Obras de catálogo que no han sido clasificadas"
+                TextAlignment="Justify"
+                TextWrapping="Wrap" />
+            <TextBlock
+                Margin="10,12,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="14"
+                FontWeight="Bold"
+                Text="Estructura del kiosko de publicaciones"
+                TextAlignment="Justify"
+                TextWrapping="Wrap" />
+        </Grid>
+    </telerik:RadBusyIndicator>
+</UserControl>

@@ -1,0 +1,116 @@
+﻿<telerik:RadWindow x:Class="Padron.Historial.HistorialFuncionarioObras"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+                   xmlns:converter="clr-namespace:Padron.PadConverter"
+                   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                   Width="800"
+                   Height="500"
+                   Header="HistorialPorTitular"
+                   Loaded="Window_Loaded"
+                   WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.Resources>
+            <converter:TipoDevConverter x:Key="devConverter" />
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140" />
+            <RowDefinition MinHeight="50" MaxHeight="70" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <StackPanel VerticalAlignment="Stretch" Orientation="Horizontal">
+            <Button x:Name="BtnDevolver"
+                    Width="75"
+                    Margin="10"
+                    Click="BtnDevolver_Click">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="/Padron;component/Resources/devolution_128.png" />
+                    <TextBlock HorizontalAlignment="Center" Text="Hacer" />
+                    <TextBlock HorizontalAlignment="Center" Text="devolución" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="BtnCancelacion"
+                    Width="75"
+                    Margin="10"
+                    Click="BtnCancelacion_Click">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="/Padron;component/Resources/1405447864_mail_delete.png" />
+                    <TextBlock HorizontalAlignment="Center" Text=" " />
+                    <TextBlock HorizontalAlignment="Center" Text="Cancelación" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="BtnDetalle"
+                    Width="100"
+                    Margin="10">
+                <StackPanel Orientation="Vertical">
+                    <Image Height="72" Source="/Padron;component/Resources/devCal_128.png" />
+                    <TextBlock HorizontalAlignment="Center" Text="Detalle de" />
+                    <TextBlock HorizontalAlignment="Center" Text="las devoluciones" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="BtnReporteContraloria"
+                    Width="100"
+                    Margin="10"
+                    Click="BtnReporteContraloria_Click">
+                <StackPanel Orientation="Vertical">
+                    <Image Height="72" Source="/Padron;component/Resources/auditor_128.png" />
+                    <TextBlock HorizontalAlignment="Center" Text="Reporte" />
+                    <TextBlock HorizontalAlignment="Center" Text="contraloría" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <TextBlock x:Name="TxtTitular"
+                   Grid.Row="1"
+                   Margin="30,10"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Stretch"
+                   FontSize="18"
+                   FontWeight="Bold"
+                   TextAlignment="Center"
+                   TextWrapping="WrapWithOverflow" />
+        <telerik:RadGridView x:Name="GPlantilla"
+                             Grid.Row="2"
+                             HorizontalAlignment="Stretch"
+                             VerticalAlignment="Stretch"
+                             AutoExpandGroups="True"
+                             AutoGenerateColumns="False"
+                             EnableRowVirtualization="True"
+                             FontSize="15"
+                             GroupRenderMode="Flat"
+                             IsFilteringAllowed="False"
+                             IsReadOnly="True"
+                             ItemsSource="{Binding}"
+                             SelectionChanged="GPlantilla_SelectionChanged"
+                             ShowGroupPanel="False">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Width="*"
+                                            DataMemberBinding="{Binding Titulo}"
+                                            Header="Título de la obra" />
+                <telerik:GridViewDataColumn Width="100"
+                                            DataMemberBinding="{Binding Particular}"
+                                            Header="Particular" />
+                <telerik:GridViewDataColumn Width="100"
+                                            DataMemberBinding="{Binding Oficina}"
+                                            Header="Oficina" />
+                <telerik:GridViewDataColumn Width="100"
+                                            DataMemberBinding="{Binding Biblioteca}"
+                                            Header="Biblioteca" />
+                <telerik:GridViewDataColumn Width="100"
+                                            DataMemberBinding="{Binding Resguardo}"
+                                            Header="Resguardo" />
+                <telerik:GridViewDataColumn Width="100"
+                                            DataMemberBinding="{Binding TotalDevoluciones}"
+                                            Header="Devueltos" />
+            </telerik:RadGridView.Columns>
+            <telerik:RadGridView.RowStyle>
+                <Style TargetType="{x:Type telerik:GridViewRow}">
+                    <Setter Property="Background" Value="{Binding TipoDevolucion, Converter={StaticResource devConverter}}" />
+                </Style>
+            </telerik:RadGridView.RowStyle>
+        </telerik:RadGridView>
+    </Grid>
+</telerik:RadWindow>

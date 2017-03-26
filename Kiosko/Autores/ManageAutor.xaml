@@ -1,0 +1,135 @@
+﻿<telerik:RadWindow x:Class="Kiosko.Autores.ManageAutor"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls"
+                   xmlns:converter="clr-namespace:PadronApi.Converter;assembly=PadronApi"
+                   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                   Width="630"
+                   Height="580"
+                   Header="Autores"
+                   Loaded="RadWindow_Loaded"
+                   ResizeMode="NoResize"
+                   WindowStartupLocation="CenterScreen">
+    <telerik:RadWindow.Resources>
+        <converter:TextValConverter x:Key="textConv" />
+    </telerik:RadWindow.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid x:Name="PanelPrincipal">
+            <GroupBox Height="270"
+                      Margin="15,31,15,0"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Top"
+                      Header="Datos Personales">
+                <Grid>
+                    <Label Margin="16,107,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="Apellidos:" />
+                    <TextBox x:Name="TxtApellidos"
+                             Width="437"
+                             Height="23"
+                             Margin="103,107,-2,0"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Top"
+                             PreviewTextInput="TxtPreviewTextInput"
+                             Text="{Binding Apellidos,
+                                            Converter={StaticResource textConv}}"
+                             TextWrapping="Wrap" />
+                    <Label Margin="16,159,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="Nombre(s):" />
+                    <TextBox x:Name="TxtNombre"
+                             Width="437"
+                             Height="23"
+                             Margin="103,159,-2,0"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Top"
+                             PreviewTextInput="TxtPreviewTextInput"
+                             Text="{Binding Nombre,
+                                            Converter={StaticResource textConv}}"
+                             TextWrapping="Wrap" />
+                    <telerik:RadComboBox x:Name="CbxGrado"
+                                         Width="120"
+                                         Margin="103,68,0,0"
+                                         HorizontalAlignment="Left"
+                                         VerticalAlignment="Top"
+                                         DisplayMemberPath="TituloDesc"
+                                         ItemsSource="{Binding}"
+                                         SelectedValuePath="IdTitulo" />
+                    <Label Margin="35,64,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="Título:" />
+                    <Label Margin="17,202,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="Correo:" />
+                    <TextBox x:Name="TxtCorreo"
+                             Width="235"
+                             Height="23"
+                             Margin="103,202,0,0"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Top"
+                             Text="{Binding Correo,
+                                            Mode=TwoWay}"
+                             TextWrapping="Wrap" />
+                    <Custom:ToggleSwitch x:Name="TbGenero"
+                                         Margin="35,10,0,0"
+                                         HorizontalAlignment="Left"
+                                         VerticalAlignment="Top"
+                                         Checked="TbGenero_Checked"
+                                         Content="Genero       "
+                                         FontSize="12"
+                                         IsChecked="True"
+                                         Unchecked="TbGenero_Unchecked" />
+                    <Image x:Name="ImGenero"
+                           Width="32"
+                           Height="35"
+                           Margin="181,10,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Source="/Kiosko;component/Resources/female_128.png" />
+                </Grid>
+            </GroupBox>
+            <Label Margin="15,333,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Content="Observaciones:" />
+            <TextBox x:Name="TxtObservaciones"
+                     Height="90"
+                     Margin="15,363,15,0"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Top"
+                     AcceptsReturn="True"
+                     Text="{Binding Observaciones}"
+                     TextWrapping="Wrap" />
+        </Grid>
+        <Button x:Name="BtnSalir"
+                Grid.Row="1"
+                Width="80"
+                Height="30"
+                Margin="0,10,20,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Click="BtnSalir_Click"
+                Content="Cancelar"
+                Style="{StaticResource BlueButton}" />
+        <Button x:Name="BtnGuardar"
+                Grid.Row="1"
+                Width="80"
+                Height="30"
+                Margin="0,10,105,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Click="BtnGuardar_Click"
+                Content="Guardar"
+                Style="{StaticResource BlueButton}" />
+
+
+    </Grid>
+</telerik:RadWindow>

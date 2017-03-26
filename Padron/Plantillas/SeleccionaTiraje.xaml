@@ -1,0 +1,55 @@
+﻿<telerik:RadWindow x:Class="Padron.Plantillas.SeleccionaTiraje"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                   Width="300"
+                   Height="267"
+                   Header="Seleccionar tiraje"
+                   Loaded="Window_Loaded"
+                   ResizeMode="NoResize"
+                   WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Margin="25,107,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Tiraje:" />
+        <ComboBox x:Name="CbxTiraje"
+                  Width="245"
+                  Margin="25,138,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  DisplayMemberPath="AcDescripcion"
+                  ItemsSource="{Binding}"
+                  SelectedValuePath="IdAcuerdo" />
+        <Label Margin="28,30,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Obra:" />
+        <ComboBox x:Name="CbxObra"
+                  Width="242"
+                  Margin="28,61,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  DisplayMemberPath="Titulo"
+                  ItemsSource="{Binding}"
+                  SelectedValuePath="IdObra"
+                  SelectionChanged="CbxObra_SelectionChanged" />
+        <Button x:Name="BtnGuardar"
+                Width="89"
+                Margin="96,194,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="BtnGuardar_Click"
+                Content="Siguiente"
+                Style="{StaticResource BlueButton}" />
+        <Button x:Name="BtnCancelar"
+                Width="80"
+                Margin="190,194,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="BtnCancelar_Click"
+                Content="Cancelar"
+                Style="{StaticResource BlueButton}" />
+
+    </Grid>
+</telerik:RadWindow>

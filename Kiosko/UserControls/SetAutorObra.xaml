@@ -1,0 +1,114 @@
+﻿<UserControl
+    x:Class="Kiosko.UserControls.SetAutorObra"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    Loaded="UserControl_Loaded"
+    mc:Ignorable="d">
+    <Grid>
+        <telerik:RadGridView
+            x:Name="GAutorObra"
+            Grid.Row="1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            AutoGenerateColumns="False"
+            CanUserDeleteRows="False"
+            CanUserReorderColumns="False"
+            CanUserResizeColumns="False"
+            ItemsSource="{Binding}"
+            ShowGroupPanel="False"
+            ValidatesOnDataErrors="None">
+            <telerik:RadGridView.Columns>
+
+
+                <telerik:GridViewDataColumn
+                    Width="50"
+                    DataMemberBinding="{Binding IdAutor}"
+                    Header="Id"
+                    HeaderTextAlignment="Center"
+                    IsFilterable="False"
+                    IsReadOnly="True"
+                    IsVisible="False" />
+
+                <telerik:GridViewDataColumn
+                    Width="*"
+                    MinWidth="100"
+                    DataMemberBinding="{Binding NombreCompleto}"
+                    Header="Nombre"
+                    HeaderTextAlignment="Center"
+                    IsFilterable="False"
+                    IsReadOnly="True" />
+
+                <telerik:GridViewCheckBoxColumn
+                    Width="60"
+                    AutoSelectOnEdit="True"
+                    DataMemberBinding="{Binding IsAutor, Mode=TwoWay}"
+                    EditTriggers="CellClick"
+                    Header="Autor"
+                    HeaderTextAlignment="Center"
+                    IsFilterable="True" />
+                <telerik:GridViewCheckBoxColumn
+                    Width="90"
+                    AutoSelectOnEdit="True"
+                    DataMemberBinding="{Binding IsCompilador, Mode=TwoWay}"
+                    EditTriggers="CellClick"
+                    Header="Compilador"
+                    HeaderTextAlignment="Center"
+                    IsFilterable="True" />
+                <telerik:GridViewCheckBoxColumn
+                    Width="90"
+                    AutoSelectOnEdit="True"
+                    DataMemberBinding="{Binding IsTraductor, Mode=TwoWay}"
+                    EditTriggers="CellClick"
+                    Header="Traductor"
+                    HeaderTextAlignment="Center"
+                    IsFilterable="True" />
+                <telerik:GridViewCheckBoxColumn
+                    Width="90"
+                    AutoSelectOnEdit="True"
+                    DataMemberBinding="{Binding IsCoordinador, Mode=TwoWay}"
+                    EditTriggers="CellClick"
+                    Header="Coordinador"
+                    HeaderTextAlignment="Center"
+                    IsFilterable="True" />
+                <telerik:GridViewCheckBoxColumn
+                    Width="90"
+                    AutoSelectOnEdit="True"
+                    DataMemberBinding="{Binding IsComentarista, Mode=TwoWay}"
+                    EditTriggers="CellClick"
+                    Header="Comentarista"
+                    HeaderTextAlignment="Center"
+                    IsFilterable="True" />
+                <telerik:GridViewCheckBoxColumn
+                    Width="90"
+                    AutoSelectOnEdit="True"
+                    DataMemberBinding="{Binding IsCoedicion, Mode=TwoWay}"
+                    EditTriggers="CellClick"
+                    Header="Coeditor"
+                    HeaderTextAlignment="Center"
+                    IsFilterable="True" />
+                <telerik:GridViewCheckBoxColumn
+                    Width="90"
+                    AutoSelectOnEdit="True"
+                    DataMemberBinding="{Binding IsEstudio, Mode=TwoWay}"
+                    EditTriggers="CellClick"
+                    Header="Estudio In."
+                    HeaderTextAlignment="Center"
+                    IsFilterable="True" />
+                <telerik:GridViewCheckBoxColumn
+                    Width="90"
+                    AutoSelectOnEdit="True"
+                    DataMemberBinding="{Binding IsPrologo, Mode=TwoWay}"
+                    EditTriggers="CellClick"
+                    Header="Prologuista"
+                    HeaderTextAlignment="Center"
+                    IsFilterable="True" />
+
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</UserControl>

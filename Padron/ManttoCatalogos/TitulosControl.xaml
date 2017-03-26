@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="Padron.ManttoCatalogos.TitulosControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Converters="clr-namespace:Padron.PadConverter"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             d:DesignHeight="300"
+             d:DesignWidth="400"
+             Background="White"
+             mc:Ignorable="d" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <Converters:GenderConverter x:Key="genderConv" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <telerik:RadGridView x:Name="GTitulos"
+                             Grid.Row="2"
+                             HorizontalAlignment="Stretch"
+                             VerticalAlignment="Stretch"
+                             AutoGenerateColumns="False"
+                             EnableRowVirtualization="True"
+                             IsReadOnly="True"
+                             ItemsSource="{Binding}"
+                             FontSize="18"
+                             RowIndicatorVisibility="Collapsed"
+                             SelectionMode="Single"
+                             ShowGroupPanel="False"
+                             ValidatesOnDataErrors="None" SelectionChanged="GTitulos_SelectionChanged">
+            <telerik:RadGridView.Columns>
+                <Converters:MyColumnNumber Width="30"
+                                           CellStyle="{StaticResource ColumnaNumerica}"
+                                           Header="#" />
+
+
+                <telerik:GridViewDataColumn Width="100"
+                                            DataMemberBinding="{Binding TituloDesc}"
+                                            Header="Título" />
+                <telerik:GridViewDataColumn Width="100"
+                                            DataMemberBinding="{Binding TituloAbr}"
+                                            Header="Abreviatura"
+                                            IsFilterable="False" />
+                <telerik:GridViewDataColumn Width="100"
+                                            DataMemberBinding="{Binding Orden}"
+                                            Header="Orden"
+                                            IsFilterable="True" />
+                <telerik:GridViewImageColumn Width="100"
+                                             DataMemberBinding="{Binding IdGenero,
+                                                                         Converter={StaticResource genderConv}}"
+                                             Header="Genero"
+                                             IsFilterable="False">
+                    <telerik:GridViewImageColumn.CellStyle>
+                        <Style TargetType="{x:Type telerik:GridViewCell}">
+                            <Setter Property="VerticalContentAlignment" Value="Top" />
+                        </Style>
+                    </telerik:GridViewImageColumn.CellStyle>
+                </telerik:GridViewImageColumn>
+            </telerik:RadGridView.Columns>
+            <!--<telerik:RadGridView.RowStyle>
+                <Style TargetType="{x:Type telerik:GridViewRow}">
+                    <Setter Property="Background" Value="{Binding MedioPublicacion, Converter={StaticResource medioConv}}" />
+                </Style>
+            </telerik:RadGridView.RowStyle>-->
+
+        </telerik:RadGridView>
+    </Grid>
+</UserControl>
