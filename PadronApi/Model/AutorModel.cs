@@ -722,5 +722,65 @@ namespace PadronApi.Model
         }
 
 
+        /// <summary>
+        /// Devuelve el texto con el que el autor colabora en la obra de la cual se está detallando la información
+        /// </summary>
+        /// <param name="idObra">Identificador de la obra que se esta imprimiendo</param>
+        /// <param name="idTitular">Identificador del titular seleccionado</param>
+        /// <param name="idTipoColaboracion">Indica el tipo de colaboración que tuvo el titular dentro de la publicación</param>
+        /// <param name="tipoAutor">Indica si el colaborador es un titula ro una institucion</param>
+        /// <returns></returns>
+        public string GetTextoColaboracion(int idObra, int idTitular, int idTipoColaboracion, int tipoAutor)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand cmd = null;
+            SqlDataReader reader = null;
+
+            string texto = String.Empty;
+
+            try
+            {
+                connection.Open();
+
+                if (tipoAutor == 1)
+                    cmd = new SqlCommand("SELECT ArticuloColabora FROM RelObrasAutores WHERE IdObra = @IdObra AND IdTitular = @Autor AND IdTipoAutor = @Tipo", connection);
+                else if (tipoAutor == 2)
+                    cmd = new SqlCommand("SELECT ArticuloColabora FROM RelObrasAutores WHERE IdObra = @IdObra AND IdOrg = @Autor AND IdTipoAutor = @Tipo", connection);
+
+                cmd.Parameters.AddWithValue("@IdObra", idObra);
+                cmd.Parameters.AddWithValue("@Autor", idTitular);
+                cmd.Parameters.AddWithValue("@Tipo", idTipoColaboracion);
+                reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        texto = reader["ArticuloColabora"].ToString();
+                    }
+                }
+                cmd.Dispose();
+                reader.Close();
+
+            }
+            catch (SqlException ex)
+            {
+                string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
+                ErrorUtilities.SetNewErrorMessage(ex, methodName + " Exception,AutorModel", "PadronApi");
+            }
+            catch (Exception ex)
+            {
+                string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
+                ErrorUtilities.SetNewErrorMessage(ex, methodName + " Exception,AutorModel", "PadronApi");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return texto;
+        }
+
+
     }
 }

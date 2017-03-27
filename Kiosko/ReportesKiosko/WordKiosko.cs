@@ -202,6 +202,18 @@ namespace Kiosko.ReportesKiosko
                             //paraSintesis = null;
                         }
                         numObra++;
+
+                        string textoColabora = new AutorModel().GetTextoColaboracion(obra.IdObra, autor.IdTitular, obra.IdIdioma, tipoAutor);
+
+                        if (!String.IsNullOrEmpty(textoColabora))
+                        {
+                            oPara1.Range.Text = "Artículo: " + textoColabora;
+                            oPara1.Range.Font.Bold = 0;
+                            oPara1.Range.Font.Size = 12;
+                            oPara1.Range.Paragraphs.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
+                            oPara1.Range.InsertParagraphAfter();
+                        }
+
                     }
                     oDoc.Words.Last.InsertBreak(WdBreakType.wdPageBreak);
                 }
