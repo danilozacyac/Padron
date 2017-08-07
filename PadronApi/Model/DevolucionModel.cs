@@ -192,7 +192,7 @@ namespace PadronApi.Model
         {
             ObservableCollection<Devoluciones> plantilla = new ObservableCollection<Devoluciones>();
 
-            string sqlCadena = "SELECT H.*, P.AcuerdoNum, P.AnioAcuerdo, O.Titulo,O.IdObra,P.Fecha, " + 
+            string sqlCadena = "SELECT H.*, P.AcuerdoNum, P.AnioAcuerdo, O.Titulo,O.IdObra,P.Fecha, O.Precio" + 
                                "(SELECT SUM(Cantidad) FROM Devolucion WHERE IdTitular = H.IdTitular AND IdObra = P.IdObra) AS Total, " +
                                "(SELECT TipoDevolucion FROM Devolucion WHERE IdTitular = H.IdTitular AND IdObra = P.IdObra) AS Tipo " +
                                "FROM (Padron P INNER JOIN C_Obra O ON P.IdObra = O.IdObra) INNER JOIN PadronHistorico H " +
@@ -234,6 +234,7 @@ namespace PadronApi.Model
                         item.FechaEnvio = DateTimeUtilities.IntToDate(reader, "Fecha");
                         item.TotalDevoluciones = (reader["Total"]) as int? ?? 0;
                         item.TipoDevolucion = Convert.ToInt16(reader["Cancelado"]);
+                        item.Precio = reader["Precio"].ToString();
 
                         plantilla.Add(item);
                     }

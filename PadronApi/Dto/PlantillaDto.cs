@@ -34,6 +34,7 @@ namespace PadronApi.Dto
         private int oficio;
         private int funcion;
         private string obrasRecibe;
+        private string precio;
         //private DateTime? fechaRecPaqueteria;
         //private string numGuia;
         //private string archivoGuia;
@@ -103,6 +104,19 @@ namespace PadronApi.Dto
                 this.obrasRecibe = value;
             }
         }
+
+        public string Precio
+        {
+            get
+            {
+                return this.precio;   
+            }
+            set
+            {
+                this.precio = value;   
+            }
+        }
+
 
         public int Funcion
         {

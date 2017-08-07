@@ -160,15 +160,15 @@ namespace PadronApi.Reportes
                 myDocument.Add(white);
 
                 //se crea un objeto PdfTable con el numero de columnas del dataGridView 
-                PdfPTable table = new PdfPTable(9) { WidthPercentage = 100 };
+                PdfPTable table = new PdfPTable(10) { WidthPercentage = 100 };
                 //asignamos algunas propiedades para el diseño del pdf 
                 table.DefaultCell.Padding = 1;
-                float[] headerwidths = new float[9] { .25f, 1.5f, 1f, .35f, .40f, .4f, .45f, .45f, .9f };
+                float[] headerwidths = new float[10] { .25f, 1.5f, 1f, .35f, .40f, .4f, .45f, .45f, .4f, .9f };
                 table.SetWidths(headerwidths);
 
                 table.DefaultCell.BorderWidth = 1;
 
-                string[] encabezado = { "#", "Título", "Organismos donde recibió", "Oficina", "Biblioteca", "Oficio", "F. de devolución", "Devueltos", "Observaciones" };
+                string[] encabezado = { "#", "Título", "Organismos donde recibió", "Oficina", "Biblioteca", "Oficio", "F. de devolución", "Devueltos", "Precio de venta", "Observaciones" };
                 PdfPCell cell;
 
                 foreach (string cabeza in encabezado)
