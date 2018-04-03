@@ -174,6 +174,12 @@ namespace Kiosko
                     return;
             }
 
+            if (obra.AnioPublicacion < 1870 || obra.AnioPublicacion > DateTime.Now.Year)
+            {
+                MessageBox.Show(String.Format("El año de publicación debe estar entre el rango de 1870 y {0}", DateTime.Now.Year),"Error de datos",MessageBoxButton.OK,MessageBoxImage.Error);
+                return;
+            }
+
             obra.Presentacion = Convert.ToInt32(CbxPresentacion.SelectedValue);
             obra.TipoObra = Convert.ToInt32(CbxTipoObra.SelectedValue);
             obra.IdTipoPublicacion = Convert.ToInt32(CbxTipoPub.SelectedValue);
