@@ -202,3 +202,5 @@ C:\Users\Luis\Documents\GitHub\Padron\Padron\obj\Debug\Padron.Properties.Resourc
 C:\Users\Luis\Documents\GitHub\Padron\Padron\obj\Debug\Padron.csproj.GenerateResource.Cache
 C:\Users\Luis\Documents\GitHub\Padron\Padron\obj\Debug\Padron.exe.manifest
 C:\Users\Luis\Documents\GitHub\Padron\Padron\obj\Debug\Padron.application
+C:\Users\Luis\Documents\GitHub\Padron\Padron\obj\Debug\Reportes\DistPorTipo.baml
+C:\Users\Luis\Documents\GitHub\Padron\Padron\obj\Debug\Reportes\DistPorTipo.g.cs

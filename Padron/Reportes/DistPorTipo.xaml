@@ -1,0 +1,138 @@
+﻿<telerik:RadWindow
+    x:Class="Padron.Reportes.DistPorTipo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    Width="741"
+    Height="800"
+    Background="White"
+    Header="Distribución por medio de publicación"
+    Loaded="UserControl_Loaded"
+    WindowState="Maximized"
+    mc:Ignorable="d">
+    <Grid x:Name="RadYear">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <telerik:RadGridView
+            x:Name="GReporte"
+            Grid.Row="1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            AutoGenerateColumns="False"
+            EnableRowVirtualization="True"
+            FontSize="14"
+            IsReadOnly="True"
+            ItemsSource="{Binding}"
+            RowIndicatorVisibility="Collapsed"
+            ShowGroupPanel="False">
+            <telerik:RadGridView.Columns>
+
+                <telerik:GridViewDataColumn
+                    Width="2*"
+                    DataMemberBinding="{Binding Estado}"
+                    Header="Estado"
+                    IsFilterable="False" />
+                <telerik:GridViewDataColumn
+                    Width="*"
+                    DataMemberBinding="{Binding Cd}"
+                    Header="Total CD"
+                    ShowFieldFilters="False" />
+                <telerik:GridViewDataColumn
+                    Width="*"
+                    DataMemberBinding="{Binding Dvd}"
+                    Header="Total Dvd"
+                    ShowFieldFilters="False" />
+                <telerik:GridViewDataColumn
+                    Width="*"
+                    DataMemberBinding="{Binding Libro}"
+                    Header="Total Libro"
+                    IsFilterable="False" />
+                <telerik:GridViewDataColumn
+                    Width="*"
+                    DataMemberBinding="{Binding Ebook}"
+                    Header="Total eBook"
+                    ShowFieldFilters="False" />
+                <telerik:GridViewDataColumn
+                    Width="*"
+                    DataMemberBinding="{Binding Ambos}"
+                    Header="Total Libro y Disco"
+                    ShowFieldFilters="False" />
+                <telerik:GridViewDataColumn
+                    Width="120"
+                    DataMemberBinding="{Binding AudioLibro}"
+                    Header="Total AudioLibro"
+                    ShowFieldFilters="False" />
+            </telerik:RadGridView.Columns>
+
+        </telerik:RadGridView>
+        <Label
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Visualizar información: " />
+        <RadioButton
+            x:Name="RadYear1"
+            Margin="167,14,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content=" Por año" />
+        <telerik:RadNumericUpDown
+            x:Name="UDYear"
+            Width="96"
+            Margin="167,37,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Minimum="2016" />
+        <RadioButton
+            x:Name="RadRange"
+            Margin="333,14,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content=" Por rango" />
+        <telerik:RadNumericUpDown
+            x:Name="UDYearBegin"
+            Width="96"
+            Margin="384,37,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Minimum="2016" />
+        <Label
+            Margin="333,37,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Desde:" />
+        <telerik:RadNumericUpDown
+            x:Name="UDYearEnd"
+            Width="96"
+            Margin="547,37,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+        <Label
+            Margin="496,37,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Hasta:" />
+        <telerik:RadButton
+            x:Name="RBtnExport"
+            Width="132"
+            Height="Auto"
+            Margin="10,68,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="RBtnExport_Click"
+            Content="Exportar a Excel" />
+
+
+
+
+
+
+
+    </Grid>
+</telerik:RadWindow>

@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dnDvgRj11Bxdy0aJhZdzNiC+1cIrM/u9qeb1ni7/oCo=</dsig:DigestValue>
+        <dsig:DigestValue>fQ4DHP9I+rg/Vcf9IpFpcyyDMXaNCQwoIzom1LE49g0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nxYQ+TdVuXN8o3fwFwh1PihRmsz/A9phRAp2KMAEiHk=</dsig:DigestValue>
+        <dsig:DigestValue>fDKjhCYq2X5hf9rPMY2sHeNmEumR/NoDSgFWRBb4jPI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,7 +98,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LCkBhk/9ZMtcX62N22e/aALGoXp7gT7HzmTzTHEFV/0=</dsig:DigestValue>
+        <dsig:DigestValue>sTE5OckSKw3WxSo0qNUmYCJwhVXcPh9WRWajjV4DXII=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -110,31 +110,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vofGlUm0Wy+QMXIfhqI8c+gFySacYL24p3VWRQebpxk=</dsig:DigestValue>
+        <dsig:DigestValue>NA0yasYbTvjAzwRQkQPpqbWqU6WssjmR2PKyvhh7AMc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Padron.exe" size="3356160">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Padron.exe" size="3362816">
       <assemblyIdentity name="Padron" version="3.2017.2.22066" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7DSr2lrcZRNszCsMHAu7zr5ZnnptORDgBBwoOTwPriM=</dsig:DigestValue>
+        <dsig:DigestValue>q34aNRUqLCMiMGX7TVJF/k4jCe1tN0A0MJc8wNbTZHk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PadronApi.dll" size="655360">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PadronApi.dll" size="659968">
       <assemblyIdentity name="PadronApi" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IrHsIXkKrZo3hDzc05y9RpBi1yr2wmwYR5tCCtF8P4g=</dsig:DigestValue>
+        <dsig:DigestValue>O108GzsLYycgV7wY5yxuN2LwCD6eTUAaTdDGrcvLq24=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -336,7 +336,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>7VwiBtbFDBnE8Q54bwLOAXajdentgZw1lz5HougN6TE=</dsig:DigestValue>
+      <dsig:DigestValue>cSTihqkC3139TrE9pE+W3BaBprDXRJTRJz1y4kagHyg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="rocket.ico" size="67646">

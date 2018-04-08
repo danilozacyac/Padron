@@ -17,6 +17,7 @@ namespace PadronApi.Reportes
     {
         private readonly ObservableCollection<PlantillaDto> plantillaDistr;
         private readonly ObservableCollection<Obra> obrasImprimir;
+        private readonly ObservableCollection<TotalPorTipo> distPorTipo;
 
         readonly string tituloObra;
         readonly string filePath;
@@ -41,6 +42,18 @@ namespace PadronApi.Reportes
             this.filePath = filePath;
             this.tituloObra = tituloObra;
             this.parte = parte;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="distPorTipo"></param>
+        /// <param name="filePath"></param>
+        /// <param name="tipo"></param>
+        public ExcelReports(ObservableCollection<TotalPorTipo> distPorTipo, string filePath,int tipo)
+        {
+            this.filePath = filePath;
+            this.distPorTipo = distPorTipo;
         }
 
         public void InformeGeneralObras()
@@ -348,6 +361,10 @@ namespace PadronApi.Reportes
             }
         }
 
+       
+
+
+
         public void ObtenFechaEntregaPaqueteria()
         {
             Application xlApp;
@@ -450,6 +467,52 @@ namespace PadronApi.Reportes
         }
 
 
+        /// <summary>
+        /// Genera el informe del total de obras distribuidas por entidad federativa de acuerdo
+        /// al medio de publicación de cada una de ellas
+        /// </summary>
+        public void InformeDistribucionPortipo()
+        {
+            try
+            {
+                oExcel = new Application();
+                oBooks = oExcel.Workbooks;
+                oBook = oBooks.Add(1);
+                oSheets = (Sheets)oBook.Worksheets;
+                oSheet = oSheets.get_Item(1);
+
+                this.oSheet.Cells[1, 1] = "Estado";
+                this.oSheet.Cells[1, 2] = "CD";
+                this.oSheet.Cells[1, 3] = "DVD";
+                this.oSheet.Cells[1, 4] = "Libro";
+                this.oSheet.Cells[1, 5] = "eBook";
+                this.oSheet.Cells[1, 6] = "Libro y Disco";
+                this.oSheet.Cells[1, 7] = "Audiolibro";
+
+                int fila = 2;
+                foreach (TotalPorTipo total in distPorTipo)
+                {
+                    oSheet.Cells[1][fila] = total.Estado;
+                    oSheet.Cells[2][fila] = total.Cd;
+                    oSheet.Cells[3][fila] = total.Dvd;
+                    oSheet.Cells[4][fila] = total.Libro;
+                    oSheet.Cells[5][fila] = total.Ebook;
+                    oSheet.Cells[6][fila] = total.Ambos;
+                    oSheet.Cells[7][fila] = total.AudioLibro;
+                    fila++;
+                }
+                this.oExcel.ActiveWorkbook.SaveAs(filePath);
+                this.oExcel.ActiveWorkbook.Saved = true;
+                this.oExcel.Quit();
+
+                Process.Start(filePath);
+            }
+            catch (Exception ex)
+            {
+                string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
+                ErrorUtilities.SetNewErrorMessage(ex, methodName + " Exception,ExcelReports", "PadronApi");
+            }
+        }
 
 
         public string GetDateFromString(string textString)

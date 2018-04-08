@@ -677,6 +677,14 @@
                         </StackPanel>
                     </telerik:RadRibbonButton>
                 </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Reportes">
+                    <telerik:RadRibbonButton
+                        x:Name="BtnDistNacional"
+                        Click="BtnDistNacional_Click"
+                        Content="Distribución por estado"
+                        Size="Large"
+                        Tag="525" />
+                </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab x:Name="TabKiosko" Header="Kiosko">
                 <telerik:RadRibbonGroup Header="Catálogos">
@@ -893,7 +901,9 @@
                 </telerik:RadRibbonGroup>
 
             </telerik:RadRibbonTab>
-            <telerik:RadRibbonTab x:Name="TabReportes" Header="Reportes" />
+            <telerik:RadRibbonTab x:Name="TabReportes" Header="Reportes">
+                <telerik:RadRibbonGroup Header="Estadísticas" />
+            </telerik:RadRibbonTab>
             <telerik:RadRibbonTab
                 x:Name="TabMantenimiento"
                 Margin="4,0,-1,0"

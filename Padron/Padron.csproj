@@ -190,6 +190,9 @@
     <Compile Include="Plantillas\SeleccionaTiraje.xaml.cs">
       <DependentUpon>SeleccionaTiraje.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\DistPorTipo.xaml.cs">
+      <DependentUpon>DistPorTipo.xaml</DependentUpon>
+    </Compile>
     <Page Include="Cierre\AcuSanMetrop.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -289,6 +292,10 @@
     <Page Include="Plantillas\VentanaChecaDistr.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Reportes\DistPorTipo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Theme\Padrontheme.xaml">
       <SubType>Designer</SubType>

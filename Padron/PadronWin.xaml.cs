@@ -20,6 +20,7 @@ using Padron.Plantillas;
 using PadronApi.Dto;
 using PadronApi.Model;
 using Telerik.Windows.Controls;
+using Padron.Reportes;
 
 namespace Padron
 {
@@ -38,6 +39,8 @@ namespace Padron
         TitulosControl mantoTitulos;
         ListaPublicaciones listadoKiosko;
         ArbolKiosko arbolKiosko;
+        DistPorTipo distPorTipo;
+
 
         ListadoAutores listadoAutores;
         List<RadRibbonButton> listadoBotones;
@@ -556,9 +559,9 @@ namespace Padron
 
                 case 523: padronesGenerados.GetCadenaControl();
                     break;
-                
-               
 
+                
+                  
                 
                 case 802:
                     GeneraNuevaPlantilla nuevaPlantilla = new GeneraNuevaPlantilla() { Owner = this };
@@ -762,6 +765,11 @@ namespace Padron
         private void BtnEditObraEstructura_Click(object sender, RoutedEventArgs e)
         {
             arbolKiosko.EditaObra();
+        }
+
+        private void BtnDistNacional_Click(object sender, RoutedEventArgs e)
+        {
+            new DistPorTipo().ShowDialog();
         }
 
 

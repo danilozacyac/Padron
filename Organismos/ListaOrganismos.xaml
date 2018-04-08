@@ -1,18 +1,19 @@
-﻿<UserControl x:Class="Organismos.ListaOrganismos"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:CustomColumn="clr-namespace:Organismos"
-             xmlns:UIControls="clr-namespace:UIControls;assembly=UIControls"
-             xmlns:converter="clr-namespace:PadronApi.Converter;assembly=PadronApi"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:orgConverter="clr-namespace:Organismos.OrgConverter"
-             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-             d:DesignHeight="300"
-             d:DesignWidth="600"
-             Background="White"
-             Loaded="UserControl_Loaded"
-             mc:Ignorable="d">
+﻿<UserControl
+    x:Class="Organismos.ListaOrganismos"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:CustomColumn="clr-namespace:Organismos"
+    xmlns:UIControls="clr-namespace:UIControls;assembly=UIControls"
+    xmlns:converter="clr-namespace:PadronApi.Converter;assembly=PadronApi"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:orgConverter="clr-namespace:Organismos.OrgConverter"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    d:DesignHeight="300"
+    d:DesignWidth="600"
+    Background="White"
+    Loaded="UserControl_Loaded"
+    mc:Ignorable="d">
     <UserControl.Resources>
         <orgConverter:AdscritosConverter x:Key="adsConv" />
         <converter:CiudadesConverter x:Key="ciudadConv" />
@@ -25,70 +26,78 @@
                 <RowDefinition Height="*" />
                 <!--<RowDefinition Height="*" />-->
             </Grid.RowDefinitions>
-            <Label Margin="10,18,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Buscar:"
-                   FontWeight="Bold" />
-            <UIControls:SearchTextBox x:Name="TxtBusqueda"
-                                      Width="256"
-                                      Height="25"
-                                      Margin="85,18,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      LabelText="Buscar por organismo..."
-                                      TextChanged="SearchTextBox_TextChanged" />
-            <Label x:Name="LblTotales"
-                   Margin="0,10,20,0"
-                   HorizontalAlignment="Right"
-                   VerticalAlignment="Top"
-                   Content="   "
-                   FontSize="14"
-                   FontWeight="Bold" />
-            <telerik:RadGridView x:Name="GOrganismos"
-                                 Grid.Row="1"
-                                 HorizontalAlignment="Stretch"
-                                 VerticalAlignment="Stretch"
-                                 AutoGenerateColumns="False"
-                                 EnableRowVirtualization="True"
-                                 Filtered="GOrganismos_Filtered"
-                                 FontSize="14"
-                                 IsReadOnly="True"
-                                 ItemsSource="{Binding}"
-                                 RowIndicatorVisibility="Collapsed"
-                                 SelectionChanged="GOrganismos_SelectionChanged"
-                                 ShowGroupPanel="False">
+            <Label
+                Margin="10,18,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Buscar:"
+                FontWeight="Bold" />
+            <UIControls:SearchTextBox
+                x:Name="TxtBusqueda"
+                Width="256"
+                Height="25"
+                Margin="85,18,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                LabelText="Buscar por organismo..."
+                TextChanged="SearchTextBox_TextChanged" />
+            <Label
+                x:Name="LblTotales"
+                Margin="0,10,20,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Content="   "
+                FontSize="14"
+                FontWeight="Bold" />
+            <telerik:RadGridView
+                x:Name="GOrganismos"
+                Grid.Row="1"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                AutoGenerateColumns="False"
+                EnableRowVirtualization="True"
+                Filtered="GOrganismos_Filtered"
+                FontSize="14"
+                IsReadOnly="True"
+                ItemsSource="{Binding}"
+                RowIndicatorVisibility="Collapsed"
+                SelectionChanged="GOrganismos_SelectionChanged"
+                ShowGroupPanel="False">
                 <telerik:RadGridView.Columns>
-                    <CustomColumn:MyColumnNumber Width="30"
-                                                 CellStyle="{StaticResource ColumnaNumerica}"
-                                                 Header="#" />
-                    <telerik:GridViewDataColumn Width="*"
-                                                DataMemberBinding="{Binding OrganismoDesc}"
-                                                Header="Organismo"
-                                                IsFilterable="False" />
-                    <telerik:GridViewDataColumn Width="120"
-                                                DataMemberBinding="{Binding TipoOrganismoStr}"
-                                                Header="Tipo Org."
-                                                ShowFieldFilters="False" />
-                    <telerik:GridViewDataColumn Width="120"
-                                                DataMemberBinding="{Binding Circuito,
-                                                                            Converter={StaticResource ordinalConv}}"
-                                                Header="Circuito"
-                                                ShowFieldFilters="False" />
-                    <telerik:GridViewDataColumn Width="120"
-                                                DataMemberBinding="{Binding Ordinal,
-                                                                            Converter={StaticResource ordinalConv}}"
-                                                Header="Ordinal"
-                                                ShowFieldFilters="False" />
-                    <telerik:GridViewDataColumn Width="150"
-                                                DataMemberBinding="{Binding Ciudad,
-                                                                            Converter={StaticResource ciudadConv}}"
-                                                Header="Ciudad"
-                                                ShowFieldFilters="False" />
-                    <telerik:GridViewDataColumn Width="120"
-                                                DataMemberBinding="{Binding Distribucion}"
-                                                Header="Distribución"
-                                                ShowFieldFilters="False" />
+                    <CustomColumn:MyColumnNumber
+                        Width="30"
+                        CellStyle="{StaticResource ColumnaNumerica}"
+                        Header="#" />
+                    <telerik:GridViewDataColumn
+                        Width="*"
+                        DataMemberBinding="{Binding OrganismoDesc}"
+                        Header="Organismo"
+                        IsFilterable="False" />
+                    <telerik:GridViewDataColumn
+                        Width="120"
+                        DataMemberBinding="{Binding TipoOrganismoStr}"
+                        Header="Tipo Org."
+                        ShowFieldFilters="False" />
+                    <telerik:GridViewDataColumn
+                        Width="120"
+                        DataMemberBinding="{Binding Circuito, Converter={StaticResource ordinalConv}}"
+                        Header="Circuito"
+                        ShowFieldFilters="False" />
+                    <telerik:GridViewDataColumn
+                        Width="120"
+                        DataMemberBinding="{Binding Ordinal, Converter={StaticResource ordinalConv}}"
+                        Header="Ordinal"
+                        ShowFieldFilters="False" />
+                    <telerik:GridViewDataColumn
+                        Width="150"
+                        DataMemberBinding="{Binding Ciudad, Converter={StaticResource ciudadConv}}"
+                        Header="Ciudad"
+                        ShowFieldFilters="False" />
+                    <telerik:GridViewDataColumn
+                        Width="120"
+                        DataMemberBinding="{Binding Distribucion}"
+                        Header="Distribución"
+                        ShowFieldFilters="False" />
                 </telerik:RadGridView.Columns>
                 <telerik:RadGridView.RowStyle>
                     <Style TargetType="{x:Type telerik:GridViewRow}">

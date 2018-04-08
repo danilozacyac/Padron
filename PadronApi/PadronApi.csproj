@@ -85,6 +85,7 @@
     <Compile Include="Dto\TirajePersonal.cs" />
     <Compile Include="Dto\Titular.cs" />
     <Compile Include="Dto\Titulo.cs" />
+    <Compile Include="Dto\TotalPorTipo.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Model\AccesoModel.cs" />
     <Compile Include="Model\AcuerdosModel.cs" />

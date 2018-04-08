@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2/23uozoJ6rXNZyHLQMr5PtpzibQml9cs2Ys3f73Yok=</dsig:DigestValue>
+        <dsig:DigestValue>fQ4DHP9I+rg/Vcf9IpFpcyyDMXaNCQwoIzom1LE49g0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kiosko.dll" size="185344">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kiosko.dll" size="185856">
       <assemblyIdentity name="Kiosko" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Frh75QHTy6Se5p7OeSHI0+zJsBP/7ccnAC7filHtCCw=</dsig:DigestValue>
+        <dsig:DigestValue>fDKjhCYq2X5hf9rPMY2sHeNmEumR/NoDSgFWRBb4jPI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,7 +98,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ruIdh5q8/HLzmdD32sGqipzWXm2jWqPcL419uu3T0gw=</dsig:DigestValue>
+        <dsig:DigestValue>sTE5OckSKw3WxSo0qNUmYCJwhVXcPh9WRWajjV4DXII=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -110,31 +110,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5jXW5PaE0rKkaam/5N6t3Y2FR413HnQ6+NE+4fnGxNg=</dsig:DigestValue>
+        <dsig:DigestValue>NA0yasYbTvjAzwRQkQPpqbWqU6WssjmR2PKyvhh7AMc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Padron.exe" size="3356160">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Padron.exe" size="3362816">
       <assemblyIdentity name="Padron" version="3.2017.2.22066" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BcYf3pZrvqOfEpNzoKW3368CGozJ7GgkOOzsQ8+KzWc=</dsig:DigestValue>
+        <dsig:DigestValue>q34aNRUqLCMiMGX7TVJF/k4jCe1tN0A0MJc8wNbTZHk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PadronApi.dll" size="655360">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PadronApi.dll" size="659968">
       <assemblyIdentity name="PadronApi" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Yc3HviwWsPTarxCHxGleqfxIlvwbAWkKgn99YhmrMjY=</dsig:DigestValue>
+        <dsig:DigestValue>O108GzsLYycgV7wY5yxuN2LwCD6eTUAaTdDGrcvLq24=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

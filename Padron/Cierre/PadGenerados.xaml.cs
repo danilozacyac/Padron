@@ -217,6 +217,11 @@ namespace Padron.Cierre
         /// </summary>
         public void VerificaDistribucion()
         {
+            if (selectedPadron == null)
+            {
+                MessageBox.Show("Debes de seleccionar la distribución que quieres revisar", "Atención", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
             TirajePersonal tiraje = new AcuerdosModel().GetAcuerdos(selectedPadron.IdAcuerdo);
             Obra obra = new ObraModel().GetObras(selectedPadron.IdObra);

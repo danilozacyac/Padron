@@ -472,5 +472,72 @@ namespace PadronApi.Model
             return total;
         }
 
+        /// <summary>
+        /// Obtiene la distribución nacional por estado y de acuerdo al medio de publicación en el que se produjo la obra
+        /// </summary>
+        /// <param name="year">Año del cual se desea obtener el dato de distribución</param>
+        /// <returns></returns>
+        public ObservableCollection<TotalPorTipo> GetDistribucionPorTipo(int year)
+        {
+            ObservableCollection<TotalPorTipo> totalDistribucion = new ObservableCollection<TotalPorTipo>();
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand cmd = null;
+            SqlDataReader reader = null;
+
+            string sqlQuery = "Select Estado,[1] TotalCD,[2] TotalDVD,[3] TotalLibro,[4] TotalEbook,[7] TotalLyCD,[8] TotalAudioL FROM " +
+                              "(SELECT Estado,IdMedio,Total FROM V_DistTotalPorOrg WHERE AnioAcuerdo = @Year and IdPais = 39 ) AS SourceTable " +
+                              "PIVOT " +
+                              "( SUM(Total) FOR IdMedio IN ([1],[2],[3],[4],[7],[8] ) ) AS PivotTable;";
+
+            try
+            {
+                connection.Open();
+
+                cmd = new SqlCommand(sqlQuery, connection);
+                cmd.Parameters.AddWithValue("@Year", year);
+
+                reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        TotalPorTipo distEstado = new TotalPorTipo()
+                        {
+                            Estado = reader["Estado"].ToString(),
+                            Cd = Convert.ToInt32(reader["TotalCD"]),
+                            Dvd = Convert.ToInt32(reader["TotalDVD"]),
+                            Libro = Convert.ToInt32(reader["TotalLibro"]),
+                            Ebook = Convert.ToInt32(reader["TotalEbook"]),
+                            Ambos = Convert.ToInt32(reader["TotalLyCD"]),
+                            AudioLibro = Convert.ToInt32(reader["TotalAudioL"])
+                        };
+
+                        totalDistribucion.Add(distEstado);
+                    }
+                }
+                cmd.Dispose();
+                reader.Close();
+            }
+            catch (SqlException ex)
+            {
+                string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
+                ErrorUtilities.SetNewErrorMessage(ex, methodName + " Exception,ReportesModel", "PadronApi");
+            }
+            catch (Exception ex)
+            {
+                string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
+                ErrorUtilities.SetNewErrorMessage(ex, methodName + " Exception,ReportesModel", "PadronApi");
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return totalDistribucion;
+        }
+
+
+
     }
 }
