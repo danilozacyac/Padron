@@ -681,9 +681,14 @@
                     <telerik:RadRibbonButton
                         x:Name="BtnDistNacional"
                         Click="BtnDistNacional_Click"
-                        Content="Distribución por estado"
+                        LargeImage="Resources/mapaDist.png"
                         Size="Large"
-                        Tag="525" />
+                        Tag="525">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock HorizontalAlignment="Center" Text="Distribución" />
+                            <TextBlock HorizontalAlignment="Center" Text="por Estado" />
+                        </StackPanel>
+                    </telerik:RadRibbonButton>
                 </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab x:Name="TabKiosko" Header="Kiosko">

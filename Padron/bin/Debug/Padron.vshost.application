@@ -14,14 +14,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Padron.exe.manifest" size="19810">
+    <dependentAssembly dependencyType="install" codebase="Padron.exe.manifest" size="29971">
       <assemblyIdentity name="Padron.exe" version="3.0.0.67" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qPR6qc2cAolnRHcedODcxvaQQWguU3jUfzyvjdTBXoc=</dsig:DigestValue>
+        <dsig:DigestValue>svfu+QnmFRLZCCzLQcMvHs/JXMY9SL6kxA1yWJAouZE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

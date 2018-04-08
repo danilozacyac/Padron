@@ -506,12 +506,12 @@ namespace PadronApi.Model
                         TotalPorTipo distEstado = new TotalPorTipo()
                         {
                             Estado = reader["Estado"].ToString(),
-                            Cd = Convert.ToInt32(reader["TotalCD"]),
-                            Dvd = Convert.ToInt32(reader["TotalDVD"]),
-                            Libro = Convert.ToInt32(reader["TotalLibro"]),
-                            Ebook = Convert.ToInt32(reader["TotalEbook"]),
-                            Ambos = Convert.ToInt32(reader["TotalLyCD"]),
-                            AudioLibro = Convert.ToInt32(reader["TotalAudioL"])
+                            Cd = reader["TotalCD"] as int? ??  0,
+                            Dvd = reader["TotalDVD"] as int? ?? 0,
+                            Libro = reader["TotalLibro"] as int? ?? 0,
+                            Ebook = reader["TotalEbook"] as int? ?? 0,
+                            Ambos = reader["TotalLyCD"] as int? ?? 0,
+                            AudioLibro = reader["TotalAudioL"] as int? ?? 0
                         };
 
                         totalDistribucion.Add(distEstado);
