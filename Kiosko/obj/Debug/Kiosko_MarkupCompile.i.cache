@@ -16,5 +16,5 @@ DEBUG;TRACE
 29-243625276
 EstructuraKiosko\ArbolKiosko.xaml;Autores\ListadoAutores.xaml;Autores\ManageAutor.xaml;Ayudas\ColorAutor.xaml;Ayudas\ColorObras.xaml;ListaPublicaciones.xaml;ObrasKiosko.xaml;RelAutorObras.xaml;TextoColaboracion.xaml;UserControls\SetAutorObra.xaml;
 
-True
+False
 
