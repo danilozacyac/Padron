@@ -109,3 +109,8 @@ C:\Users\Luis\Documents\GitHub\Padron\Kiosko\bin\Debug\Telerik.Windows.Controls.
 C:\Users\Luis\Documents\GitHub\Padron\Kiosko\bin\Debug\Telerik.Windows.Controls.Docking.xml
 C:\Users\Luis\Documents\GitHub\Padron\Kiosko\obj\Debug\TextoColaboracion.baml
 C:\Users\Luis\Documents\GitHub\Padron\Kiosko\obj\Debug\TextoColaboracion.g.cs
+C:\Users\lavega\Documents\GitHub\Padron\Kiosko\bin\Debug\Telerik.Windows.Controls.Docking.dll
+C:\Users\lavega\Documents\GitHub\Padron\Kiosko\bin\Debug\ScjnUtilities.pdb
+C:\Users\lavega\Documents\GitHub\Padron\Kiosko\bin\Debug\Telerik.Windows.Controls.Docking.xml
+C:\Users\lavega\Documents\GitHub\Padron\Kiosko\obj\Debug\TextoColaboracion.baml
+C:\Users\lavega\Documents\GitHub\Padron\Kiosko\obj\Debug\TextoColaboracion.g.cs

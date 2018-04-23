@@ -219,7 +219,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QxGqOmeXhpidEKSYgbXXzuLTGCMQDUCEa9TOyzU7wc0=</dsig:DigestValue>
+        <dsig:DigestValue>pqZPdnmAR1qW8myuhD6mdiNv9QTuVLhYKR5ESCV7Q2o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -236,14 +236,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kiosko.dll" size="186368">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kiosko.dll" size="185856">
       <assemblyIdentity name="Kiosko" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CVZxgYJ35/gyLHlY5PIe9mF8tp9EGyExvPWEiRSiJo4=</dsig:DigestValue>
+        <dsig:DigestValue>6D+EXEFBWCc0cS7e/fzTTP/bKN2wPSthbMo+0cyOFQQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -255,7 +255,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>j+B6KewuotP80t9gaTUaO530qI3BOHIDi05gxCVVQS4=</dsig:DigestValue>
+        <dsig:DigestValue>TaVkp28fXOooHHNkpOjWAnnyNEIrUXsGXAZS0xnm1ts=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -267,7 +267,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oAQYoFvw68d4JFhpoAglW1dNt3rEFsVINkMzEf4y5+E=</dsig:DigestValue>
+        <dsig:DigestValue>jzPdkL32DStZy21ZDJpMxhCexpQRMDNqlpFsHLJgaDc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -279,19 +279,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EjEyQctU7i3JXxsoccY9l3m+nXvg/iW5tHQvsNPIPsA=</dsig:DigestValue>
+        <dsig:DigestValue>hIMBdGSoPmzcKRKK6O9xrXtCycAOAWoZo821nn2Py2s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Padron.exe" size="3511296">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Padron.exe" size="3646976">
       <assemblyIdentity name="Padron" version="3.2017.2.22066" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WVKb6///1x70M39GWOwdkZVi0G5GNblDXPB4O9EehVQ=</dsig:DigestValue>
+        <dsig:DigestValue>1ckNeYUrhTde+NLw1cDHhEjwKNK6xSagc6MWh9i/uQw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -499,13 +499,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Padron.exe.config" size="4733">
+  <file name="Padron.exe.config" size="4926">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>cSTihqkC3139TrE9pE+W3BaBprDXRJTRJz1y4kagHyg=</dsig:DigestValue>
+      <dsig:DigestValue>HnelRV2s4UdbAk/2vAsnPcAdk7GRomSiggLZ6ejbbFg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="rocket.ico" size="67646">

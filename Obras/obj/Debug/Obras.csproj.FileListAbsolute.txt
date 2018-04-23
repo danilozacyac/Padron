@@ -77,3 +77,4 @@ C:\Users\lavega\Documents\GitHub\Padron\Obras\obj\Debug\Obras.Properties.Resourc
 C:\Users\lavega\Documents\GitHub\Padron\Obras\obj\Debug\Obras.csproj.GenerateResource.Cache
 C:\Users\lavega\Documents\GitHub\Padron\Obras\obj\Debug\Obras.dll
 C:\Users\lavega\Documents\GitHub\Padron\Obras\obj\Debug\Obras.pdb
+C:\Users\lavega\Documents\GitHub\Padron\Obras\bin\Debug\ScjnUtilities.pdb

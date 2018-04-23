@@ -97,3 +97,4 @@ C:\Users\lavega\Documents\GitHub\Padron\Organismos\obj\Debug\Organismos.Properti
 C:\Users\lavega\Documents\GitHub\Padron\Organismos\obj\Debug\Organismos.csproj.GenerateResource.Cache
 C:\Users\lavega\Documents\GitHub\Padron\Organismos\obj\Debug\Organismos.dll
 C:\Users\lavega\Documents\GitHub\Padron\Organismos\obj\Debug\Organismos.pdb
+C:\Users\lavega\Documents\GitHub\Padron\Organismos\bin\Debug\ScjnUtilities.pdb

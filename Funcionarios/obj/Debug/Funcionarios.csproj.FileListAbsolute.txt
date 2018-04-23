@@ -85,3 +85,4 @@ C:\Users\lavega\Documents\GitHub\Padron\Funcionarios\obj\Debug\Funcionarios.Prop
 C:\Users\lavega\Documents\GitHub\Padron\Funcionarios\obj\Debug\Funcionarios.csproj.GenerateResource.Cache
 C:\Users\lavega\Documents\GitHub\Padron\Funcionarios\obj\Debug\Funcionarios.dll
 C:\Users\lavega\Documents\GitHub\Padron\Funcionarios\obj\Debug\Funcionarios.pdb
+C:\Users\lavega\Documents\GitHub\Padron\Funcionarios\bin\Debug\ScjnUtilities.pdb

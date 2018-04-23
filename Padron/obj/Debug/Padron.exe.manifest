@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Padron.exe" version="3.0.0.67" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Padron.exe" version="3.0.0.70" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="rocket.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Padron" version="3.2017.2.22066" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Padron" version="3.2018.4.22066" language="neutral" processorArchitecture="msil" />
     <commandLine file="Padron.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -219,7 +219,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QxGqOmeXhpidEKSYgbXXzuLTGCMQDUCEa9TOyzU7wc0=</dsig:DigestValue>
+        <dsig:DigestValue>pqZPdnmAR1qW8myuhD6mdiNv9QTuVLhYKR5ESCV7Q2o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -236,14 +236,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kiosko.dll" size="186368">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kiosko.dll" size="185856">
       <assemblyIdentity name="Kiosko" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CVZxgYJ35/gyLHlY5PIe9mF8tp9EGyExvPWEiRSiJo4=</dsig:DigestValue>
+        <dsig:DigestValue>6D+EXEFBWCc0cS7e/fzTTP/bKN2wPSthbMo+0cyOFQQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -255,7 +255,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>j+B6KewuotP80t9gaTUaO530qI3BOHIDi05gxCVVQS4=</dsig:DigestValue>
+        <dsig:DigestValue>TaVkp28fXOooHHNkpOjWAnnyNEIrUXsGXAZS0xnm1ts=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -267,7 +267,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oAQYoFvw68d4JFhpoAglW1dNt3rEFsVINkMzEf4y5+E=</dsig:DigestValue>
+        <dsig:DigestValue>jzPdkL32DStZy21ZDJpMxhCexpQRMDNqlpFsHLJgaDc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -279,19 +279,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EjEyQctU7i3JXxsoccY9l3m+nXvg/iW5tHQvsNPIPsA=</dsig:DigestValue>
+        <dsig:DigestValue>hIMBdGSoPmzcKRKK6O9xrXtCycAOAWoZo821nn2Py2s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Padron.exe" size="3511296">
-      <assemblyIdentity name="Padron" version="3.2017.2.22066" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Padron.exe" size="3648000">
+      <assemblyIdentity name="Padron" version="3.2018.4.22066" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WVKb6///1x70M39GWOwdkZVi0G5GNblDXPB4O9EehVQ=</dsig:DigestValue>
+        <dsig:DigestValue>SzLvmC5NWGbFbGJCsJ2f8G9eE/Nqm8mEPmFrPRs9ntk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -499,13 +499,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Padron.exe.config" size="4733">
+  <file name="Padron.exe.config" size="4926">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>cSTihqkC3139TrE9pE+W3BaBprDXRJTRJz1y4kagHyg=</dsig:DigestValue>
+      <dsig:DigestValue>HnelRV2s4UdbAk/2vAsnPcAdk7GRomSiggLZ6ejbbFg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="rocket.ico" size="67646">
