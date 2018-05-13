@@ -192,7 +192,7 @@ namespace PadronApi.Model
         {
             ObservableCollection<Devoluciones> plantilla = new ObservableCollection<Devoluciones>();
 
-            string sqlCadena = "SELECT H.*, P.AcuerdoNum, P.AnioAcuerdo, O.Titulo,O.IdObra,P.Fecha, O.Precio" + 
+            string sqlCadena = "SELECT H.*, P.AcuerdoNum, P.AnioAcuerdo, O.Titulo,O.IdObra,P.Fecha, O.Precio," + 
                                "(SELECT SUM(Cantidad) FROM Devolucion WHERE IdTitular = H.IdTitular AND IdObra = P.IdObra) AS Total, " +
                                "(SELECT TipoDevolucion FROM Devolucion WHERE IdTitular = H.IdTitular AND IdObra = P.IdObra) AS Tipo " +
                                "FROM (Padron P INNER JOIN C_Obra O ON P.IdObra = O.IdObra) INNER JOIN PadronHistorico H " +
