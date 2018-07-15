@@ -20,13 +20,6 @@ namespace Kiosko.EstructuraKiosko
     {
         private int tipoProceso = 1;
 
-        /// <summary>
-        /// Indica la sección en la cual se hizo la última selección de una obra. Esto para mostrar la ventana de 
-        /// edición de obras.
-        /// 1. árbol
-        /// 2. Listado
-        /// </summary>
-        int seccionObraActiva = 0;
 
         public ArbolKiosko()
         {
@@ -47,7 +40,6 @@ namespace Kiosko.EstructuraKiosko
             {
                 var destinationItem = (e.OriginalSource as FrameworkElement).ParentOfType<RadTreeViewItem>();
 
-                int idPadre = 0, nivel = 0, orden = 0;
                 Obra parentItem = null;
 
                 if (dragItemDropPosition == DropPosition.Before )
@@ -75,7 +67,7 @@ namespace Kiosko.EstructuraKiosko
                 var dropDetails = DragDropPayloadManager.GetDataFromObject(e.Data, "DropDetails") as DropIndicationDetails;
                 (dropDetails.CurrentDraggedItem as Obra).ParentItem = parentItem;
 
-                int idObra = (dropDetails.CurrentDraggedItem as Obra).IdObra;
+                //int idObra = (dropDetails.CurrentDraggedItem as Obra).IdObra;
 
                 if (destinationItems != null)
                 {
@@ -122,7 +114,6 @@ namespace Kiosko.EstructuraKiosko
             else
             {
                 destinationItems = (IList)item.ItemsSource;
-                int index = 0;
 
                 if (destinationItems == null)
                 {
@@ -131,7 +122,7 @@ namespace Kiosko.EstructuraKiosko
                 else
                 {
                     e.Effects = DragDropEffects.All;
-                    dropDetails.DropIndex = index;
+                    dropDetails.DropIndex = 0;
                 }
             }
 
@@ -145,13 +136,13 @@ namespace Kiosko.EstructuraKiosko
         DropPosition dragItemDropPosition;
         private DropPosition GetPosition(RadTreeViewItem item, Point point)
         {
-            double treeViewItemHeight = 24;
-            if (point.Y < treeViewItemHeight / 4)
+            const double TreeViewItemHeight = 24;
+            if (point.Y < TreeViewItemHeight / 4)
             {
                 dragItemDropPosition = DropPosition.Before;
                 return DropPosition.Before;
             }
-            else if (point.Y > treeViewItemHeight * 3 / 4)
+            else if (point.Y > TreeViewItemHeight * 3 / 4)
             {
                 dragItemDropPosition = DropPosition.After;
                 return DropPosition.After;
@@ -190,7 +181,7 @@ namespace Kiosko.EstructuraKiosko
 
 
         private Obra selectedObra;
-        private void allProductsView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void AllProductsViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedObra = allProductsView.SelectedItem as Obra;
         }
@@ -239,14 +230,14 @@ namespace Kiosko.EstructuraKiosko
             obraWin.ShowDialog();
         }
 
-        private void wishlistView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void WishlistViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedObra = wishlistView.SelectedItem as Obra;
         }
 
 
         #region Background Worker
-        long milisegundos;
+        
         private BackgroundWorker worker = new BackgroundWorker();
         private void WorkerDoWork(object sender, DoWorkEventArgs e)
         {

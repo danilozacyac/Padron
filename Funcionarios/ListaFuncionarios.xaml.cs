@@ -92,8 +92,7 @@ namespace Funcionarios
         /// </summary>
         public void Agregar()
         {
-            AgregaFuncionario addFuncionario = new AgregaFuncionario(catalogoTitulares);
-            addFuncionario.Owner = this;
+            AgregaFuncionario addFuncionario = new AgregaFuncionario(catalogoTitulares) { Owner = this };
             addFuncionario.ShowDialog();
         }
 
@@ -108,15 +107,13 @@ namespace Funcionarios
                 return;
             }
 
-            AgregaFuncionario update = new AgregaFuncionario(selectedTitular, true);
-            update.Owner = this;
+            AgregaFuncionario update = new AgregaFuncionario(selectedTitular, true) { Owner = this };
             update.ShowDialog();
         }
 
         public void VerTrayectoria()
         {
-            Trayectoria trayectoria = new Trayectoria(selectedTitular);
-            trayectoria.Owner = this;
+            Trayectoria trayectoria = new Trayectoria(selectedTitular) { Owner = this };
             trayectoria.ShowDialog();
         }
 
@@ -177,8 +174,7 @@ namespace Funcionarios
         {
             tipoProceso = 2;
 
-            SaveFileDialog save = new SaveFileDialog();
-            save.Filter = "PDF Files (*.pdf)|*.pdf";
+            SaveFileDialog save = new SaveFileDialog() { Filter = "PDF Files (*.pdf)|*.pdf" };
 
             Nullable<bool> result = save.ShowDialog();
 

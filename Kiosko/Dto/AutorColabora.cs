@@ -195,8 +195,6 @@ namespace Kiosko.Dto
         public int GetAutoresSinColaboracion(Obra obra)
         {
             int total = 0;
-            ObservableCollection<AutorColabora> autoresObra = new ObservableCollection<AutorColabora>();
-
             const string SqlQuery = "SELECT COUNT(IdTipoAutor) Total FROM RelObrasAutores WHERE IdTipoAutor = 0 and IdObra = @IdObra";
 
             SqlConnection connection = new SqlConnection(connectionString);

@@ -21,7 +21,6 @@ namespace Kiosko.Autores
         private bool mostrarEnCombo;
         private ObservableCollection<Autor> catalogoTitulares;
         private Autor titular;
-        string qCambio = String.Empty;
 
 
         public ManageAutor(ObservableCollection<Autor> catalogoTitulares)
@@ -88,7 +87,7 @@ namespace Kiosko.Autores
             {
                 titular.Nombre = VerificationUtilities.TextBoxStringValidation(titular.Nombre);
                 titular.Apellidos = VerificationUtilities.TextBoxStringValidation(titular.Apellidos);
-                titular.NombreStr = StringUtilities.PrepareToAlphabeticalOrder(titular.Nombre) + " " + StringUtilities.PrepareToAlphabeticalOrder(titular.Apellidos);
+                titular.NombreStr = String.Format("{0} {1}", StringUtilities.PrepareToAlphabeticalOrder(titular.Nombre), StringUtilities.PrepareToAlphabeticalOrder(titular.Apellidos));
 
                 if ((!String.IsNullOrWhiteSpace(titular.Correo) && !String.IsNullOrEmpty(titular.Correo) && !VerificationUtilities.IsMailAddress(titular.Correo)))
                 {

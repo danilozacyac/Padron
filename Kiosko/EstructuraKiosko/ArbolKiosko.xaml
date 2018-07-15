@@ -107,7 +107,7 @@
                 AllowDrop="True"
                 DisplayMemberPath="Titulo"
                 FontSize="14"
-                SelectionChanged="wishlistView_SelectionChanged"
+                SelectionChanged="WishlistViewSelectionChanged"
                 SelectionMode="Single">
                 <ListBox.Resources>
                     <DataTemplate x:Key="DraggedItemTemplate">
@@ -140,7 +140,7 @@
                 FontSize="16"
                 IsDragDropEnabled="True"
                 ItemTemplate="{StaticResource CategoryTemplate}"
-                SelectionChanged="allProductsView_SelectionChanged"
+                SelectionChanged="AllProductsViewSelectionChanged"
                 TextDropAfter="Después de:"
                 TextDropBefore="Antes de:"
                 TextDropIn="Como hijo de:" />

@@ -7,12 +7,11 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using Kiosko.ReportesKiosko;
 using Microsoft.Win32;
 using PadronApi.Dto;
 using PadronApi.Model;
-using PadronApi.Reportes;
 using ScjnUtilities;
-using Kiosko.ReportesKiosko;
 
 namespace Kiosko
 {

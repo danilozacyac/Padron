@@ -23,7 +23,6 @@ namespace Kiosko
     public partial class ObrasKiosko
     {
         //private readonly string noPictureString = String.Format("{0}{1}", ConfigurationManager.AppSettings["Imagenes"], "picture.png");
-
         private readonly string catalograficaRootDir = ConfigurationManager.AppSettings["Catalografica"];
 
         private Obra obra;
@@ -38,7 +37,6 @@ namespace Kiosko
             InitializeComponent();
             this.obra = obra;
             this.isUpdating = isUpdating;
-            
         }
 
         private void RadWindow_Loaded(object sender, RoutedEventArgs e)
@@ -49,7 +47,6 @@ namespace Kiosko
             CbxMedioPub.DataContext = ElementalPropertiesSingleton.MedioPublicacion;
             CbxIdioma.DataContext = ElementalPropertiesSingleton.Idioma;
             CbxPais.DataContext = PaisesSingleton.Paises;
-            
 
             this.DataContext = obra;
             LoadData();
@@ -95,9 +92,11 @@ namespace Kiosko
                     BtnVerCatalografica.Visibility = Visibility.Collapsed;
                     BtnDelCatalografica.Visibility = Visibility.Collapsed;
                 }
-               
             }
-            catch (FileNotFoundException) { }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CargaAutores()
@@ -122,14 +121,18 @@ namespace Kiosko
                 BtnTipcolabora.Visibility = Visibility.Visible;
             else
                 BtnTipcolabora.Visibility = Visibility.Collapsed;
-
         }
 
         private void BtnImagePath_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                OpenFileDialog open = new OpenFileDialog() { Filter = "JPG (.jpg)|*.jpg|PNG (.png)|*.png|All Files (*.*)|*.*", FilterIndex = 1, Multiselect = false };
+                OpenFileDialog open = new OpenFileDialog()
+                {
+                    Filter = "JPG (.jpg)|*.jpg|PNG (.png)|*.png|All Files (*.*)|*.*",
+                    FilterIndex = 1,
+                    Multiselect = false
+                };
 
                 doImageChange = true;
                 if (open.ShowDialog() == true)
@@ -158,12 +161,10 @@ namespace Kiosko
             {
                 CargaAutores();
             }
-
         }
 
         private void BtnGuardar_Click(object sender, RoutedEventArgs e)
         {
-
             if ((TxtIsbn.Text.Length > 0) && !VerificationUtilities.IsbnValidation(TxtIsbn.Text))
             {
                 MessageBoxResult result = MessageBox.Show("El número de ISBN que ingresaste es incorrecto sino cuentas con el y deseas continuar presiona SI y el campo se vaciará, para revisar el ISBN presiona NO", "Atención", MessageBoxButton.YesNo, MessageBoxImage.Warning);
@@ -176,7 +177,7 @@ namespace Kiosko
 
             if (obra.AnioPublicacion < 1870 || obra.AnioPublicacion > DateTime.Now.Year)
             {
-                MessageBox.Show(String.Format("El año de publicación debe estar entre el rango de 1870 y {0}", DateTime.Now.Year),"Error de datos",MessageBoxButton.OK,MessageBoxImage.Error);
+                MessageBox.Show(String.Format("El año de publicación debe estar entre el rango de 1870 y {0}", DateTime.Now.Year), "Error de datos", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -188,7 +189,8 @@ namespace Kiosko
             obra.IdIdioma = Convert.ToInt32(CbxIdioma.SelectedValue);
 
             bool sinTweakApply = false;
-            if((obra.TipoObra == 1 || obra.TipoObra == 2) && (String.IsNullOrEmpty(obra.Sintesis) || String.IsNullOrWhiteSpace(obra.Sintesis))){
+            if ((obra.TipoObra == 1 || obra.TipoObra == 2) && (String.IsNullOrEmpty(obra.Sintesis) || String.IsNullOrWhiteSpace(obra.Sintesis)))
+            {
                 obra.Sintesis = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
                 sinTweakApply = true;
             }
@@ -217,8 +219,6 @@ namespace Kiosko
                 var sVldErrors = String.Join("\n", oVldResults.Select(t => String.Format("- {0}", t.ErrorMessage)));
                 ErrorUtilities.MostrarMensajes("ERRORES DE VALIDACIÓN", sVldErrors);
             }
-
-
         }
 
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
@@ -229,14 +229,10 @@ namespace Kiosko
             this.Close();
         }
 
-
-
         private void Txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = VerificationUtilities.IsNumber(e.Text);
         }
-
-        
 
         private void Txt_PreviewKeyDown(object sender, KeyEventArgs e)
         {
@@ -252,7 +248,6 @@ namespace Kiosko
 
             if (result == MessageBoxResult.Yes)
             {
-
                 new ObraModel().UpdateImagenObra(obra.IdObra, String.Empty);
                 obra.ImagePath = String.Empty;
 
@@ -260,7 +255,6 @@ namespace Kiosko
                 BtnImagePath.Visibility = Visibility.Visible;
 
                 doImageChange = true;
-                
             }
         }
 
@@ -268,7 +262,12 @@ namespace Kiosko
         {
             try
             {
-                OpenFileDialog open = new OpenFileDialog() { Filter = "PDF (.pdf)|*.pdf|All Files (*.*)|*.*", FilterIndex = 1, Multiselect = false };
+                OpenFileDialog open = new OpenFileDialog()
+                {
+                    Filter = "PDF (.pdf)|*.pdf|All Files (*.*)|*.*",
+                    FilterIndex = 1,
+                    Multiselect = false
+                };
 
                 if (open.ShowDialog() == true)
                 {
@@ -291,11 +290,6 @@ namespace Kiosko
             {
                 MessageBox.Show("Modificar la imagen de la obra constantemente puede provocar errores, vuelve a intentarlo más tarde");
             }
-
-
-
-           
-
         }
 
         private void BtnVerCatalografica_Click(object sender, RoutedEventArgs e)
@@ -305,7 +299,6 @@ namespace Kiosko
 
         private void BtnDelCatalografica_Click(object sender, RoutedEventArgs e)
         {
-
             MessageBoxResult result = MessageBox.Show("¿Estás segur@ de eliminar la ficha catalográfica asociada a esta obra? Una vez realizada la acción no podrá deshacerse", "Atención:", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (result == MessageBoxResult.Yes)
@@ -333,12 +326,12 @@ namespace Kiosko
             }
             else if (totalNoAsigna > 1)
             {
-                MessageBox.Show(String.Format("Existen {0} autores sin asignación de tipo de colaboración en la obra. Favor de revisar antes de continuar",totalNoAsigna));
+                MessageBox.Show(String.Format("Existen {0} autores sin asignación de tipo de colaboración en la obra. Favor de revisar antes de continuar", totalNoAsigna));
                 return;
             }
             else
             {
-                TextoColaboracion colaboraWin = new TextoColaboracion(obra) { Owner= this};
+                TextoColaboracion colaboraWin = new TextoColaboracion(obra) { Owner = this };
                 colaboraWin.ShowDialog();
             }
         }

@@ -22,7 +22,7 @@ namespace Funcionarios
         bool isUpdating = false, actualizaTiraje = false;
 
         Titular titular;
-        ObservableCollection<ElementalProperties> tipoObras;
+        //ObservableCollection<ElementalProperties> tipoObras;  //Descomentar si se usa el panel izquierdo
         ObservableCollection<TirajePersonal> listaTirajes;
 
         public SeleccionaOrgAdscrip(Titular titular,bool isUpdating)

@@ -69,7 +69,7 @@ namespace Organismos
         {
             selectedOrganismo = GOrganismos.SelectedItem as Organismo;
 
-            LblTotales.Content = GOrganismos.Items.IndexOf(selectedOrganismo) + 1 + " de " + GOrganismos.Items.Count.ToString() + " registros";
+            LblTotales.Content = GOrganismos.Items.IndexOf(selectedOrganismo) + 1 + " de " + GOrganismos.Items.Count + " registros";
         }
 
         /// <summary>
@@ -83,8 +83,7 @@ namespace Organismos
                 return;
             }
 
-            ActualizarVerOrganismo editOrg = new ActualizarVerOrganismo(selectedOrganismo, false);
-            editOrg.Owner = this;
+            ActualizarVerOrganismo editOrg = new ActualizarVerOrganismo(selectedOrganismo, false) { Owner = this };
             editOrg.ShowDialog();
         }
 
@@ -93,8 +92,7 @@ namespace Organismos
         /// </summary>
         public void Agregar()
         {
-            AgregaOrganismo addOrg = new AgregaOrganismo(catalogoOrganismo);
-            addOrg.Owner = this;
+            AgregaOrganismo addOrg = new AgregaOrganismo(catalogoOrganismo) { Owner = this };
             addOrg.ShowDialog();
         }
 
@@ -105,8 +103,7 @@ namespace Organismos
                 MessageBox.Show("Selecciona el organismo del cual quieres modificar su información");
                 return;
             }
-            ActualizarVerOrganismo editOrg = new ActualizarVerOrganismo(selectedOrganismo, true);
-            editOrg.Owner = this;
+            ActualizarVerOrganismo editOrg = new ActualizarVerOrganismo(selectedOrganismo, true) { Owner = this };
             editOrg.ShowDialog();
         }
 
@@ -114,7 +111,7 @@ namespace Organismos
         {
             catalogoOrganismo = new OrganismoModel().GetOrganismos(true);
             GOrganismos.DataContext = catalogoOrganismo;
-            LblTotales.Content = catalogoOrganismo.Count.ToString() + " registros";
+            LblTotales.Content = catalogoOrganismo.Count + " registros";
 
             this.LimpiaFiltros();
         }
@@ -123,7 +120,7 @@ namespace Organismos
         {
             catalogoOrganismo = new OrganismoModel().GetOrganismos(false);
             GOrganismos.DataContext = catalogoOrganismo;
-            LblTotales.Content = catalogoOrganismo.Count.ToString() + " registros";
+            LblTotales.Content = catalogoOrganismo.Count + " registros";
 
             this.LimpiaFiltros();
         }
@@ -181,7 +178,7 @@ namespace Organismos
             }
             else
             {
-                MessageBoxResult result = MessageBox.Show("¿Estas seguro de desactivar este organismo (" + selectedOrganismo.OrganismoDesc + ")?",
+                MessageBoxResult result = MessageBox.Show(String.Format("¿Estas seguro de desactivar este organismo ({0})?", selectedOrganismo.OrganismoDesc),
                     "Atención", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                 if (result == MessageBoxResult.Yes)
@@ -199,7 +196,7 @@ namespace Organismos
                     }
                 }
             }
-            LblTotales.Content = GOrganismos.Items.Count.ToString() + " registros";
+            LblTotales.Content = GOrganismos.Items.Count + " registros";
         }
 
         public void LimpiaFiltros()
@@ -243,8 +240,7 @@ namespace Organismos
 
         public void TotalSecretarios()
         {
-            SaveFileDialog save = new SaveFileDialog();
-            save.Filter = "PDF Files (*.pdf)|*.pdf|All Files (*.*)|*.*";
+            SaveFileDialog save = new SaveFileDialog() { Filter = "PDF Files (*.pdf)|*.pdf|All Files (*.*)|*.*" };
 
             Nullable<bool> result = save.ShowDialog();
 
@@ -259,8 +255,7 @@ namespace Organismos
 
         public void TotalOrganismos()
         {
-            SaveFileDialog save = new SaveFileDialog();
-            save.Filter = "PDF Files (*.pdf)|*.pdf|All Files (*.*)|*.*";
+            SaveFileDialog save = new SaveFileDialog() { Filter = "PDF Files (*.pdf)|*.pdf|All Files (*.*)|*.*" };
 
             Nullable<bool> result = save.ShowDialog();
 
@@ -275,8 +270,7 @@ namespace Organismos
 
         public void EtiquetaSeleccion()
         {
-            SaveFileDialog save = new SaveFileDialog();
-            save.Filter = "Word Files (*.docx)|*.docx|All Files (*.*)|*.*";
+            SaveFileDialog save = new SaveFileDialog() { Filter = "Word Files (*.docx)|*.docx|All Files (*.*)|*.*" };
 
             Nullable<bool> result = save.ShowDialog();
 
@@ -293,8 +287,7 @@ namespace Organismos
 
         public void EtiquetaListaGrid()
         {
-            SaveFileDialog save = new SaveFileDialog();
-            save.Filter = "Word Files (*.docx)|*.docx|All Files (*.*)|*.*";
+            SaveFileDialog save = new SaveFileDialog() { Filter = "Word Files (*.docx)|*.docx|All Files (*.*)|*.*" };
 
             Nullable<bool> result = save.ShowDialog();
 
@@ -312,8 +305,7 @@ namespace Organismos
 
         public void TotalTitulares()
         {
-            SaveFileDialog save = new SaveFileDialog();
-            save.Filter = "PDF Files (*.pdf)|*.pdf|All Files (*.*)|*.*";
+            SaveFileDialog save = new SaveFileDialog() { Filter = "PDF Files (*.pdf)|*.pdf|All Files (*.*)|*.*" };
 
             Nullable<bool> result = save.ShowDialog();
 
@@ -364,7 +356,7 @@ namespace Organismos
             if (tipoProceso == 1)
             {
                 GOrganismos.DataContext = catalogoOrganismo;
-                LblTotales.Content = catalogoOrganismo.Count.ToString() + " registros";
+                LblTotales.Content = catalogoOrganismo.Count + " registros";
             }
 
             if (tipoProceso == 3)

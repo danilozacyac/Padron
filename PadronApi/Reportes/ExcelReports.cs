@@ -456,12 +456,12 @@ namespace PadronApi.Reportes
             catch (COMException ex)
             {
 
-                System.Windows.MessageBox.Show(ex.Message + "   " + fila);
+                System.Windows.MessageBox.Show(String.Format("{0}   {1}", ex.Message, fila));
 
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message + "   " + fila);
+                System.Windows.MessageBox.Show(String.Format("{0}   {1}", ex.Message, fila));
             }
             System.Windows.MessageBox.Show(String.Format( "Se actualizaron {0} de los {1} registros que contiene el documento",filasOk,range.Rows.Count));
         }

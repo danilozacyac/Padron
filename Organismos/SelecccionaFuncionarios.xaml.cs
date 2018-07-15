@@ -20,7 +20,7 @@ namespace Organismos
         private ObservableCollection<Titular> listaTitulares;
         bool isUpdatingOrganismo;
 
-        ObservableCollection<ElementalProperties> tipoObras;
+       // ObservableCollection<ElementalProperties> tipoObras; //Descomentar si se usa el panel izquierdo
         ObservableCollection<TirajePersonal> listaTirajes;
 
         Adscripcion adscripcion;

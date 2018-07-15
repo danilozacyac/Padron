@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Configuration;
-using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 using PadronApi.Converter;
 using PadronApi.Dto;
 using PadronApi.Model;
@@ -10,8 +11,6 @@ using PadronApi.Singletons;
 using ScjnUtilities;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace PadronApi.Reportes
 {
@@ -47,7 +46,7 @@ namespace PadronApi.Reportes
         public void InformeGenerlaObras()
         {
             Document myDocument = new Document(PageSize.A4, 15, 15, 50, 50);
-            PdfWriter writer = PdfWriter.GetInstance(myDocument, new FileStream(filepath, FileMode.Create));
+            //PdfWriter writer = PdfWriter.GetInstance(myDocument, new FileStream(filepath, FileMode.Create));
             myDocument.AddTitle("Listado de Obras");
             myDocument.AddCreator("Padrón de Distribución de la Dirección de Distribución del Semanario Judicial de la Federación");
             myDocument.Open();
@@ -134,7 +133,7 @@ namespace PadronApi.Reportes
         public void ReporteFuncionarioContraloria(Titular titular, ObservableCollection<Devoluciones> obrasRecibio)
         {
             Document myDocument = new Document(PageSize.LETTER.Rotate(), 15, 15, 30, 30);
-            PdfWriter writer = PdfWriter.GetInstance(myDocument, new FileStream(filepath, FileMode.Create));
+            //PdfWriter writer = PdfWriter.GetInstance(myDocument, new FileStream(filepath, FileMode.Create));
             myDocument.AddTitle("Reporte para contraloría");
             myDocument.AddCreator("Padrón de Distribución de la Dirección de Distribución del Semanario Judicial de la Federación");
             myDocument.Open();
@@ -226,7 +225,7 @@ namespace PadronApi.Reportes
         public void ReporteSecretarios()
         {
             Document myDocument = new Document(PageSize.A4, 15, 15, 50, 50);
-            PdfWriter writer = PdfWriter.GetInstance(myDocument, new FileStream(filepath, FileMode.Create));
+            //PdfWriter writer = PdfWriter.GetInstance(myDocument, new FileStream(filepath, FileMode.Create));
             myDocument.AddTitle("Total de secretarios por organismos");
             myDocument.AddCreator("Padrón de Distribución de la Dirección de Distribución del Semanario Judicial de la Federación");
             myDocument.Open();
@@ -333,7 +332,7 @@ namespace PadronApi.Reportes
         public void ReporteOrganismosxCircuito()
         {
             Document myDocument = new Document(PageSize.A4, 15, 15, 50, 50);
-            PdfWriter writer = PdfWriter.GetInstance(myDocument, new FileStream(filepath, FileMode.Create));
+            //PdfWriter writer = PdfWriter.GetInstance(myDocument, new FileStream(filepath, FileMode.Create));
             myDocument.AddTitle("Total de organismos por circuito");
             myDocument.AddCreator("Padrón de Distribución de la Dirección de Distribución del Semanario Judicial de la Federación");
             myDocument.Open();
@@ -446,7 +445,7 @@ namespace PadronApi.Reportes
         public void ReporteIncluidosTodosTirajes(ObservableCollection<Adscripcion> adscripciones)
         {
             Document myDocument = new Document(PageSize.A4, 15, 15, 50, 50);
-            PdfWriter writer = PdfWriter.GetInstance(myDocument, new FileStream(filepath, FileMode.Create));
+            //PdfWriter writer = PdfWriter.GetInstance(myDocument, new FileStream(filepath, FileMode.Create));
             myDocument.AddTitle("Funcionarios incluidos en todas las distribuciones");
             myDocument.AddCreator("Padrón de Distribución de la Dirección de Distribución del Semanario Judicial de la Federación");
             myDocument.Open();
@@ -532,7 +531,7 @@ namespace PadronApi.Reportes
         public void ReporteGeneroTitulares()
         {
             Document myDocument = new Document(PageSize.A4, 15, 15, 50, 50);
-            PdfWriter writer = PdfWriter.GetInstance(myDocument, new FileStream(filepath, FileMode.Create));
+            //PdfWriter writer = PdfWriter.GetInstance(myDocument, new FileStream(filepath, FileMode.Create));
             myDocument.AddTitle("Total de organismos por circuito");
             myDocument.AddCreator("Padrón de Distribución de la Dirección de Distribución del Semanario Judicial de la Federación");
             myDocument.Open();
@@ -598,25 +597,22 @@ namespace PadronApi.Reportes
 
                 foreach (Organismo org in tiposOrganismo)
                 {
-                    int totalOrganismos = repModel.GetTotalOrganosByTipo(org.IdOrganismo);
+                    //int totalOrganismos = repModel.GetTotalOrganosByTipo(org.IdOrganismo);
 
-                    int totalFunc = 0, totalHombre = 0, totalMujeres = 0;
+                    int totalHombre = 0, totalMujeres = 0;
 
                     if (tribunales.Contains(org.IdOrganismo))
                     {
-                        totalFunc = repModel.GetTotalFuncionariosByTipoOrg(org.IdOrganismo, 1, 2, 0);
                         totalHombre = repModel.GetTotalFuncionariosByTipoOrg(org.IdOrganismo, 1, 2, 1);
                         totalMujeres = repModel.GetTotalFuncionariosByTipoOrg(org.IdOrganismo, 1, 2, 2);
                     }
                     else if (juzgados.Contains(org.IdOrganismo))
                     {
-                        totalFunc = repModel.GetTotalFuncionariosByTipoOrg(org.IdOrganismo, 8, 19, 0);
                         totalHombre = repModel.GetTotalFuncionariosByTipoOrg(org.IdOrganismo, 8, 19, 1);
                         totalMujeres = repModel.GetTotalFuncionariosByTipoOrg(org.IdOrganismo, 8, 19, 2);
                     }
                     else if (centros.Contains(org.IdOrganismo))
                     {
-                        totalFunc = repModel.GetTotalFuncionariosByTipoOrg(org.IdOrganismo, 131, 131, 0);
                         totalHombre = repModel.GetTotalFuncionariosByTipoOrg(org.IdOrganismo, 131, 131, 1);
                         totalMujeres = repModel.GetTotalFuncionariosByTipoOrg(org.IdOrganismo, 131, 131, 2);
                     }
@@ -731,7 +727,7 @@ namespace PadronApi.Reportes
                         autho.ScalePercent(24f);
 
                         Document myDocument = new Document(PageSize.A4, 50, 50, 15, 15);
-                        PdfWriter writer = PdfWriter.GetInstance(myDocument, new FileStream(filepath, FileMode.Create));
+                        //PdfWriter writer = PdfWriter.GetInstance(myDocument, new FileStream(filepath, FileMode.Create));
                         myDocument.AddTitle("Oficios de envio de obras");
                         myDocument.AddCreator("Padrón de Distribución de la Dirección de Distribución del Semanario Judicial de la Federación");
                         myDocument.Open();
@@ -969,7 +965,7 @@ namespace PadronApi.Reportes
             try
             {
                 this.SetPageHeader(myDocument);
-                para = new Paragraph(String.Format("Of. Núm. CCST/DDSJF-PAD-{0}-{1}-{2}", ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month.ToString() : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2)), NormalFont(black, arialFont, 10));
+                para = new Paragraph(String.Format("Of. Núm. CCST/DDSJF-PAD-{0}-{1}-{2}", ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2)), NormalFont(black, arialFont, 10));
                 para.Alignment = Element.ALIGN_RIGHT;
                 myDocument.Add(para);
                 para = new Paragraph(fechaDistribucion, NormalFont(black, arialFont, 10));
@@ -1041,7 +1037,7 @@ namespace PadronApi.Reportes
 
                 InsertLineBreak(myDocument, 1);
 
-                string[] descs = { presentacion.ToString(), cantidad.ToString(), propStr };
+                string[] descs = { presentacion, cantidad.ToString(), propStr };
 
                 foreach (string desc in descs)
                 {

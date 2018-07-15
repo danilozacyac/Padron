@@ -98,8 +98,7 @@ namespace Organismos.Ciudades
                 }
                 else
                 {
-                    Estado estado = new Estado();
-                    estado.IdPais = selectedPais.IdPais;
+                    Estado estado = new Estado() { IdPais = selectedPais.IdPais };
                     PaisEstadoWin addEstado = new PaisEstadoWin(estado, false) { Owner = this };
                     addEstado.ShowDialog();
 

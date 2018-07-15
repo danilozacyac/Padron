@@ -53,7 +53,7 @@ namespace Organismos.Ciudades
             TxtCiudad.Focus();
         }
 
-        private void CbxPais_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void CbxPais_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedPais = CbxPais.SelectedItem as Pais;
 

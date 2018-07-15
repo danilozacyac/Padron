@@ -763,8 +763,7 @@ namespace PadronApi.Reportes
             try
             {
                 //Insert a paragraph at the beginning of the document.
-                Paragraph oPara1;
-                oPara1 = aDoc.Content.Paragraphs.Add(ref oMissing);
+                Paragraph oPara1 = aDoc.Content.Paragraphs.Add(ref oMissing);
                 oPara1.Range.Text = "SUPREMA CORTE DE JUSTICIA DE LA NACIÓN";
                 oPara1.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
 
@@ -800,7 +799,7 @@ namespace PadronApi.Reportes
                 this.SetWidthAndHeader(oTable, tamanios, encabezados);
 
                 fila++;
-                int dondeAgrego = 1;
+                const int DondeAgrego = 1;
 
                 foreach (PlantillaDto print in plantillaDistr)
                 {
@@ -815,7 +814,7 @@ namespace PadronApi.Reportes
                     if (print.Oficina > 0)
                     {
                         if (tieneFila)
-                            oTable.Rows.Add(oTable.Rows[plantillaDistr.Count + dondeAgrego]);
+                            oTable.Rows.Add(oTable.Rows[plantillaDistr.Count + DondeAgrego]);
 
                         this.AddFilaAcuseCorte(oTable, print.Organismo, print.Nombre, print.Oficina, "Oficina");
                         tieneFila = true;
@@ -824,7 +823,7 @@ namespace PadronApi.Reportes
                     if (print.Personal > 0)
                     {
                         if (tieneFila)
-                            oTable.Rows.Add(oTable.Rows[plantillaDistr.Count + dondeAgrego]);
+                            oTable.Rows.Add(oTable.Rows[plantillaDistr.Count + DondeAgrego]);
 
                         this.AddFilaAcuseCorte(oTable, print.Organismo, print.Nombre, print.Personal, "Personal");
                         tieneFila = true;
@@ -832,7 +831,7 @@ namespace PadronApi.Reportes
                     if (print.Biblioteca > 0)
                     {
                         if (tieneFila)
-                            oTable.Rows.Add(oTable.Rows[plantillaDistr.Count + dondeAgrego]);
+                            oTable.Rows.Add(oTable.Rows[plantillaDistr.Count + DondeAgrego]);
 
                         this.AddFilaAcuseCorte(oTable, print.Organismo, print.Nombre, print.Biblioteca, "Biblioteca");
                         tieneFila = true;
@@ -840,7 +839,7 @@ namespace PadronApi.Reportes
                     if (print.Resguardo > 0)
                     {
                         if (tieneFila)
-                            oTable.Rows.Add(oTable.Rows[plantillaDistr.Count + dondeAgrego]);
+                            oTable.Rows.Add(oTable.Rows[plantillaDistr.Count + DondeAgrego]);
 
                         this.AddFilaAcuseCorte(oTable, print.Organismo, print.Nombre, print.Resguardo, "Resguardo");
                         tieneFila = true;
@@ -926,7 +925,6 @@ namespace PadronApi.Reportes
                 this.SetWidthAndHeader(oTable, tamanios, encabezados);
 
                 fila++;
-                int dondeAgrego = 1;
 
                 oWord.Visible = true;
 
@@ -1377,23 +1375,6 @@ namespace PadronApi.Reportes
             }
             return isComplete;
         }
-
-
-
-        #region Kiosko
-
-
-
-        //readonly string filepath = Path.GetTempFileName() + ".docx";
-
-
-        Document oDoc;
-
-        
-
-
-        #endregion
-
 
 
 

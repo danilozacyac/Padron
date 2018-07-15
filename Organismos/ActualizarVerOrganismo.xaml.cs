@@ -144,8 +144,7 @@ namespace Organismos
 
         private void RbtnAgregaFuncionario_Click(object sender, RoutedEventArgs e)
         {
-            SelecccionaFuncionarios select = new SelecccionaFuncionarios(organismo, true);
-            select.Owner = this;
+            SelecccionaFuncionarios select = new SelecccionaFuncionarios(organismo, true) { Owner = this };
             select.ShowDialog();
             organismo.TotalAdscritos = organismo.Adscripciones.Count;
         }
@@ -195,8 +194,7 @@ namespace Organismos
                 return;
             }
 
-            SelecccionaFuncionarios select = new SelecccionaFuncionarios(selectedAdscripciones);
-            select.Owner = this;
+            SelecccionaFuncionarios select = new SelecccionaFuncionarios(selectedAdscripciones) { Owner = this };
             select.ShowDialog();
             organismo.TotalAdscritos = organismo.Adscripciones.Count;
         }
@@ -471,11 +469,11 @@ namespace Organismos
                             materia3 = CbxMateria3.Text;
 
 
-                        materias += ", " + materia2 + " y " + materia3 + " ";
+                        materias += String.Format(", {0} y {1} ", materia2, materia3);
                     }
                     else
                     {
-                        materias += " y " + materia2 + " ";
+                        materias += String.Format(" y {0} ", materia2);
                     }
                     materias = materias.Replace("Materia", "Materias");
                 }
@@ -485,24 +483,21 @@ namespace Organismos
             if (selectedTipoOrg.IdTipoOrganismo == 2)
             {
                 if (CbxCircuito.SelectedIndex != -1)
-                    TxtOrganismo.Text = ((CbxOrdinal.SelectedIndex != -1) ? CbxOrdinal.Text + " " : String.Empty) +
-                        "Tribunal Colegiado " + materias + "del " + CbxCircuito.Text;
+                    TxtOrganismo.Text = String.Format("{0} Tribunal Colegiado {1} del {2}", ((CbxOrdinal.SelectedIndex != -1) ? CbxOrdinal.Text + " " : String.Empty), materias, CbxCircuito.Text);
                 else
                     MessageBox.Show("Selecciona el circuito al cual pertenece el tribunal");
             }
             else if (selectedTipoOrg.IdTipoOrganismo == 4)
             {
                 if (CbxCircuito.SelectedIndex != -1)
-                    TxtOrganismo.Text = ((CbxOrdinal.SelectedIndex != -1) ? CbxOrdinal.Text + " " : String.Empty) +
-                        "Tribunal Unitario " + materias + " del " + CbxCircuito.Text;
+                    TxtOrganismo.Text = String.Format("{0} Tribunal Unitario {1} del {2}", ((CbxOrdinal.SelectedIndex != -1) ? CbxOrdinal.Text + " " : String.Empty), materias, CbxCircuito.Text);
                 else
                     MessageBox.Show("Selecciona el circuito al cual pertenece el tribunal");
             }
             else if (selectedTipoOrg.IdTipoOrganismo == 8)
             {
                 if (CbxCircuito.SelectedIndex != -1 )
-                    TxtOrganismo.Text = "Juzgado " + ((CbxOrdinal.SelectedIndex != -1) ? CbxOrdinal.Text + " " : String.Empty) + " de Distrito " +
-                         materias + " del " + CbxCircuito.Text;
+                    TxtOrganismo.Text = String.Format("Juzgado {0} de Distrito {1} del {2}", ((CbxOrdinal.SelectedIndex != -1) ? CbxOrdinal.Text + " " : String.Empty), materias, CbxCircuito.Text);
                 else
                     MessageBox.Show("Selecciona el ordinal y el circuito al cual pertenece el tribunal");
             }
@@ -561,10 +556,7 @@ namespace Organismos
             CbxEstado.SelectedValue = ordinal.IdEstado;
         }
 
-        private void CbxOrdinal_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
+       
 
         private void GridIntegrantes_SelectionChanged_1(object sender, Telerik.Windows.Controls.SelectionChangeEventArgs e)
         {
@@ -578,8 +570,7 @@ namespace Organismos
         private void GIntegrantes_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
-            MessageBoxResult result = MessageBox.Show( "¿Estas seguro de asignar a " +
-                selectedAdscripciones.Titular.Nombre + " " + selectedAdscripciones.Titular.Apellidos + " como presidente de este organismo?", 
+            MessageBoxResult result = MessageBox.Show(String.Format("¿Estas seguro de asignar a {0} {1} como presidente de este organismo?", selectedAdscripciones.Titular.Nombre, selectedAdscripciones.Titular.Apellidos), 
                 "Atención:", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (result == MessageBoxResult.Yes)
