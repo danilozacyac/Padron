@@ -254,7 +254,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KO/Nt2ugS0LsTokQkhTUJahbysXwLx3uyxH+u3f6jkk=</dsig:DigestValue>
+        <dsig:DigestValue>NgMRAsAaVu14P1FagSPkgZ5OPDjiaID8KbrLMVsjrAo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -290,7 +290,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6Jc9DNhGAluuS7/Lp4c89se6DVkcsd9kUMKVGV9yX/Y=</dsig:DigestValue>
+        <dsig:DigestValue>6T5Kg6ZaeFQ+CpKGvvS3U1TP0X5Iv/h6V+bTUKonu3c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -314,19 +314,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5HwVwYjNzSumI/D/EbY87ql3MAz3z8m9UuxQprT+e44=</dsig:DigestValue>
+        <dsig:DigestValue>mT8gxqTD20Xk8P1Hh/uXJnYbuPTMv+5R3lna6Pz65Yg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Organismos.dll" size="247808">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Organismos.dll" size="248320">
       <assemblyIdentity name="Organismos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fjLt4R9mwg8rkynvRBeftZDGXYUKHjKwSP69IpatKlg=</dsig:DigestValue>
+        <dsig:DigestValue>uWd3rR4KnGV88t30QDTyp6pC9/7R+mw/EgKmJPv79d8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -338,7 +338,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>HfMdHfKavucKUo/EndsjIFI1XhUWjjvmeBBkHtFK6p8=</dsig:DigestValue>
+        <dsig:DigestValue>TbTK5mZN9ZW6HTjYoePE5F1xUTu5LyWWz3egslEwJ84=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -350,7 +350,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0GKUDhOzXY8MRw6X4Bi6KITY3awBwUktNSfonwLGL+E=</dsig:DigestValue>
+        <dsig:DigestValue>DjpxgZb1TnvMXdEiFfWO03vKrdFmemeBHn42KflWbtU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -552,7 +552,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HnelRV2s4UdbAk/2vAsnPcAdk7GRomSiggLZ6ejbbFg=</dsig:DigestValue>
+      <dsig:DigestValue>OSxaA+QQiCOmA9mBaccI3iL+3NLk320mL38uRgXeGyw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="rocket.ico" size="67646">

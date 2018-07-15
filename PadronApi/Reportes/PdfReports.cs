@@ -196,7 +196,7 @@ namespace PadronApi.Reportes
                     string[] descs = { consecutivo.ToString(), obra.Titulo, organismo.OrganismoDesc, 
                                         obra.Oficina.ToString(), 
                                         obra.Biblioteca.ToString(), obra.OficioDevolucion, obra.FechaDevolucionString,
-                                        obra.Cantidad.ToString(), obra.Observaciones };
+                                        obra.Cantidad.ToString(),obra.Precio, obra.Observaciones };
 
 
                     foreach (string desc in descs)

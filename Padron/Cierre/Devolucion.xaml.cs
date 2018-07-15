@@ -33,6 +33,8 @@ namespace Padron.Cierre
             this.DataContext = plantilla;
 
             model = new DevolucionModel();
+            RdpFechaDevuelve.SelectableDateEnd = DateTime.Now;
+
 
             devOfic = model.GetDevueltosTituProp(plantilla.IdTitular, plantilla.IdObra, 2);
             
@@ -67,9 +69,15 @@ namespace Padron.Cierre
 
             bool complete = false;
 
+            if (String.IsNullOrEmpty(TxtOficio.Text) || String.IsNullOrWhiteSpace(TxtOficio.Text))
+            {
+                MessageBox.Show("Para realizar una devolución debes ingresar el oficio con el que se realizó","Atención",MessageBoxButton.OK,MessageBoxImage.Information);
+                return;
+            }
+
             if (RdpFechaDevuelve.SelectedDate == null)
             {
-                MessageBox.Show("Para realizar una devolución debes ingresar la fecha en que se llevó a cabo");
+                MessageBox.Show("Para realizar una devolución debes ingresar la fecha en que se llevó a cabo", "Atención", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
 
@@ -77,7 +85,7 @@ namespace Padron.Cierre
                 complete = model.InsertaDevolucion(devolucion);
 
             if (!complete)
-                MessageBox.Show("No se realizaron todas las devoluciones correctamente, favor de volver a intentar");
+                MessageBox.Show("No se completó el trámite de devolución, favor de volver a intentar", "Atención", MessageBoxButton.OK, MessageBoxImage.Error);
 
             this.Close();
         }
