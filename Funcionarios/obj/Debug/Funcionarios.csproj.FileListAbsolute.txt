@@ -86,3 +86,5 @@ C:\Users\lavega\Documents\GitHub\Padron\Funcionarios\obj\Debug\Funcionarios.cspr
 C:\Users\lavega\Documents\GitHub\Padron\Funcionarios\obj\Debug\Funcionarios.dll
 C:\Users\lavega\Documents\GitHub\Padron\Funcionarios\obj\Debug\Funcionarios.pdb
 C:\Users\lavega\Documents\GitHub\Padron\Funcionarios\bin\Debug\ScjnUtilities.pdb
+C:\Users\Luis\Documents\GitHub\Padron\Funcionarios\bin\Debug\KellermanSoftware.Compare-NET-Objects.dll
+C:\Users\Luis\Documents\GitHub\Padron\Funcionarios\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml

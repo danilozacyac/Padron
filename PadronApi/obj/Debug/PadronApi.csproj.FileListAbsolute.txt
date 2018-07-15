@@ -20,3 +20,5 @@ C:\Users\lavega\Documents\GitHub\Padron\PadronApi\obj\Debug\PadronApi.Properties
 C:\Users\lavega\Documents\GitHub\Padron\PadronApi\obj\Debug\PadronApi.csproj.GenerateResource.Cache
 C:\Users\lavega\Documents\GitHub\Padron\PadronApi\obj\Debug\PadronApi.dll
 C:\Users\lavega\Documents\GitHub\Padron\PadronApi\obj\Debug\PadronApi.pdb
+C:\Users\Luis\Documents\GitHub\Padron\PadronApi\bin\Debug\KellermanSoftware.Compare-NET-Objects.dll
+C:\Users\Luis\Documents\GitHub\Padron\PadronApi\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml

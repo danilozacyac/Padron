@@ -98,3 +98,5 @@ C:\Users\lavega\Documents\GitHub\Padron\Organismos\obj\Debug\Organismos.csproj.G
 C:\Users\lavega\Documents\GitHub\Padron\Organismos\obj\Debug\Organismos.dll
 C:\Users\lavega\Documents\GitHub\Padron\Organismos\obj\Debug\Organismos.pdb
 C:\Users\lavega\Documents\GitHub\Padron\Organismos\bin\Debug\ScjnUtilities.pdb
+C:\Users\Luis\Documents\GitHub\Padron\Organismos\bin\Debug\KellermanSoftware.Compare-NET-Objects.dll
+C:\Users\Luis\Documents\GitHub\Padron\Organismos\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml

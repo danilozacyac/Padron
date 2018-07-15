@@ -78,3 +78,5 @@ C:\Users\lavega\Documents\GitHub\Padron\Obras\obj\Debug\Obras.csproj.GenerateRes
 C:\Users\lavega\Documents\GitHub\Padron\Obras\obj\Debug\Obras.dll
 C:\Users\lavega\Documents\GitHub\Padron\Obras\obj\Debug\Obras.pdb
 C:\Users\lavega\Documents\GitHub\Padron\Obras\bin\Debug\ScjnUtilities.pdb
+C:\Users\Luis\Documents\GitHub\Padron\Obras\bin\Debug\KellermanSoftware.Compare-NET-Objects.dll
+C:\Users\Luis\Documents\GitHub\Padron\Obras\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml

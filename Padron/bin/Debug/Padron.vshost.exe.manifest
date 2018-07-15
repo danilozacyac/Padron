@@ -254,7 +254,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hIkALni32iR6l1Yz2Xpz5qBS806h68q8bh9Hs41NC0Q=</dsig:DigestValue>
+        <dsig:DigestValue>KO/Nt2ugS0LsTokQkhTUJahbysXwLx3uyxH+u3f6jkk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -271,6 +271,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KellermanSoftware.Compare-NET-Objects.dll" size="84992">
+      <assemblyIdentity name="KellermanSoftware.Compare-NET-Objects" version="4.55.0.0" publicKeyToken="D970ACE04CC85217" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Xi3zbhDpWRMx8BIi4h3SUkQs+n5Ikfgu2sGceNFdfXM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kiosko.dll" size="185856">
       <assemblyIdentity name="Kiosko" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -278,7 +290,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>duC37EuneonSzUeLaRl2MKORCPPgM5hoLAGI7RhDsWA=</dsig:DigestValue>
+        <dsig:DigestValue>6Jc9DNhGAluuS7/Lp4c89se6DVkcsd9kUMKVGV9yX/Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -290,7 +302,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TaVkp28fXOooHHNkpOjWAnnyNEIrUXsGXAZS0xnm1ts=</dsig:DigestValue>
+        <dsig:DigestValue>j+B6KewuotP80t9gaTUaO530qI3BOHIDi05gxCVVQS4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -302,7 +314,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>P2HmAs1Ap9yvMRzjyfbqQDL8GvfxSqlE7mAX6LOcNWE=</dsig:DigestValue>
+        <dsig:DigestValue>5HwVwYjNzSumI/D/EbY87ql3MAz3z8m9UuxQprT+e44=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -314,19 +326,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oZgk8XRWOrHAuI4UUemYdXImYBh7x2zdF8U/0g8BQv0=</dsig:DigestValue>
+        <dsig:DigestValue>fjLt4R9mwg8rkynvRBeftZDGXYUKHjKwSP69IpatKlg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Padron.exe" size="3646976">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Padron.exe" size="3510784">
       <assemblyIdentity name="Padron" version="3.2018.4.22066" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2uOr/uYu2i6iBYeyVvp7rwvXNMXrc/8gJExgcGg4NU0=</dsig:DigestValue>
+        <dsig:DigestValue>HfMdHfKavucKUo/EndsjIFI1XhUWjjvmeBBkHtFK6p8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -338,19 +350,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qox+lMO5J3rXAp/C7D24MtUE4DEZy9X/cDHrb24Ztds=</dsig:DigestValue>
+        <dsig:DigestValue>0GKUDhOzXY8MRw6X4Bi6KITY3awBwUktNSfonwLGL+E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ScjnUtilities.dll" size="26624">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ScjnUtilities.dll" size="27136">
       <assemblyIdentity name="ScjnUtilities" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AkIZ9bbBAFo9A2nJImF0crQ5sAYOp/k293UoTKz4kl8=</dsig:DigestValue>
+        <dsig:DigestValue>dcMCFspgcEl5+SybJJihmHui50sKLwb03sz768Z4NJA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

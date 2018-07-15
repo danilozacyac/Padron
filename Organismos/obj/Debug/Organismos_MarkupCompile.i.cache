@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\lavega\Documents\GitHub\Padron\Organismos\obj\Debug\
+C:\Users\Luis\Documents\GitHub\Padron\Organismos\obj\Debug\
 Organismos
 none
 false
@@ -12,9 +12,9 @@ DEBUG;TRACE
 
 7160903510
 
-17-1974199446
-25-2131822653
+171253396562
+26-1972513029
 ActualizarVerOrganismo.xaml;AgregaOrganismo.xaml;Ciudades\AddCiudad.xaml;Ciudades\Mantenimiento.xaml;Ciudades\PaisEstadoWin.xaml;ListaOrganismos.xaml;SelecccionaFuncionarios.xaml;
 
-False
+True
 

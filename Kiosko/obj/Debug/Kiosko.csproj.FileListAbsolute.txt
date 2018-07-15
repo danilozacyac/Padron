@@ -114,3 +114,5 @@ C:\Users\lavega\Documents\GitHub\Padron\Kiosko\bin\Debug\ScjnUtilities.pdb
 C:\Users\lavega\Documents\GitHub\Padron\Kiosko\bin\Debug\Telerik.Windows.Controls.Docking.xml
 C:\Users\lavega\Documents\GitHub\Padron\Kiosko\obj\Debug\TextoColaboracion.baml
 C:\Users\lavega\Documents\GitHub\Padron\Kiosko\obj\Debug\TextoColaboracion.g.cs
+C:\Users\Luis\Documents\GitHub\Padron\Kiosko\bin\Debug\KellermanSoftware.Compare-NET-Objects.dll
+C:\Users\Luis\Documents\GitHub\Padron\Kiosko\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml

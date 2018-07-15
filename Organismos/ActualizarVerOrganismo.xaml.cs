@@ -8,6 +8,7 @@ using PadronApi.Dto;
 using PadronApi.Model;
 using PadronApi.Singletons;
 using ScjnUtilities;
+using KellermanSoftware.CompareNetObjects;
 
 namespace Organismos
 {
@@ -406,7 +407,14 @@ namespace Organismos
 
             Organismo orHistorial = model.GetOrganismos(organismo.IdOrganismo);
 
-            if (!organismo.IsEqualTo(orHistorial))
+            CompareLogic compareLogic = new CompareLogic();
+            compareLogic.Config.MaxDifferences = 100;
+            compareLogic = VerificationUtilities.IsEqualObjectExclusion(compareLogic,new string[]{"OrganismoStr","TipoOrganismoStr","Adscripciones","TotalAdscritos","IdUsuario","Fecha"});
+
+            ComparisonResult result = compareLogic.Compare(organismo, orHistorial);
+
+            //if (!organismo.IsEqualTo(orHistorial))
+            if (!result.AreEqual)
             {
                 model.UpdateOrganismo(organismo);
                 model.InsertaHistorial(orHistorial);
