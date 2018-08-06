@@ -1,15 +1,16 @@
-﻿<telerik:RadWindow x:Class="Organismos.SelecccionaFuncionarios"
-                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                   xmlns:UIControls="clr-namespace:UIControls;assembly=UIControls"
-                   xmlns:converter="clr-namespace:PadronApi.Converter;assembly=PadronApi"
-                   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-                   Width="700"
-                   Height="750"
-                   Header="Selecccionar Funcionarios"
-                   Loaded="Window_Loaded"
-                   ResizeMode="NoResize"
-                   WindowStartupLocation="CenterScreen">
+﻿<telerik:RadWindow
+    x:Class="Organismos.SelecccionaFuncionarios"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:UIControls="clr-namespace:UIControls;assembly=UIControls"
+    xmlns:converter="clr-namespace:PadronApi.Converter;assembly=PadronApi"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    Width="700"
+    Height="750"
+    Header="Selecccionar Funcionarios"
+    Loaded="Window_Loaded"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen">
     <telerik:RadWindow.Resources>
         <converter:TituloConverter x:Key="tituloConv" />
     </telerik:RadWindow.Resources>
@@ -23,46 +24,51 @@
 
 
         <Grid x:Name="GridBuscar">
-            <UIControls:SearchTextBox Width="382"
-                                      Margin="75,15,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      LabelText="Buscar por nombre y apellidos..."
-                                      Search="SearchTextBox_Search" />
+            <UIControls:SearchTextBox
+                Width="382"
+                Margin="75,15,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                LabelText="Buscar por nombre y apellidos..."
+                Search="SearchTextBox_Search" />
 
-            <Label Margin="10,10,0,5"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Buscar:"
-                   FontSize="14"
-                   FontWeight="Black" />
+            <Label
+                Margin="10,10,0,5"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Buscar:"
+                FontSize="14"
+                FontWeight="Black" />
         </Grid>
 
-        <telerik:RadGridView x:Name="GTitulares"
-                             Grid.Row="1"
-                             Height="290"
-                             HorizontalAlignment="Stretch"
-                             VerticalAlignment="Stretch"
-                             AutoGenerateColumns="False"
-                             EnableRowVirtualization="True"
-                             FontSize="14"
-                             IsFilteringAllowed="False"
-                             IsReadOnly="True"
-                             ItemsSource="{Binding}"
-                             SelectionChanged="GTitulares_SelectionChanged"
-                             ShowGroupPanel="False">
+        <telerik:RadGridView
+            x:Name="GTitulares"
+            Grid.Row="1"
+            Height="290"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            AutoGenerateColumns="False"
+            EnableRowVirtualization="True"
+            FontSize="14"
+            IsFilteringAllowed="False"
+            IsReadOnly="True"
+            ItemsSource="{Binding}"
+            SelectionChanged="GTitulares_SelectionChanged"
+            ShowGroupPanel="False">
             <telerik:RadGridView.Columns>
 
-                <telerik:GridViewDataColumn Width="80"
-                                            DataMemberBinding="{Binding IdTitulo,
-                                                                        Converter={StaticResource tituloConv}}"
-                                            Header="Título" />
-                <telerik:GridViewDataColumn Width=".7*"
-                                            DataMemberBinding="{Binding Nombre}"
-                                            Header="Nombre" />
-                <telerik:GridViewDataColumn Width=".8*"
-                                            DataMemberBinding="{Binding Apellidos}"
-                                            Header="Apellidos" />
+                <telerik:GridViewDataColumn
+                    Width="80"
+                    DataMemberBinding="{Binding IdTitulo, Converter={StaticResource tituloConv}}"
+                    Header="Título" />
+                <telerik:GridViewDataColumn
+                    Width=".7*"
+                    DataMemberBinding="{Binding Nombre}"
+                    Header="Nombre" />
+                <telerik:GridViewDataColumn
+                    Width=".8*"
+                    DataMemberBinding="{Binding Apellidos}"
+                    Header="Apellidos" />
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
 
@@ -72,134 +78,137 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <ListBox x:Name="LstTipoObra"
-                     Margin="15,55,15,10"
-                     HorizontalAlignment="Stretch"
-                     VerticalAlignment="Stretch"
-                     ItemsSource="{Binding}"
-                     Visibility="Collapsed">
+            <ListBox
+                x:Name="LstTipoObra"
+                Margin="15,55,15,10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                ItemsSource="{Binding}"
+                Visibility="Collapsed">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <CheckBox Content="{Binding Descripcion}" IsChecked="{Binding IsChecked, Mode=TwoWay}" />
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Label Margin="15,30,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Obras que recibe:"
-                   FontWeight="Bold"
-                   Visibility="Collapsed" />
-            <Label Grid.Column="1"
-                   Margin="15,0,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Función:" />
-            <telerik:RadComboBox x:Name="CbxFunciones"
-                                 Grid.Column="1"
-                                 Grid.ColumnSpan="2"
-                                 Width="250"
-                                 Margin="74,3,0,0"
-                                 HorizontalAlignment="Left"
-                                 VerticalAlignment="Top"
-                                 DisplayMemberPath="Descripcion"
-                                 IsEditable="True"
-                                 IsTextSearchEnabled="True"
-                                 ItemsSource="{Binding}"
-                                 SelectedValuePath="IdElemento"
-                                 TextSearchMode="Contains" />
+            <Label
+                Margin="15,30,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Obras que recibe:"
+                FontWeight="Bold"
+                Visibility="Collapsed" />
+            <Label
+                Grid.Column="1"
+                Margin="15,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Función:" />
+            <telerik:RadComboBox
+                x:Name="CbxFunciones"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Width="250"
+                Margin="74,3,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                DisplayMemberPath="Descripcion"
+                IsEditable="True"
+                IsTextSearchEnabled="True"
+                ItemsSource="{Binding}"
+                SelectedValuePath="IdElemento"
+                TextSearchMode="Contains" />
 
-            <Label Grid.Column="1"
-                   Margin="15,30,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Tiraje en el que se incluye:"
-                   FontWeight="Bold" />
+            <Label
+                Grid.Column="1"
+                Margin="15,30,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Tiraje en el que se incluye:"
+                FontWeight="Bold" />
 
-            <telerik:RadGridView x:Name="GTirajes"
-                                 Grid.Column="1"
-                                 Margin="15,55,15,10"
-                                 HorizontalAlignment="Stretch"
-                                 VerticalAlignment="Stretch"
-                                 AutoGenerateColumns="False"
-                                 IsFilteringAllowed="False"
-                                 ItemsSource="{Binding}"
-                                 ShowGroupPanel="False">
+            <telerik:RadGridView
+                x:Name="GTirajes"
+                Grid.Column="1"
+                Margin="15,55,15,10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                AutoGenerateColumns="False"
+                IsFilteringAllowed="False"
+                ItemsSource="{Binding}"
+                ShowGroupPanel="False">
                 <telerik:RadGridView.Columns>
-                    <telerik:GridViewCheckBoxColumn Width="60"
-                                                    AutoSelectOnEdit="True"
-                                                    DataMemberBinding="{Binding IsChecked}"
-                                                    EditTriggers="CellClick"
-                                                    Header="Recibe"
-                                                    IsFilterable="False" />
+                    <telerik:GridViewCheckBoxColumn
+                        Width="60"
+                        AutoSelectOnEdit="True"
+                        DataMemberBinding="{Binding IsChecked}"
+                        EditTriggers="CellClick"
+                        Header="Recibe"
+                        IsFilterable="False" />
 
-                    <telerik:GridViewDataColumn Width="60"
-                                                DataMemberBinding="{Binding AcDescripcion}"
-                                                Header="Acuerdo"
-                                                IsFilterable="False"
-                                                IsReadOnly="True" />
+                    <telerik:GridViewDataColumn
+                        Width="60"
+                        DataMemberBinding="{Binding AcDescripcion}"
+                        Header="Acuerdo"
+                        IsFilterable="False"
+                        IsReadOnly="True" />
                     <telerik:GridViewDataColumn DataMemberBinding="{Binding Particular}" Header="Particular">
                         <telerik:GridViewDataColumn.CellEditTemplate>
                             <DataTemplate>
-                                <telerik:RadNumericUpDown IsInteger="True"
-                                                          Maximum="1000"
-                                                          Minimum="0"
-                                                          UpdateValueEvent="PropertyChanged"
-                                                          Value="{Binding Particular,
-                                                                          Mode=TwoWay,
-                                                                          UpdateSourceTrigger=Explicit}" />
+                                <telerik:RadNumericUpDown
+                                    IsInteger="True"
+                                    Maximum="1000"
+                                    Minimum="0"
+                                    UpdateValueEvent="PropertyChanged"
+                                    Value="{Binding Particular, Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
                             </DataTemplate>
                         </telerik:GridViewDataColumn.CellEditTemplate>
                     </telerik:GridViewDataColumn>
                     <telerik:GridViewDataColumn DataMemberBinding="{Binding Personal}" Header="Integrantes">
                         <telerik:GridViewDataColumn.CellEditTemplate>
                             <DataTemplate>
-                                <telerik:RadNumericUpDown IsInteger="True"
-                                                          Maximum="1000"
-                                                          Minimum="0"
-                                                          UpdateValueEvent="PropertyChanged"
-                                                          Value="{Binding Personal,
-                                                                          Mode=TwoWay,
-                                                                          UpdateSourceTrigger=Explicit}" />
+                                <telerik:RadNumericUpDown
+                                    IsInteger="True"
+                                    Maximum="1000"
+                                    Minimum="0"
+                                    UpdateValueEvent="PropertyChanged"
+                                    Value="{Binding Personal, Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
                             </DataTemplate>
                         </telerik:GridViewDataColumn.CellEditTemplate>
                     </telerik:GridViewDataColumn>
                     <telerik:GridViewDataColumn DataMemberBinding="{Binding Oficina}" Header="Oficina">
                         <telerik:GridViewDataColumn.CellEditTemplate>
                             <DataTemplate>
-                                <telerik:RadNumericUpDown IsInteger="True"
-                                                          Maximum="1000"
-                                                          Minimum="0"
-                                                          UpdateValueEvent="PropertyChanged"
-                                                          Value="{Binding Oficina,
-                                                                          Mode=TwoWay,
-                                                                          UpdateSourceTrigger=Explicit}" />
+                                <telerik:RadNumericUpDown
+                                    IsInteger="True"
+                                    Maximum="1000"
+                                    Minimum="0"
+                                    UpdateValueEvent="PropertyChanged"
+                                    Value="{Binding Oficina, Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
                             </DataTemplate>
                         </telerik:GridViewDataColumn.CellEditTemplate>
                     </telerik:GridViewDataColumn>
                     <telerik:GridViewDataColumn DataMemberBinding="{Binding Biblioteca}" Header="Biblioteca">
                         <telerik:GridViewDataColumn.CellEditTemplate>
                             <DataTemplate>
-                                <telerik:RadNumericUpDown IsInteger="True"
-                                                          Maximum="1000"
-                                                          Minimum="0"
-                                                          UpdateValueEvent="PropertyChanged"
-                                                          Value="{Binding Biblioteca,
-                                                                          Mode=TwoWay,
-                                                                          UpdateSourceTrigger=Explicit}" />
+                                <telerik:RadNumericUpDown
+                                    IsInteger="True"
+                                    Maximum="1000"
+                                    Minimum="0"
+                                    UpdateValueEvent="PropertyChanged"
+                                    Value="{Binding Biblioteca, Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
                             </DataTemplate>
                         </telerik:GridViewDataColumn.CellEditTemplate>
                     </telerik:GridViewDataColumn>
                     <telerik:GridViewDataColumn DataMemberBinding="{Binding Resguardo}" Header="Resguardo">
                         <telerik:GridViewDataColumn.CellEditTemplate>
                             <DataTemplate>
-                                <telerik:RadNumericUpDown IsInteger="True"
-                                                          Maximum="1000"
-                                                          Minimum="0"
-                                                          UpdateValueEvent="PropertyChanged"
-                                                          Value="{Binding Resguardo,
-                                                                          Mode=TwoWay,
-                                                                          UpdateSourceTrigger=Explicit}" />
+                                <telerik:RadNumericUpDown
+                                    IsInteger="True"
+                                    Maximum="1000"
+                                    Minimum="0"
+                                    UpdateValueEvent="PropertyChanged"
+                                    Value="{Binding Resguardo, Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
                             </DataTemplate>
                         </telerik:GridViewDataColumn.CellEditTemplate>
                     </telerik:GridViewDataColumn>
@@ -211,24 +220,26 @@
 
         </Grid>
 
-        <Button x:Name="BtnSalir"
-                Grid.Row="3"
-                Width="80"
-                Margin="0,14,10,0"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Click="BtnSalir_Click"
-                Content="Salir"
-                Style="{StaticResource BlueButton}" />
-        <Button x:Name="BtnGuardar"
-                Grid.Row="3"
-                Width="80"
-                Margin="0,14,95,0"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Click="BtnGuardar_Click"
-                Content="Agregar"
-                Style="{StaticResource BlueButton}" />
+        <Button
+            x:Name="BtnSalir"
+            Grid.Row="3"
+            Width="80"
+            Margin="0,14,10,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Click="BtnSalir_Click"
+            Content="Salir"
+            Style="{StaticResource BlueButton}" />
+        <Button
+            x:Name="BtnGuardar"
+            Grid.Row="3"
+            Width="80"
+            Margin="0,14,95,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Click="BtnGuardar_Click"
+            Content="Agregar"
+            Style="{StaticResource BlueButton}" />
 
     </Grid>
 </telerik:RadWindow>

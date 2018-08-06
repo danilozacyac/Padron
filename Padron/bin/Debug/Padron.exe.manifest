@@ -331,14 +331,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Padron.exe" size="3510784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Padron.exe" size="3512832">
       <assemblyIdentity name="Padron" version="3.2018.4.22066" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uVp0/Wn9uWN0h3O1zFbxZU328bJqDWsK2a5MCgC87sg=</dsig:DigestValue>
+        <dsig:DigestValue>PLKhr0nx8zNE/zizHXmhtY2eFbooGL5Dr1f1RaCMn7s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

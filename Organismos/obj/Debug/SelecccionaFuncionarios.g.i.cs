@@ -57,7 +57,7 @@ namespace Organismos {
     public partial class SelecccionaFuncionarios : Telerik.Windows.Controls.RadWindow, System.Windows.Markup.IComponentConnector {
         
         
-        #line 25 "..\..\SelecccionaFuncionarios.xaml"
+        #line 26 "..\..\SelecccionaFuncionarios.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid GridBuscar;
         
@@ -65,7 +65,7 @@ namespace Organismos {
         #line hidden
         
         
-        #line 41 "..\..\SelecccionaFuncionarios.xaml"
+        #line 45 "..\..\SelecccionaFuncionarios.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal Telerik.Windows.Controls.RadGridView GTitulares;
         
@@ -73,7 +73,7 @@ namespace Organismos {
         #line hidden
         
         
-        #line 75 "..\..\SelecccionaFuncionarios.xaml"
+        #line 82 "..\..\SelecccionaFuncionarios.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ListBox LstTipoObra;
         
@@ -81,7 +81,7 @@ namespace Organismos {
         #line hidden
         
         
-        #line 98 "..\..\SelecccionaFuncionarios.xaml"
+        #line 108 "..\..\SelecccionaFuncionarios.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal Telerik.Windows.Controls.RadComboBox CbxFunciones;
         
@@ -89,7 +89,7 @@ namespace Organismos {
         #line hidden
         
         
-        #line 119 "..\..\SelecccionaFuncionarios.xaml"
+        #line 131 "..\..\SelecccionaFuncionarios.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal Telerik.Windows.Controls.RadGridView GTirajes;
         
@@ -97,7 +97,7 @@ namespace Organismos {
         #line hidden
         
         
-        #line 214 "..\..\SelecccionaFuncionarios.xaml"
+        #line 224 "..\..\SelecccionaFuncionarios.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button BtnSalir;
         
@@ -105,7 +105,7 @@ namespace Organismos {
         #line hidden
         
         
-        #line 223 "..\..\SelecccionaFuncionarios.xaml"
+        #line 234 "..\..\SelecccionaFuncionarios.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button BtnGuardar;
         
@@ -144,7 +144,7 @@ namespace Organismos {
             {
             case 1:
             
-            #line 10 "..\..\SelecccionaFuncionarios.xaml"
+            #line 11 "..\..\SelecccionaFuncionarios.xaml"
             ((Organismos.SelecccionaFuncionarios)(target)).Loaded += new System.Windows.RoutedEventHandler(this.Window_Loaded);
             
             #line default
@@ -155,7 +155,7 @@ namespace Organismos {
             return;
             case 3:
             
-            #line 31 "..\..\SelecccionaFuncionarios.xaml"
+            #line 33 "..\..\SelecccionaFuncionarios.xaml"
             ((UIControls.SearchTextBox)(target)).Search += new System.Windows.RoutedEventHandler(this.SearchTextBox_Search);
             
             #line default
@@ -164,7 +164,7 @@ namespace Organismos {
             case 4:
             this.GTitulares = ((Telerik.Windows.Controls.RadGridView)(target));
             
-            #line 52 "..\..\SelecccionaFuncionarios.xaml"
+            #line 56 "..\..\SelecccionaFuncionarios.xaml"
             this.GTitulares.SelectionChanged += new System.EventHandler<Telerik.Windows.Controls.SelectionChangeEventArgs>(this.GTitulares_SelectionChanged);
             
             #line default
@@ -182,7 +182,7 @@ namespace Organismos {
             case 8:
             this.BtnSalir = ((System.Windows.Controls.Button)(target));
             
-            #line 220 "..\..\SelecccionaFuncionarios.xaml"
+            #line 230 "..\..\SelecccionaFuncionarios.xaml"
             this.BtnSalir.Click += new System.Windows.RoutedEventHandler(this.BtnSalir_Click);
             
             #line default
@@ -191,7 +191,7 @@ namespace Organismos {
             case 9:
             this.BtnGuardar = ((System.Windows.Controls.Button)(target));
             
-            #line 229 "..\..\SelecccionaFuncionarios.xaml"
+            #line 240 "..\..\SelecccionaFuncionarios.xaml"
             this.BtnGuardar.Click += new System.Windows.RoutedEventHandler(this.BtnGuardar_Click);
             
             #line default

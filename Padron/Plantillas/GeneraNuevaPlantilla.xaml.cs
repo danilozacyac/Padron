@@ -58,6 +58,8 @@ namespace Padron.Plantillas
             NudZaragoza.Value = zaragoza;
             NudVentas.Value = ventas;
 
+            NudNuevoTiraje.Minimum = distribucion + reserva + sede + 50;
+
             LblTotales.Content = total.ToString();
         }
 
@@ -136,6 +138,39 @@ namespace Padron.Plantillas
                 MessageBox.Show("No se pudo generar la plantilla, favor de contactar al administrador del sistema");
                 this.Close();
             }
+        }
+
+        private void NudNuevoTiraje_ValueChanged(object sender, RadRangeBaseValueChangedEventArgs e)
+        {
+            if (e.OldValue - e.NewValue == 1)
+            {
+                if ((Convert.ToInt32(NudNuevoTiraje.Value) < Convert.ToInt32(selectedTiraje.Acuerdo)) && ((distribucion + reserva + sede + Convert.ToInt32(NudZaragoza.Value) + Convert.ToInt32(NudVentas.Value)) > Convert.ToInt32(NudNuevoTiraje.Value)))
+                {
+                    if (NudZaragoza.Value < NudVentas.Value)
+                        NudVentas.Value -= 1;
+                    else
+                        NudZaragoza.Value -= 1;
+                }
+            }
+            else if (Math.Abs(Convert.ToInt32(e.OldValue - e.NewValue)) > 1)
+            {
+                double diferencia = Math.Abs(Convert.ToInt32(e.NewValue - (distribucion + sede + reserva)));
+
+                if (diferencia % 2 == 0)
+                {
+                    NudVentas.Value = diferencia / 2;
+                    NudZaragoza.Value = diferencia / 2;
+                }
+                else
+                {
+                    NudVentas.Value = Math.Ceiling(diferencia / 2 );
+                    NudZaragoza.Value = Math.Floor(diferencia / 2);
+                }
+            }
+
+            total = distribucion + reserva + sede + Convert.ToInt32(NudZaragoza.Value) + Convert.ToInt32(NudVentas.Value);
+
+            BtnGenera.IsEnabled = (total == Convert.ToInt32(NudNuevoTiraje.Value)) ? true : false;
         }
     }
 }
