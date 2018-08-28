@@ -125,12 +125,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\autho.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\autho2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\logo.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +137,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\autho.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\autho2.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
