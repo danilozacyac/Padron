@@ -42,7 +42,7 @@ namespace Padron.Plantillas
             totalDistr, totalZara, totalASede, totalReserva, totalVentas, total;
 
         int tipoProceso = 1;
-        string fileName = String.Empty;
+        //string fileName = String.Empty;
 
         bool plantillaSaveComplete = false;
 
@@ -110,8 +110,7 @@ namespace Padron.Plantillas
 
         public void IncluyeTitular()
         {
-            IncluyeFuncionario incluye = new IncluyeFuncionario(plantilla);
-            incluye.Owner = this;
+            IncluyeFuncionario incluye = new IncluyeFuncionario(plantilla) { Owner = this };
             incluye.ShowDialog();
 
             if (incluye.DialogResult == true)
@@ -480,19 +479,22 @@ namespace Padron.Plantillas
 
         private void ActualizaResguardos(PlantillaDto plantilla)
         {
-            DialogParameters parameters = new DialogParameters();
-            parameters.Content = String.Format( "Ingresa el número de ejemplares destinados para {0}",plantilla.Organismo);
-            parameters.Header = String.Format("Ejemplares {0}", plantilla.Organismo); 
-            parameters.DialogStartupLocation = WindowStartupLocation.CenterScreen;
-            parameters.Closed = this.OnClosed;
-            parameters.DefaultPromptResultValue = plantilla.Resguardo.ToString();
+            DialogParameters parameters = new DialogParameters()
+            {
+                Content = String.Format("Ingresa el número de ejemplares destinados para {0}", plantilla.Organismo),
+                Header = String.Format("Ejemplares {0}", plantilla.Organismo),
+                DialogStartupLocation = WindowStartupLocation.CenterScreen,
+                Closed = this.OnClosed,
+                DefaultPromptResultValue = plantilla.Resguardo.ToString()
+            };
             RadWindow.Prompt(parameters);
         }
 
         /// <summary>
         /// Indica la cantidad de ejemplares que se asignaron manualmente para cada uno de los organismos de resguardo
         /// </summary>
-        int cantidadReguardo = 0;
+        //int cantidadReguardo = 0;
+        
         private void OnClosed(object sender, WindowClosedEventArgs e)
         {
 

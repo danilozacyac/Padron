@@ -49,6 +49,7 @@
     <add key="ErrorPath" value="C:\MensajesErrorSCJN" />
     <add key="Aclaraciones" value="Para cualquier comentario o aclaración sobre el presente, pongo a su disposición el teléfono: 01 (55) 4113-1000 ext. 1414 y el teléfono/fax (55) 4113-1335 de la Dirección de Distribución del Semanario Judicial de la Federación y Otras Obras de este Alto Tribunal." />
     <add key="TitularCoord" value="LIC. ERIKA ARELLANO HOBELSBERGER" />
+    <add key="LeyendaOficio" value="2019, Año del Caudillo del Sur, Emiliano Zapata"/>
     <add key="ClientSettingsProvider.ServiceUri" value="" />
   </appSettings>
   <system.web>

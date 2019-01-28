@@ -25,6 +25,7 @@ namespace PadronApi.Reportes
 
         readonly string aclaraciones = ConfigurationManager.AppSettings["Aclaraciones"];
         readonly string titularCoord = ConfigurationManager.AppSettings["TitularCoord"];
+        readonly string leyendaYear = ConfigurationManager.AppSettings["LeyendaOficio"];
 
 
         public PdfReports(ObservableCollection<Obra> obrasImprimir, string filepath)
@@ -57,15 +58,15 @@ namespace PadronApi.Reportes
             try
             {
 
-                para = new Paragraph("Suprema Corte de Justicia de la Nación", BoldFont(black, arialFont, 18));
+                para = new Paragraph("Suprema Corte de Justicia de la Nación", BoldFont(black, ArialFont, 18));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph("Padrón de distribución del Semanario", BoldFont(black, arialFont, 14));
+                para = new Paragraph("Padrón de distribución del Semanario", BoldFont(black, ArialFont, 14));
                 para.Add(Environment.NewLine);
                 para.Add("Judicial de la Federación");
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph("Lista de obras", BoldFont(black, arialFont, 14));
+                para = new Paragraph("Lista de obras", BoldFont(black, ArialFont, 14));
                 para.Alignment = Element.ALIGN_LEFT;
                 myDocument.Add(para);
 
@@ -86,7 +87,7 @@ namespace PadronApi.Reportes
 
                 foreach (string cabeza in encabezado)
                 {
-                    cell = new PdfPCell(new Phrase(cabeza, BoldFont(black, arialFont, 12)));
+                    cell = new PdfPCell(new Phrase(cabeza, BoldFont(black, ArialFont, 12)));
                     cell.Colspan = 0;
                     cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
                     table.AddCell(cell);
@@ -104,7 +105,7 @@ namespace PadronApi.Reportes
 
                     foreach (string desc in descs)
                     {
-                        cell = new PdfPCell(new Phrase(desc, NormalFont(black, arialFont, 10)));
+                        cell = new PdfPCell(new Phrase(desc, NormalFont(black, ArialFont, 10)));
                         cell.Colspan = 0;
                         cell.HorizontalAlignment = (desc.Length > 15) ? 3 : 1; //0=Left, 1=Centre, 2=Right
                         table.AddCell(cell);
@@ -144,15 +145,15 @@ namespace PadronApi.Reportes
             try
             {
 
-                para = new Paragraph("Suprema Corte de Justicia de la Nación", BoldFont(black, arialFont, 18));
+                para = new Paragraph("Suprema Corte de Justicia de la Nación", BoldFont(black, ArialFont, 18));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph("Padrón de distribución del Semanario", BoldFont(black, arialFont, 14));
+                para = new Paragraph("Padrón de distribución del Semanario", BoldFont(black, ArialFont, 14));
                 para.Add(Environment.NewLine);
                 para.Add("Judicial de la Federación");
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph(String.Format("Listado de obras en resguardo de: {0} {1} {2}", new TituloConverter().Convert(titular.IdTitulo, null, null, null), titular.Nombre, titular.Apellidos), BoldFont(black, arialFont, 14));
+                para = new Paragraph(String.Format("Listado de obras en resguardo de: {0} {1} {2}", new TituloConverter().Convert(titular.IdTitulo, null, null, null), titular.Nombre, titular.Apellidos), BoldFont(black, ArialFont, 14));
                 para.Alignment = Element.ALIGN_LEFT;
                 myDocument.Add(para);
 
@@ -173,7 +174,7 @@ namespace PadronApi.Reportes
 
                 foreach (string cabeza in encabezado)
                 {
-                    cell = new PdfPCell(new Phrase(cabeza, BoldFont(black, arialFont, 10)));
+                    cell = new PdfPCell(new Phrase(cabeza, BoldFont(black, ArialFont, 10)));
                     cell.Colspan = 0;
                     cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
                     table.AddCell(cell);
@@ -201,7 +202,7 @@ namespace PadronApi.Reportes
 
                     foreach (string desc in descs)
                     {
-                        cell = new PdfPCell(new Phrase(desc, NormalFont(black, arialFont, 10)));
+                        cell = new PdfPCell(new Phrase(desc, NormalFont(black, ArialFont, 10)));
                         cell.Colspan = 0;
                         cell.HorizontalAlignment = (desc.Length > 15) ? 3 : 1; //0=Left, 1=Centre, 2=Right
                         table.AddCell(cell);
@@ -238,15 +239,15 @@ namespace PadronApi.Reportes
             try
             {
 
-                para = new Paragraph("Suprema Corte de Justicia de la Nación", BoldFont(black, arialFont, 18));
+                para = new Paragraph("Suprema Corte de Justicia de la Nación", BoldFont(black, ArialFont, 18));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph("Padrón de distribución del Semanario", BoldFont(black, arialFont, 14));
+                para = new Paragraph("Padrón de distribución del Semanario", BoldFont(black, ArialFont, 14));
                 para.Add(Environment.NewLine);
                 para.Add("Judicial de la Federación");
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph("Total de secretarios por organismos", BoldFont(black, arialFont, 14));
+                para = new Paragraph("Total de secretarios por organismos", BoldFont(black, ArialFont, 14));
                 para.Alignment = Element.ALIGN_LEFT;
                 myDocument.Add(para);
 
@@ -259,7 +260,7 @@ namespace PadronApi.Reportes
                     else
                     {
 
-                        para = new Paragraph(circuito.Ordinal + " Circuito", BoldFont(black, arialFont, 14));
+                        para = new Paragraph(circuito.Ordinal + " Circuito", BoldFont(black, ArialFont, 14));
                         para.Alignment = Element.ALIGN_LEFT;
                         myDocument.Add(para);
                         myDocument.Add(white);
@@ -278,7 +279,7 @@ namespace PadronApi.Reportes
 
                         foreach (string cabeza in encabezado)
                         {
-                            cell = new PdfPCell(new Phrase(cabeza, BoldFont(black, arialFont, 12)));
+                            cell = new PdfPCell(new Phrase(cabeza, BoldFont(black, ArialFont, 12)));
                             cell.Colspan = 0;
                             cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
                             table.AddCell(cell);
@@ -298,7 +299,7 @@ namespace PadronApi.Reportes
 
                             foreach (string desc in descs)
                             {
-                                cell = new PdfPCell(new Phrase(desc, NormalFont(black, arialFont, 10)));
+                                cell = new PdfPCell(new Phrase(desc, NormalFont(black, ArialFont, 10)));
                                 cell.Colspan = 0;
                                 cell.HorizontalAlignment = (desc.Length > 15) ? 3 : 1; //0=Left, 1=Centre, 2=Right
                                 table.AddCell(cell);
@@ -345,15 +346,15 @@ namespace PadronApi.Reportes
             try
             {
 
-                para = new Paragraph("Suprema Corte de Justicia de la Nación", BoldFont(black, arialFont, 18));
+                para = new Paragraph("Suprema Corte de Justicia de la Nación", BoldFont(black, ArialFont, 18));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph("Padrón de distribución del Semanario", BoldFont(black, arialFont, 14));
+                para = new Paragraph("Padrón de distribución del Semanario", BoldFont(black, ArialFont, 14));
                 para.Add(Environment.NewLine);
                 para.Add("Judicial de la Federación");
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph("Total de organismos por circuito", BoldFont(black, arialFont, 14));
+                para = new Paragraph("Total de organismos por circuito", BoldFont(black, ArialFont, 14));
                 para.Alignment = Element.ALIGN_LEFT;
                 myDocument.Add(para);
 
@@ -366,7 +367,7 @@ namespace PadronApi.Reportes
                     else
                     {
 
-                        para = new Paragraph(circuito.Ordinal + " Circuito", BoldFont(black, arialFont, 14));
+                        para = new Paragraph(circuito.Ordinal + " Circuito", BoldFont(black, ArialFont, 14));
                         para.Alignment = Element.ALIGN_LEFT;
                         myDocument.Add(para);
                         myDocument.Add(white);
@@ -385,7 +386,7 @@ namespace PadronApi.Reportes
 
                         foreach (string cabeza in encabezado)
                         {
-                            cell = new PdfPCell(new Phrase(cabeza, BoldFont(black, arialFont, 12)));
+                            cell = new PdfPCell(new Phrase(cabeza, BoldFont(black, ArialFont, 12)));
                             cell.Colspan = 0;
                             cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
                             table.AddCell(cell);
@@ -405,7 +406,7 @@ namespace PadronApi.Reportes
 
                             foreach (string desc in descs)
                             {
-                                cell = new PdfPCell(new Phrase(desc, NormalFont(black, arialFont, 10)));
+                                cell = new PdfPCell(new Phrase(desc, NormalFont(black, ArialFont, 10)));
                                 cell.Colspan = 0;
                                 cell.HorizontalAlignment = (desc.Length > 15) ? 3 : 1; //0=Left, 1=Centre, 2=Right
                                 table.AddCell(cell);
@@ -458,15 +459,15 @@ namespace PadronApi.Reportes
             try
             {
 
-                para = new Paragraph("Suprema Corte de Justicia de la Nación", BoldFont(black, arialFont, 18));
+                para = new Paragraph("Suprema Corte de Justicia de la Nación", BoldFont(black, ArialFont, 18));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph("Padrón de distribución del Semanario", BoldFont(black, arialFont, 14));
+                para = new Paragraph("Padrón de distribución del Semanario", BoldFont(black, ArialFont, 14));
                 para.Add(Environment.NewLine);
                 para.Add("Judicial de la Federación");
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph("Funcionarios incluidos en todas las distribuciones", BoldFont(black, arialFont, 14));
+                para = new Paragraph("Funcionarios incluidos en todas las distribuciones", BoldFont(black, ArialFont, 14));
                 para.Alignment = Element.ALIGN_LEFT;
                 myDocument.Add(para);
 
@@ -488,7 +489,7 @@ namespace PadronApi.Reportes
 
                 foreach (string cabeza in encabezado)
                 {
-                    cell = new PdfPCell(new Phrase(cabeza, BoldFont(black, arialFont, 12)));
+                    cell = new PdfPCell(new Phrase(cabeza, BoldFont(black, ArialFont, 12)));
                     cell.Colspan = 0;
                     cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
                     table.AddCell(cell);
@@ -506,7 +507,7 @@ namespace PadronApi.Reportes
 
                     foreach (string desc in descs)
                     {
-                        cell = new PdfPCell(new Phrase(desc, NormalFont(black, arialFont, 10)));
+                        cell = new PdfPCell(new Phrase(desc, NormalFont(black, ArialFont, 10)));
                         cell.Colspan = 0;
                         cell.HorizontalAlignment = (desc.Length > 15) ? 3 : 1; //0=Left, 1=Centre, 2=Right
                         table.AddCell(cell);
@@ -548,10 +549,10 @@ namespace PadronApi.Reportes
             try
             {
 
-                para = new Paragraph("Suprema Corte de Justicia de la Nación", BoldFont(black, arialFont, 18));
+                para = new Paragraph("Suprema Corte de Justicia de la Nación", BoldFont(black, ArialFont, 18));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph("Padrón de distribución del Semanario", BoldFont(black, arialFont, 14));
+                para = new Paragraph("Padrón de distribución del Semanario", BoldFont(black, ArialFont, 14));
                 para.Add(Environment.NewLine);
                 para.Add("Judicial de la Federación");
                 para.Alignment = Element.ALIGN_CENTER;
@@ -560,7 +561,7 @@ namespace PadronApi.Reportes
                 Paragraph white = new Paragraph(" ");
                 myDocument.Add(white);
 
-                para = new Paragraph("Órganos Jurisdiccionales", BoldFont(black, arialFont, 14));
+                para = new Paragraph("Órganos Jurisdiccionales", BoldFont(black, ArialFont, 14));
                 para.Alignment = Element.ALIGN_LEFT;
                 myDocument.Add(para);
                 myDocument.Add(white);
@@ -581,7 +582,7 @@ namespace PadronApi.Reportes
 
                 foreach (string cabeza in encabezado)
                 {
-                    cell = new PdfPCell(new Phrase(cabeza, BoldFont(black, arialFont, 12)));
+                    cell = new PdfPCell(new Phrase(cabeza, BoldFont(black, ArialFont, 12)));
                     cell.Colspan = 0;
                     cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
                     table.AddCell(cell);
@@ -625,7 +626,7 @@ namespace PadronApi.Reportes
 
                     foreach (string desc in descs)
                     {
-                        cell = new PdfPCell(new Phrase(desc, NormalFont(black, arialFont, 10)));
+                        cell = new PdfPCell(new Phrase(desc, NormalFont(black, ArialFont, 10)));
                         cell.Colspan = 0;
                         cell.HorizontalAlignment = (desc.Length > 15) ? 3 : 1; //0=Left, 1=Centre, 2=Right
                         table.AddCell(cell);
@@ -810,13 +811,13 @@ namespace PadronApi.Reportes
             string propStr = String.Empty;
 
             if (propiedad == 1)
-                propStr = "particular.";
+                propStr = "particular,";
             else if (propiedad == 2)
-                propStr = "de la oficina.";
+                propStr = "de la oficina,";
             else if (propiedad == 3)
-                propStr = "de la biblioteca.";
+                propStr = "de la biblioteca,";
             else if (propiedad == 4)
-                propStr = "particular de los secretarios.";
+                propStr = "particular de los secretarios,";
 
             Paragraph para;
 
@@ -825,56 +826,56 @@ namespace PadronApi.Reportes
             try
             {
                 this.SetPageHeader(myDocument);
-                para = new Paragraph(String.Format("Of. Núm. CCST/DDSJF-PAD-{0}-{1}-{2}", ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2)), NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph(String.Format("Of. Núm. CCST/DDSJF-PAD-{0}-{1}-{2}", ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2)), NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_RIGHT;
                 myDocument.Add(para);
-                para = new Paragraph(fechaDistribucion, NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph(fechaDistribucion, NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_RIGHT;
                 myDocument.Add(para);
                 InsertLineBreak(myDocument, 1);
 
-                para = new Paragraph(plantilla.Nombre, BoldFont(black, arialFont, TamanoLetra));
+                para = new Paragraph(plantilla.Nombre, BoldFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_LEFT;
                 myDocument.Add(para);
 
                 if (plantilla.TipoOrganismo == 265)
-                    para = new Paragraph("Ministros Jubilados", NormalFont(black, arialFont, TamanoLetra));
+                    para = new Paragraph("Ministros Jubilados", NormalFont(black, ArialFont, TamanoLetra));
                 else if (plantilla.GrupoOrganismo == 1 && plantilla.Funcion == 1)
-                    para = new Paragraph("Presidente del " + plantilla.Organismo, NormalFont(black, arialFont, TamanoLetra));
+                    para = new Paragraph("Presidente del " + plantilla.Organismo, NormalFont(black, ArialFont, TamanoLetra));
                 else if ((plantilla.GrupoOrganismo == 1 && plantilla.Funcion == 0) || plantilla.Funcion == 0)
-                    para = new Paragraph(plantilla.Organismo, NormalFont(black, arialFont, TamanoLetra));
+                    para = new Paragraph(plantilla.Organismo, NormalFont(black, ArialFont, TamanoLetra));
                 else
-                    para = new Paragraph(String.Format("{0} de {1}", new FuncionConverter().Convert(plantilla.Funcion, null, null, null), plantilla.Organismo), NormalFont(black, arialFont, TamanoLetra));
+                    para = new Paragraph(String.Format("{0} de {1}", new FuncionConverter().Convert(plantilla.Funcion, null, null, null), plantilla.Organismo), NormalFont(black, ArialFont, TamanoLetra));
 
 
                 para.IndentationRight = 150;
 
                 myDocument.Add(para);
 
-                para = new Paragraph("P r e s e n t e", NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("P r e s e n t e", NormalFont(black, ArialFont, TamanoLetra));
                 para.SpacingBefore = 0;
                 myDocument.Add(para);
 
                 InsertLineBreak(myDocument, 1);
 
-                para = new Paragraph("Muy Distinguido(a) " + plantilla.Nombre, NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("Muy Distinguido(a) " + plantilla.Nombre, NormalFont(black, ArialFont, TamanoLetra));
                 myDocument.Add(para);
 
                 InsertLineBreak(myDocument, 1);
 
-                para = new Paragraph("Me es grato enviarle por este medio la publicación oficial que se detalla a continuación:", NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("Me es grato enviarle por este medio la publicación oficial que se detalla a continuación:", NormalFont(black, ArialFont, TamanoLetra));
                 myDocument.Add(para);
 
                 InsertLineBreak(myDocument, 1);
 
-                para = new Paragraph(obra.Titulo, BoldFont(black, arialFont, TamanoLetra));
+                para = new Paragraph(obra.Titulo, BoldFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
                 InsertLineBreak(myDocument, 1);
 
                 if (obra.Presentacion == 4)
                 {
-                    para = new Paragraph(String.Format("TOTAL: {0} {1}", cantidad, ((obra.TipoObra == 1) ? "USB" : "DISCO ÓPTICO")), BoldFont(black, arialFont, TamanoLetra));
+                    para = new Paragraph(String.Format("TOTAL: {0} {1}", cantidad, ((obra.TipoObra == 1) ? "USB" : "DISCO ÓPTICO")), BoldFont(black, ArialFont, TamanoLetra));
                     para.Alignment = Element.ALIGN_CENTER;
                     myDocument.Add(para);
                     InsertLineBreak(myDocument, 1);
@@ -882,32 +883,32 @@ namespace PadronApi.Reportes
                 else
                 {
 
-                    para = new Paragraph(String.Format("{0}{1} EN PRESENTACIÓN {2}", cantidad, ((cantidad > 1) ? " EJEMPLARES" : " EJEMPLAR"), presentacion.ToUpper()), BoldFont(black, arialFont, TamanoLetra));
+                    para = new Paragraph(String.Format("{0}{1} EN PRESENTACIÓN {2}", cantidad, ((cantidad > 1) ? " EJEMPLARES" : " EJEMPLAR"), presentacion.ToUpper()), BoldFont(black, ArialFont, TamanoLetra));
                     para.Alignment = Element.ALIGN_CENTER;
                     myDocument.Add(para);
                     InsertLineBreak(myDocument, 1);
-                    para = new Paragraph(String.Format("TOTAL: {0} {1}", cantidad, ((cantidad > 1) ? "LIBROS" : "LIBRO")), BoldFont(black, arialFont, TamanoLetra));
+                    para = new Paragraph(String.Format("TOTAL: {0} {1}", cantidad, ((cantidad > 1) ? "LIBROS" : "LIBRO")), BoldFont(black, ArialFont, TamanoLetra));
                     para.Alignment = Element.ALIGN_CENTER;
                     myDocument.Add(para);
                     InsertLineBreak(myDocument, 1);
                 }
 
-                para = new Paragraph("Al respecto le comunico que la obra citada se entrega en propiedad " + propStr + " con fundamento en el Acuerdo General de Administración 11/2008, del Comité de Publicaciones y Promoción Educativa de la Suprema Corte de Justicia de la Nación.", BoldFont(black, arialFont, TamanoLetra));
+                para = new Paragraph(String.Format("Al respecto le comunico que la obra citada se entrega en propiedad {0} con fundamento en el Acuerdo General de Administración II/2008, del Comité de Publicaciones y Promoción Educativa de la Suprema Corte de Justicia de la Nación.", propStr), NormalFont(black, ArialFont, TamanoLetra));
                 myDocument.Add(para);
                 InsertLineBreak(myDocument, 1);
 
-                para = new Paragraph(aclaraciones, NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph(aclaraciones, NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_JUSTIFIED;
                 myDocument.Add(para);
 
                 InsertLineBreak(myDocument, 1);
 
-                para = new Paragraph("Sin otro particular, le envío un cordial y respetuoso saludo, además de quedar a sus apreciables órdenes.", NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("Sin otro particular, le envío un cordial y respetuoso saludo, además de quedar a sus apreciables órdenes.", NormalFont(black, ArialFont, TamanoLetra));
                 myDocument.Add(para);
 
                 InsertLineBreak(myDocument, 1);
 
-                para = new Paragraph("A T E N T A M E N T E", NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("A T E N T A M E N T E", NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
 
@@ -918,24 +919,24 @@ namespace PadronApi.Reportes
 
                 myDocument.Add(autho);
 
-                para = new Paragraph(titularCoord, BoldFont(black, arialFont, TamanoLetra));
+                para = new Paragraph(titularCoord, BoldFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
                 //para = new Paragraph("COORDINADORA", NormalFont(black, arialFont, 10));
-                para = new Paragraph("ENCARGADA DEL DESPACHO DE LA", NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("ENCARGADA DEL DESPACHO DE LA", NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph("COORDINACIÓN DE COMPILACIÓN Y SISTEMATIZACIÓN DE TESIS", NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("COORDINACIÓN DE COMPILACIÓN Y SISTEMATIZACIÓN DE TESIS", NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
 
                 InsertLineBreak(myDocument, 1);
-                para = new Paragraph("c.c.p- El archivo.-", NormalFont(black, arialFont, 8));
+                para = new Paragraph("c.c.p- El archivo.-", NormalFont(black, ArialFont, 8));
                 para.Alignment = Element.ALIGN_LEFT;
                 myDocument.Add(para);
-                para = new Paragraph("LVP/JJMM", NormalFont(black, arialFont, 8));
+                para = new Paragraph("LVP/JJMM", NormalFont(black, ArialFont, 8));
                 myDocument.Add(para);
-                para = new Paragraph(String.Format("Folio {0}-{1}", plantilla.TipoDistribucion, folio), BoldFont(black, arialFont, 8));
+                para = new Paragraph(String.Format("Folio {0}-{1}", plantilla.TipoDistribucion, folio), BoldFont(black, ArialFont, 8));
                 para.Alignment = Element.ALIGN_RIGHT;
                 myDocument.Add(para);
 
@@ -975,15 +976,15 @@ namespace PadronApi.Reportes
             try
             {
                 this.SetPageHeader(myDocument);
-                para = new Paragraph(String.Format("Of. Núm. CCST/DDSJF-PAD-{0}-{1}-{2}", ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2)), NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph(String.Format("Of. Núm. CCST/DDSJF-PAD-{0}-{1}-{2}", ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2)), NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_RIGHT;
                 myDocument.Add(para);
-                para = new Paragraph(fechaDistribucion, NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph(fechaDistribucion, NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_RIGHT;
                 myDocument.Add(para);
                 InsertLineBreak(myDocument, 1);
 
-                para = new Paragraph(plantilla.Nombre, BoldFont(black, arialFont, TamanoLetra));
+                para = new Paragraph(plantilla.Nombre, BoldFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_LEFT;
                 myDocument.Add(para);
 
@@ -995,34 +996,34 @@ namespace PadronApi.Reportes
                     complOrganismo = String.Empty;
 
                 if (plantilla.TipoOrganismo == 265)
-                    para = new Paragraph("Ministros Jubilados", NormalFont(black, arialFont, TamanoLetra));
+                    para = new Paragraph("Ministros Jubilados", NormalFont(black, ArialFont, TamanoLetra));
                 else if (plantilla.GrupoOrganismo == 1 && plantilla.Funcion == 1)
-                    para = new Paragraph(String.Format("Presidente del {0}{1}", plantilla.Organismo, complOrganismo), NormalFont(black, arialFont, TamanoLetra));
+                    para = new Paragraph(String.Format("Presidente del {0}{1}", plantilla.Organismo, complOrganismo), NormalFont(black, ArialFont, TamanoLetra));
                 else if ((plantilla.GrupoOrganismo == 1 && plantilla.Funcion == 0) || plantilla.Funcion == 0)
-                    para = new Paragraph(plantilla.Organismo + complOrganismo, NormalFont(black, arialFont, TamanoLetra));
+                    para = new Paragraph(plantilla.Organismo + complOrganismo, NormalFont(black, ArialFont, TamanoLetra));
                 else
-                    para = new Paragraph(String.Format("{0} de {1}{2}", new FuncionConverter().Convert(plantilla.Funcion, null, null, null), plantilla.Organismo, complOrganismo), NormalFont(black, arialFont, TamanoLetra));
+                    para = new Paragraph(String.Format("{0} de {1}{2}", new FuncionConverter().Convert(plantilla.Funcion, null, null, null), plantilla.Organismo, complOrganismo), NormalFont(black, ArialFont, TamanoLetra));
                 para.IndentationRight = 150;
 
                 myDocument.Add(para);
 
-                para = new Paragraph("P r e s e n t e", NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("P r e s e n t e", NormalFont(black, ArialFont, TamanoLetra));
                 para.SpacingBefore = 0;
                 myDocument.Add(para);
 
                 InsertLineBreak(myDocument, 1);
 
-                para = new Paragraph("Muy Distinguido(a) " + plantilla.Nombre, NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("Muy Distinguido(a) " + plantilla.Nombre, NormalFont(black, ArialFont, TamanoLetra));
                 myDocument.Add(para);
 
                 InsertLineBreak(myDocument, 1);
 
-                para = new Paragraph("Me es grato enviarle por este medio la publicación oficial que se detalla a continuación:", NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("Me es grato enviarle por este medio la publicación oficial que se detalla a continuación:", NormalFont(black, ArialFont, TamanoLetra));
                 myDocument.Add(para);
 
                 //InsertLineBreak(myDocument, 1);
 
-                para = new Paragraph(obra.Titulo, BoldFont(black, arialFont, TamanoLetra));
+                para = new Paragraph(obra.Titulo, BoldFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
                 //InsertLineBreak(myDocument, 1);
@@ -1038,7 +1039,7 @@ namespace PadronApi.Reportes
                 PdfPCell cell;
                 foreach (string cabeza in encabezado)
                 {
-                    cell = new PdfPCell(new Phrase(cabeza, BoldFont(black, arialFont, 11)));
+                    cell = new PdfPCell(new Phrase(cabeza, BoldFont(black, ArialFont, 11)));
                     cell.Colspan = 0;
                     cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
                     cell.BorderWidth = 0;
@@ -1051,7 +1052,7 @@ namespace PadronApi.Reportes
 
                 foreach (string desc in descs)
                 {
-                    cell = new PdfPCell(new Phrase(desc, NormalFont(black, arialFont, TamanoLetra)));
+                    cell = new PdfPCell(new Phrase(desc, NormalFont(black, ArialFont, TamanoLetra)));
                     cell.Colspan = 0;
                     cell.HorizontalAlignment = (desc.Length > 15) ? 3 : 1; //0=Left, 1=Centre, 2=Right
                     cell.BorderWidth = 0;
@@ -1062,15 +1063,15 @@ namespace PadronApi.Reportes
 
                 InsertLineBreak(myDocument, 1);
 
-                para = new Paragraph("Al respecto le comunico que  la citada obra se entrega en propiedad particular, con fundamento en el Acuerdo General de Administración 11/2008, del Comite de Publicaciones y Promoción Educativa de la Suprema Corte de Justicia de la Nación.", NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("Al respecto le comunico que  la citada obra se entrega en propiedad particular, con fundamento en el Acuerdo General de Administración II/2008, del Comite de Publicaciones y Promoción Educativa de la Suprema Corte de Justicia de la Nación.", NormalFont(black, ArialFont, TamanoLetra));
                 myDocument.Add(para);
 
-                para = new Paragraph("Sin otro particular, le envío un cordial y respetuoso saludo.", NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("Sin otro particular, le envío un cordial y respetuoso saludo.", NormalFont(black, ArialFont, TamanoLetra));
                 myDocument.Add(para);
 
                 InsertLineBreak(myDocument, 1);
 
-                para = new Paragraph("A T E N T A M E N T E", NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("A T E N T A M E N T E", NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
 
@@ -1080,19 +1081,19 @@ namespace PadronApi.Reportes
 
                 myDocument.Add(autho);
 
-                para = new Paragraph(titularCoord, BoldFont(black, arialFont, TamanoLetra));
+                para = new Paragraph(titularCoord, BoldFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
                 //para = new Paragraph("COORDINADORA", NormalFont(black, arialFont, 10));
-                para = new Paragraph("ENCARGADA DEL DESPACHO DE LA", NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("ENCARGADA DEL DESPACHO DE LA", NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph("COORDINACIÓN DE COMPILACIÓN Y SISTEMATIZACIÓN DE TESIS", NormalFont(black, arialFont, TamanoLetra));
+                para = new Paragraph("COORDINACIÓN DE COMPILACIÓN Y SISTEMATIZACIÓN DE TESIS", NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
                 InsertLineBreak(myDocument, 1);
 
-                para = new Paragraph("FAVOR DE NO RECORTAR EL OFICIO-ACUSE", NormalFont(black, arialFont, 7));
+                para = new Paragraph("FAVOR DE NO RECORTAR EL OFICIO-ACUSE", NormalFont(black, ArialFont, 7));
                 para.Alignment = Element.ALIGN_LEFT;
                 myDocument.Add(para);
 
@@ -1100,30 +1101,30 @@ namespace PadronApi.Reportes
                 tableAc.DefaultCell.Padding = 1;
                 tableAc.DefaultCell.BorderWidth = 1;
 
-                PdfPCell cellAc = new PdfPCell(new Phrase("Acuso a Usted de recibido por la publicación arriba señalada", NormalFont(black, arialFont, 7))) { Colspan = 0, Border = Rectangle.RIGHT_BORDER | Rectangle.LEFT_BORDER | Rectangle.TOP_BORDER, HorizontalAlignment = 0 /*0=Left, 1=Centre, 2=Right*/ };
+                PdfPCell cellAc = new PdfPCell(new Phrase("Acuso a Usted de recibido por la publicación arriba señalada", NormalFont(black, ArialFont, 7))) { Colspan = 0, Border = Rectangle.RIGHT_BORDER | Rectangle.LEFT_BORDER | Rectangle.TOP_BORDER, HorizontalAlignment = 0 /*0=Left, 1=Centre, 2=Right*/ };
                 tableAc.AddCell(cellAc);
 
-                cellAc = new PdfPCell(new Phrase("_____________________________________________\r\n" + plantilla.Nombre, BoldFont(black, arialFont, 7))) { Colspan = 0, Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER, HorizontalAlignment = 1 /*0=Left, 1=Centre, 2=Right*/ };
+                cellAc = new PdfPCell(new Phrase("_____________________________________________\r\n" + plantilla.Nombre, BoldFont(black, ArialFont, 7))) { Colspan = 0, Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER, HorizontalAlignment = 1 /*0=Left, 1=Centre, 2=Right*/ };
                 tableAc.AddCell(cellAc);
 
-                cellAc = new PdfPCell(new Phrase("Correo electrónico\r\n(Institucional)    _____________________________________________", NormalFont(black, arialFont, 7))) { Colspan = 0, Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER, HorizontalAlignment = 0 /*0=Left, 1=Centre, 2=Right*/ };
+                cellAc = new PdfPCell(new Phrase("Correo electrónico\r\n(Institucional)    _____________________________________________", NormalFont(black, ArialFont, 7))) { Colspan = 0, Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER, HorizontalAlignment = 0 /*0=Left, 1=Centre, 2=Right*/ };
                 tableAc.AddCell(cellAc);
 
-                cellAc = new PdfPCell(new Phrase("Si existiera alguna de las siguientes modificaciones, favor de indicarla en el espacio correspondiente:", NormalFont(black, arialFont, 7))) { Colspan = 0, Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER, HorizontalAlignment = 0 /*0=Left, 1=Centre, 2=Right*/ };
+                cellAc = new PdfPCell(new Phrase("Si existiera alguna de las siguientes modificaciones, favor de indicarla en el espacio correspondiente:", NormalFont(black, ArialFont, 7))) { Colspan = 0, Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER, HorizontalAlignment = 0 /*0=Left, 1=Centre, 2=Right*/ };
                 tableAc.AddCell(cellAc);
 
-                cellAc = new PdfPCell(new Phrase("Cambio de titular\r\nCambio de plantilla\r\nOtros datos      ___________________________________________________________________", NormalFont(black, arialFont, 7))) { Colspan = 0, Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER, HorizontalAlignment = 0 /*0=Left, 1=Centre, 2=Right*/ };
+                cellAc = new PdfPCell(new Phrase("Cambio de titular\r\nCambio de plantilla\r\nOtros datos      ___________________________________________________________________", NormalFont(black, ArialFont, 7))) { Colspan = 0, Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER, HorizontalAlignment = 0 /*0=Left, 1=Centre, 2=Right*/ };
                 tableAc.AddCell(cellAc);
 
-                cellAc = new PdfPCell(new Phrase("FAVOR DE ACUSAR A LA BREVEDAD POSIBLE\r\n" + "ENVIAR RECIBO ESCANEADO EN PDF AL CORREO ELECTRÓNICO gortegas@mail.scjn.gob.mx\r\n" + "O VÍA FAX A LOS TELÉFONOS 01 (55) 4113-1127 Ó 4113-1335\r\n" + "Y CONFIRMAR AL 01 (55) 4113-1000 EXT. 2280", NormalFont(black, arialFont, 9))) { Colspan = 0, Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER | Rectangle.BOTTOM_BORDER, HorizontalAlignment = 1 /*0=Left, 1=Centre, 2=Right*/ };
+                cellAc = new PdfPCell(new Phrase("FAVOR DE ACUSAR A LA BREVEDAD POSIBLE\r\n" + "ENVIAR RECIBO ESCANEADO EN PDF AL CORREO ELECTRÓNICO majimenez@mail.scjn.gob.mx y tgalicia@mail.scjn.gob.mx\r\n" + "O VÍA FAX A LOS TELÉFONOS 01 (55) 4113-1127 Ó 4113-1335\r\n" + "Y CONFIRMAR AL 01 (55) 4113-1000 EXT. 1414, 2039 ó 1322", NormalFont(black, ArialFont, 9))) { Colspan = 0, Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER | Rectangle.BOTTOM_BORDER, HorizontalAlignment = 1 /*0=Left, 1=Centre, 2=Right*/ };
                 tableAc.AddCell(cellAc);
 
                 myDocument.Add(tableAc);
 
                 //prv fin
-                para = new Paragraph("LVP/JJMM", NormalFont(black, arialFont, 8));
+                para = new Paragraph("LVP/JJMM", NormalFont(black, ArialFont, 8));
                 myDocument.Add(para);
-                para = new Paragraph(String.Format("Folio {0}-{1}", plantilla.TipoDistribucion, folio), BoldFont(black, arialFont, 8));
+                para = new Paragraph(String.Format("Folio {0}-{1}", plantilla.TipoDistribucion, folio), BoldFont(black, ArialFont, 8));
                 para.Alignment = Element.ALIGN_RIGHT;
                 myDocument.Add(para);
 
@@ -1184,20 +1185,21 @@ namespace PadronApi.Reportes
             table.AddCell(cell);
 
             cell = new PdfPCell() { Border = 0 };
-            Paragraph para = new Paragraph(" ", BoldFont(black, arialFont, 10));
+            Paragraph para = new Paragraph(String.Format("{0}{1}{0}","\"", leyendaYear), ItalicFont(black, ArialFont, 10));
+            para.Alignment = Element.ALIGN_RIGHT;
             cell.AddElement(para);
             table.AddCell(cell);
 
             cell = new PdfPCell();
             cell.Border = 0;
             cell.Border = Rectangle.BOTTOM_BORDER;
-            para = new Paragraph(" ", BoldFont(black, arialFont, 10));
+            para = new Paragraph(" ", BoldFont(black, ArialFont, 10));
             cell.AddElement(para);
             table.AddCell(cell);
 
             cell = new PdfPCell() { Border = 0 };
-            Chunk c1 = new Chunk("PRESIDENCIA DE LA SUPREMA CORTE DE JUSTICIA DE LA NACIÓN", BoldFont(black, arialFont, 10));
-            Chunk c2 = new Chunk("COORDINACIÓN DE COMPILACIÓN Y SISTEMATIZACIÓN DE TESIS", NormalFont(black, arialFont, 10));
+            Chunk c1 = new Chunk("PRESIDENCIA DE LA SUPREMA CORTE DE JUSTICIA DE LA NACIÓN", BoldFont(black, ArialFont, 10));
+            Chunk c2 = new Chunk("COORDINACIÓN DE COMPILACIÓN Y SISTEMATIZACIÓN DE TESIS", NormalFont(black, ArialFont, 10));
             Phrase phrase = new Phrase();
             phrase.Add(c1);
             phrase.Add(Environment.NewLine);
@@ -1218,7 +1220,7 @@ namespace PadronApi.Reportes
 
         #region Fonts
 
-        private const String arialFont = "Arial";
+        private const String ArialFont = "Arial";
 
         #endregion
 
@@ -1246,6 +1248,15 @@ namespace PadronApi.Reportes
 
             return font;
         }
+
+        private Font ItalicFont(BaseColor color, string fontName, int fontSize)
+        {
+            Font font = FontFactory.GetFont(fontName, fontSize, Font.ITALIC, color);
+
+            return font;
+        }
+
+
         #endregion
     }
 }

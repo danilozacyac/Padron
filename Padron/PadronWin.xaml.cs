@@ -301,8 +301,7 @@ namespace Padron
 
                 case 5:
                     CleanCentralPanel();
-                    SeleccionaTiraje nuevoPadron = new SeleccionaTiraje();
-                    nuevoPadron.Owner = this;
+                    SeleccionaTiraje nuevoPadron = new SeleccionaTiraje() { Owner = this };
                     nuevoPadron.ShowDialog();
 
                     if (nuevoPadron.DialogResult == true)
@@ -729,8 +728,7 @@ namespace Padron
 
         private void BtnExportaKiosko_Click(object sender, RoutedEventArgs e)
         {
-            ExportarKiosko exporta = new ExportarKiosko();
-            exporta.Owner = this;
+            ExportarKiosko exporta = new ExportarKiosko() { Owner = this };
             exporta.ShowDialog();
         }
 

@@ -327,7 +327,6 @@ namespace PadronApi.Model
         public ObservableCollection<Organismo> GetOrganosJurisdiccionales()
         {
             ObservableCollection<Organismo> jurisdiccionales = new ObservableCollection<Organismo>();
-            string sqlCadena = "SELECT * FROM C_TipoOrganismo WHERE IdGrupo = 1";
 
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand cmd = null;
@@ -337,7 +336,7 @@ namespace PadronApi.Model
             {
                 connection.Open();
 
-                cmd = new SqlCommand(sqlCadena, connection);
+                cmd = new SqlCommand("SELECT * FROM C_TipoOrganismo WHERE IdGrupo = 1", connection);
                 reader = cmd.ExecuteReader();
 
                 if (reader.HasRows)

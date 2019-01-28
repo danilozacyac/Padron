@@ -210,3 +210,4 @@ C:\Users\Luis\Documents\GitHub\Padron\Padron\obj\Debug\Padron.csproj.GenerateRes
 C:\Users\Luis\Documents\GitHub\Padron\Padron\obj\Debug\Padron.exe.licenses
 C:\Users\Luis\Documents\GitHub\Padron\Padron\obj\Debug\Padron.exe.manifest
 C:\Users\Luis\Documents\GitHub\Padron\Padron\obj\Debug\Padron.application
+C:\Users\Luis\Documents\GitHub\Padron\PadronApi\bin\Debug\Padron.exe.config

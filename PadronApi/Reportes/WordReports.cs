@@ -316,7 +316,7 @@ namespace PadronApi.Reportes
             }
             catch (Exception ex)
             {
-                string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
+                string methodName = MethodBase.GetCurrentMethod().Name;
                 ErrorUtilities.SetNewErrorMessage(ex, methodName + " Exception,WordReports", "PadronApi");
             }
         }
@@ -706,7 +706,7 @@ namespace PadronApi.Reportes
             oTable1.Cell(5, 1).Range.Text = "Cambio de titular\r\nCambio de plantilla\r\nOtros datos      ___________________________________________________________________";
             oTable1.Cell(5, 1).Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
             oTable1.Cell(6, 1).Range.Text = "FAVOR DE ACUSAR A LA BREVEDAD POSIBLE\r\n" +
-                                           "ENVIAR RECIBO ESCANEADO EN PDF AL CORREO ELECTRÓNICO gortegas@mail.scjn.gob.mx\r\n" +
+                                           "ENVIAR RECIBO ESCANEADO EN PDF AL CORREO ELECTRÓNICO majimenez@mail.scjn.gob.mx o tgalicia@mail.scjn.gob.mx\r\n" +
                                            "O VÍA FAX A LOS TELÉFONOS 01 (55) 4113-1127 Ó 4113-1335\r\n" +
                                            "Y CONFIRMAR AL 01 (55) 4113-1000 EXT. 2280";
             oTable1.Cell(6, 1).Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
@@ -867,7 +867,7 @@ namespace PadronApi.Reportes
             }
             catch (Exception ex)
             {
-                string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
+                string methodName = MethodBase.GetCurrentMethod().Name;
                 ErrorUtilities.SetNewErrorMessage(ex, methodName + " Exception,WordReports", "PadronApi");
             }
             finally
@@ -1040,7 +1040,7 @@ namespace PadronApi.Reportes
             }
             catch (Exception ex)
             {
-                string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
+                string methodName = MethodBase.GetCurrentMethod().Name;
                 ErrorUtilities.SetNewErrorMessage(ex, methodName + " Exception,WordReports", "PadronApi");
             }
             finally
