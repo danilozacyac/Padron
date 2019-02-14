@@ -826,6 +826,9 @@ namespace PadronApi.Reportes
             try
             {
                 this.SetPageHeader(myDocument);
+                para = new Paragraph(String.Format("{0}{1}{0}", "\"", leyendaYear), NormalFont(black, ArialFont, 10));
+                para.Alignment = Element.ALIGN_RIGHT;
+                myDocument.Add(para);
                 para = new Paragraph(String.Format("Of. Núm. CCST/DDSJF-PAD-{0}-{1}-{2}", ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2)), NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_RIGHT;
                 myDocument.Add(para);
@@ -923,10 +926,10 @@ namespace PadronApi.Reportes
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
                 //para = new Paragraph("COORDINADORA", NormalFont(black, arialFont, 10));
-                para = new Paragraph("ENCARGADA DEL DESPACHO DE LA", NormalFont(black, ArialFont, TamanoLetra));
+                para = new Paragraph("ENCARGADA DEL DESPACHO DE LA DIRECCIÓN GENERAL", NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph("COORDINACIÓN DE COMPILACIÓN Y SISTEMATIZACIÓN DE TESIS", NormalFont(black, ArialFont, TamanoLetra));
+                para = new Paragraph("DE LA COORDINACIÓN DE COMPILACIÓN Y SISTEMATIZACIÓN DE TESIS", NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
 
@@ -976,6 +979,9 @@ namespace PadronApi.Reportes
             try
             {
                 this.SetPageHeader(myDocument);
+                para = new Paragraph(String.Format("{0}{1}{0}", "\"", leyendaYear), NormalFont(black, ArialFont, 10));
+                para.Alignment = Element.ALIGN_RIGHT;
+                myDocument.Add(para);
                 para = new Paragraph(String.Format("Of. Núm. CCST/DDSJF-PAD-{0}-{1}-{2}", ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2)), NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_RIGHT;
                 myDocument.Add(para);
@@ -1085,10 +1091,10 @@ namespace PadronApi.Reportes
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
                 //para = new Paragraph("COORDINADORA", NormalFont(black, arialFont, 10));
-                para = new Paragraph("ENCARGADA DEL DESPACHO DE LA", NormalFont(black, ArialFont, TamanoLetra));
+                para = new Paragraph("ENCARGADA DEL DESPACHO DE LA DIRECCIÓN GENERAL", NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
-                para = new Paragraph("COORDINACIÓN DE COMPILACIÓN Y SISTEMATIZACIÓN DE TESIS", NormalFont(black, ArialFont, TamanoLetra));
+                para = new Paragraph("DE LA COORDINACIÓN DE COMPILACIÓN Y SISTEMATIZACIÓN DE TESIS", NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_CENTER;
                 myDocument.Add(para);
                 InsertLineBreak(myDocument, 1);
@@ -1185,8 +1191,32 @@ namespace PadronApi.Reportes
             table.AddCell(cell);
 
             cell = new PdfPCell() { Border = 0 };
-            Paragraph para = new Paragraph(String.Format("{0}{1}{0}","\"", leyendaYear), ItalicFont(black, ArialFont, 10));
+            Chunk c1 = new Chunk("SECRETARIA GENERAL DE LA PRESIDENCIA DE LA ", BoldFont(black, ArialFont, 10));
+            Chunk c2 = new Chunk("SUPREMA CORTE DE JUSTICIA DE LA NACIÓN", BoldFont(black, ArialFont, 10));
+            Chunk c3 = new Chunk("DIRECCIÓN GENERAL DE LA COORDINACIÓN DE", NormalFont(black, ArialFont, 10));
+            Chunk c4 = new Chunk("COMPILACIÓN Y SISTEMATIZACIÓN DE TESIS", NormalFont(black, ArialFont, 10));
+
+
+            Chunk cLeyenda = new Chunk(String.Format("{0}{1}{0}", "\"", leyendaYear), ItalicFont(black, ArialFont, 10));
+            Phrase phrase = new Phrase();
+            phrase.Add(c1);
+            phrase.Add(Environment.NewLine);
+            phrase.Add(c2);
+            phrase.Add(Environment.NewLine);
+            phrase.Add(c3);
+            phrase.Add(Environment.NewLine);
+            phrase.Add(c4);
+            Paragraph para = new Paragraph();
+            para.Add(phrase);
             para.Alignment = Element.ALIGN_RIGHT;
+            cell.AddElement(para);
+            table.AddCell(cell);
+
+
+            cell = new PdfPCell() { Border = 0 };
+            para = new Paragraph(String.Format(" "), ItalicFont(black, ArialFont, 10));
+            para.Alignment = Element.ALIGN_RIGHT;
+            cell.Border = Rectangle.BOTTOM_BORDER;
             cell.AddElement(para);
             table.AddCell(cell);
 
@@ -1197,20 +1227,8 @@ namespace PadronApi.Reportes
             cell.AddElement(para);
             table.AddCell(cell);
 
-            cell = new PdfPCell() { Border = 0 };
-            Chunk c1 = new Chunk("PRESIDENCIA DE LA SUPREMA CORTE DE JUSTICIA DE LA NACIÓN", BoldFont(black, ArialFont, 10));
-            Chunk c2 = new Chunk("COORDINACIÓN DE COMPILACIÓN Y SISTEMATIZACIÓN DE TESIS", NormalFont(black, ArialFont, 10));
-            Phrase phrase = new Phrase();
-            phrase.Add(c1);
-            phrase.Add(Environment.NewLine);
-            phrase.Add(c2);
-            para = new Paragraph();
-            para.Add(phrase);
-            para.Alignment = Element.ALIGN_RIGHT;
-            cell.AddElement(para);
-            cell.Border = Rectangle.BOTTOM_BORDER;
-            table.AddCell(cell);
-
+            
+            
 
 
             myDocument.Add(table);

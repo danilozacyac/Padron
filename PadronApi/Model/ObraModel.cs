@@ -293,6 +293,8 @@ namespace PadronApi.Model
             obra.Nivel = Convert.ToInt32(reader["Nivel"]);
             //Este campo hace referencia a las obras que se ponen a disposición del personal del PJF por considerarse de lento movimiento
             obra.ADisposicion = Convert.ToBoolean(reader["Disponible"]);
+            
+            //Cuando hago pruebas en casa debo de comentar estas dos líneas
             obra.Catalografica = reader["Catalografica"].ToString();
             obra.EsCategoria = Convert.ToBoolean(reader["EsCategoria"]);
 
