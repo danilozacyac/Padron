@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Suprema Corte de Justicia de la Nación")]
 [assembly: AssemblyProduct("Padron")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -47,5 +47,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.2019.02.13104")]
-[assembly: AssemblyFileVersion("3.2019.02.13104")]
+[assembly: AssemblyVersion("3.2021.01.24000")]
+[assembly: AssemblyFileVersion("3.2021.01.24000")]

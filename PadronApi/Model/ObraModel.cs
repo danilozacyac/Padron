@@ -170,14 +170,18 @@ namespace PadronApi.Model
 
                         Obra obra = this.GetObraDetail(reader, fieldNames);
 
-                        if (obrasConAutor.Contains(obra.IdObra))
-                        {
-                            List<Autor> autLista = model.GetAutores(obra).ToList();
-                            List<Autor> autInsti = model.GetInstituciones(obra).ToList();
-                            autLista.AddRange(autInsti);
+                        /**
+                         * Esta sección se paso a la acción de selección de la obra cuando se despliega el listado completo de obras en el kiosko,
+                         * no se valido que no tenga impacto en otro espacio
+                         * */
+                        //if (obrasConAutor.Contains(obra.IdObra))
+                        //{
+                        //    List<Autor> autLista = model.GetAutores(obra).ToList();
+                        //    List<Autor> autInsti = model.GetInstituciones(obra).ToList();
+                        //    autLista.AddRange(autInsti);
 
-                            obra.Autores = new ObservableCollection<Autor>(autLista);
-                        }
+                        //    obra.Autores = new ObservableCollection<Autor>(autLista);
+                        //}
 
                         catalogoObras.Add(obra);
 

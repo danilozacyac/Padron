@@ -1,15 +1,16 @@
-﻿<telerik:RadWindow x:Class="Obras.ObrasWin"
-                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                   xmlns:global="clr-namespace:System.Globalization;assembly=mscorlib"
-                   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-                   Width="661"
-                   Height="415"
-                   Header="Obras"
-                   Loaded="Window_Loaded"
-                   PreviewClosed="RadWindow_PreviewClosed"
-                   ResizeMode="NoResize"
-                   WindowStartupLocation="CenterScreen">
+﻿<telerik:RadWindow
+    x:Class="Obras.ObrasWin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:global="clr-namespace:System.Globalization;assembly=mscorlib"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    Width="661"
+    Height="415"
+    Header="Obras"
+    Loaded="Window_Loaded"
+    PreviewClosed="RadWindow_PreviewClosed"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -17,169 +18,187 @@
         </Grid.RowDefinitions>
 
         <Grid x:Name="PanelCentral">
-            <Label Margin="24,13,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Título:" />
-            <TextBox x:Name="TxtTitulo"
-                     Height="96"
-                     Margin="25,44,25,0"
-                     HorizontalAlignment="Stretch"
-                     VerticalAlignment="Top"
-                     LostFocus="TxtsLostFocus"
-                     Text="{Binding Titulo}"
-                     TextWrapping="Wrap" />
-            <Label Margin="25,153,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Núm. de material:" />
-            <TextBox x:Name="TxtNumMaterial"
-                     Width="140"
-                     Height="23"
-                     Margin="24,183,0,0"
-                     HorizontalAlignment="Left"
-                     VerticalAlignment="Top"
-                     LostFocus="TxtsLostFocus"
-                     PreviewKeyDown="TxtsPreviewKeyDown"
-                     PreviewTextInput="TxtNumMaterial_PreviewTextInput"
-                     Text="{Binding NumMaterial,
-                                    Mode=TwoWay}"
-                     TextWrapping="Wrap" />
-            <Label Margin="25,272,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Presentación:" />
-            <ComboBox x:Name="CbxPresentacion"
-                      Width="176"
-                      Margin="24,298,0,0"
-                      HorizontalAlignment="Left"
-                      VerticalAlignment="Top"
-                      DisplayMemberPath="Descripcion"
-                      ItemsSource="{Binding}"
-                      SelectedValuePath="IdElemento"
-                      SelectionChanged="CbxPresentacion_SelectionChanged" />
-            <Label Margin="192,153,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Núm. de volúmenes:" />
+            <Label
+                Margin="24,13,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Título:" />
+            <TextBox
+                x:Name="TxtTitulo"
+                Height="96"
+                Margin="25,44,25,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                LostFocus="TxtsLostFocus"
+                Text="{Binding Titulo}"
+                TextWrapping="Wrap" />
+            <Label
+                Margin="25,153,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Núm. de material:" />
+            <TextBox
+                x:Name="TxtNumMaterial"
+                Width="140"
+                Height="23"
+                Margin="24,183,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                LostFocus="TxtsLostFocus"
+                PreviewKeyDown="TxtsPreviewKeyDown"
+                PreviewTextInput="TxtNumMaterial_PreviewTextInput"
+                Text="{Binding NumMaterial, Mode=TwoWay}"
+                TextWrapping="Wrap" />
+            <Label
+                Margin="25,272,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Presentación:" />
+            <ComboBox
+                x:Name="CbxPresentacion"
+                Width="176"
+                Margin="24,298,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                DisplayMemberPath="Descripcion"
+                ItemsSource="{Binding}"
+                SelectedValuePath="IdElemento"
+                SelectionChanged="CbxPresentacion_SelectionChanged" />
+            <Label
+                Margin="192,153,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Núm. de volúmenes:" />
 
-            <TextBox x:Name="TxtIsbn"
-                     Width="140"
-                     Height="23"
-                     Margin="347,183,0,0"
-                     HorizontalAlignment="Left"
-                     VerticalAlignment="Top"
-                     LostFocus="TxtIsbn_LostFocus"
-                     PreviewKeyDown="TxtsPreviewKeyDown"
-                     PreviewTextInput="TxtIsbn_PreviewTextInput"
-                     Text="{Binding Isbn,
-                                    Mode=TwoWay}"
-                     TextWrapping="Wrap" />
-            <Label Margin="347,153,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="ISBN:" />
-            <Label Margin="273,272,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Tipo de obra:" />
-            <ComboBox x:Name="CbxTipoObra"
-                      Width="176"
-                      Margin="273,298,0,0"
-                      HorizontalAlignment="Left"
-                      VerticalAlignment="Top"
-                      DisplayMemberPath="Descripcion"
-                      ItemsSource="{Binding}"
-                      SelectedValuePath="IdElemento" />
+            <TextBox
+                x:Name="TxtIsbn"
+                Width="140"
+                Height="23"
+                Margin="347,183,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                LostFocus="TxtIsbn_LostFocus"
+                PreviewKeyDown="TxtsPreviewKeyDown"
+                PreviewTextInput="TxtIsbn_PreviewTextInput"
+                Text="{Binding Isbn, Mode=TwoWay}"
+                TextWrapping="Wrap" />
+            <Label
+                Margin="347,153,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="ISBN:" />
+            <Label
+                Margin="273,272,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Tipo de obra:" />
+            <ComboBox
+                x:Name="CbxTipoObra"
+                Width="176"
+                Margin="273,298,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                DisplayMemberPath="Descripcion"
+                ItemsSource="{Binding}"
+                SelectedValuePath="IdElemento" />
 
-            <Label Margin="505,153,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Año publicación:" />
+            <Label
+                Margin="505,153,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Año publicación:" />
 
-            <Image Width="29"
-                   Height="20"
-                   Margin="390,159,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Source="Resources/question_64.png"
-                   ToolTip="El formato de ISBN para 10 digitos es XXX-XXX-XXX-XXX-X para 13 dígitos es 978-XXX-XXX-XXX-X" />
-            <Label Margin="25,214,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Tiraje:" />
+            <Image
+                Width="29"
+                Height="20"
+                Margin="390,159,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Source="Resources/question_64.png"
+                ToolTip="El formato de ISBN para 10 digitos es XXX-XXX-XXX-XXX-X para 13 dígitos es 978-XXX-XXX-XXX-X" />
+            <Label
+                Margin="25,214,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Tiraje:" />
 
-            <telerik:RadNumericUpDown x:Name="NudYear"
-                                      Width="125"
-                                      Margin="505,183,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      IsInteger="True"
-                                      ValueFormat="Numeric"
-                                      Value="{Binding AnioPublicacion,
-                                                      Mode=TwoWay}">
+            <telerik:RadNumericUpDown
+                x:Name="NudYear"
+                Width="125"
+                Margin="505,183,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsInteger="True"
+                ValueFormat="Numeric"
+                Value="{Binding AnioPublicacion, Mode=TwoWay}">
                 <telerik:RadNumericUpDown.NumberFormatInfo>
                     <global:NumberFormatInfo NumberDecimalDigits="0" NumberGroupSeparator="" />
                 </telerik:RadNumericUpDown.NumberFormatInfo>
             </telerik:RadNumericUpDown>
-            <telerik:RadNumericUpDown x:Name="NudTiraje"
-                                      Width="125"
-                                      Margin="25,244,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      IsInteger="True"
-                                      Value="{Binding Tiraje,
-                                                      Mode=TwoWay}" />
-            <telerik:RadNumericUpDown Width="125"
-                                      Margin="192,183,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      IsInteger="True"
-                                      Maximum="15"
-                                      Minimum="1"
-                                      Value="{Binding NumLibros,
-                                                      Mode=TwoWay}" />
-            <Label Margin="192,214,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Fecha de recepción:" />
-            <telerik:RadDatePicker x:Name="DtpRecepcion"
-                                   Width="125"
-                                   Margin="192,244,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   SelectedValue="{Binding FechaRecibe}" />
-            <Label Margin="347,214,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Content="Fecha de distribución:" />
-            <telerik:RadDatePicker x:Name="DtpDistribucion"
-                                   Width="140"
-                                   Margin="347,244,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   SelectedValue="{Binding FechaDistribuye}" />
+            <telerik:RadNumericUpDown
+                x:Name="NudTiraje"
+                Width="125"
+                Margin="25,244,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsInteger="True"
+                Value="{Binding Tiraje, Mode=TwoWay}" />
+            <telerik:RadNumericUpDown
+                Width="125"
+                Margin="192,183,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsInteger="True"
+                Maximum="15"
+                Minimum="1"
+                Value="{Binding NumLibros, Mode=TwoWay}" />
+            <Label
+                Margin="192,214,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Fecha de recepción:" />
+            <telerik:RadDatePicker
+                x:Name="DtpRecepcion"
+                Width="125"
+                Margin="192,244,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                SelectedValue="{Binding FechaRecibe}" />
+            <Label
+                Margin="347,214,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Fecha de distribución:" />
+            <telerik:RadDatePicker
+                x:Name="DtpDistribucion"
+                Width="140"
+                Margin="347,244,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                SelectedValue="{Binding FechaDistribuye}" />
         </Grid>
-        <Button x:Name="BtnSalir"
-                Grid.Row="1"
-                Width="80"
-                Margin="0,7,15,0"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Click="BtnSalir_Click"
-                Content="Cancelar"
-                IsCancel="True"
-                Style="{StaticResource BlueButton}" />
-        <Button x:Name="BtnGuardar"
-                Grid.Row="1"
-                Width="80"
-                Margin="0,7,100,0"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Click="BtnGuardar_Click"
-                Content="Guardar"
-                IsDefault="True"
-                Style="{StaticResource BlueButton}" />
+        <Button
+            x:Name="BtnSalir"
+            Grid.Row="1"
+            Width="80"
+            Margin="0,7,15,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Click="BtnSalir_Click"
+            Content="Cancelar"
+            IsCancel="True"
+            Style="{StaticResource BlueButton}" />
+        <Button
+            x:Name="BtnGuardar"
+            Grid.Row="1"
+            Width="80"
+            Margin="0,7,100,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Click="BtnGuardar_Click"
+            Content="Guardar"
+            IsDefault="True"
+            Style="{StaticResource BlueButton}" />
 
     </Grid>
 </telerik:RadWindow>

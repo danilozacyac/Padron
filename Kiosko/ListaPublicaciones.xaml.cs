@@ -69,6 +69,20 @@ namespace Kiosko
         private void GObras_SelectionChanged(object sender, Telerik.Windows.Controls.SelectionChangeEventArgs e)
         {
             selectedObra = GObras.SelectedItem as Obra;
+
+            if (selectedObra != null)
+            {
+                /**
+                 * Las siguientes líneas son de prueba para tratar de que no tarde tanto en cargar
+                 * 24 de enero de 2021
+                 * */
+                AutorModel model = new AutorModel();
+                List<Autor> autLista = model.GetAutores(selectedObra).ToList();
+                List<Autor> autInsti = model.GetInstituciones(selectedObra).ToList();
+                autLista.AddRange(autInsti);
+
+                selectedObra.Autores = new ObservableCollection<Autor>(autLista);
+            }
         }
 
 

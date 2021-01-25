@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Luis\Documents\GitHub\Padron\Padron\obj\Debug\
+C:\Users\Luis.000\Documents\GitHub\Padron\Padron\obj\Debug\
 Padron
 none
 false
 DEBUG;TRACE
-C:\Users\Luis\Documents\GitHub\Padron\Padron\App.xaml
+C:\Users\Luis.000\Documents\GitHub\Padron\Padron\App.xaml
 25-1768353377
 
-37-266133188
-37-410240149
+37-1303865794
+371493534136
 Cierre\AcuSanMetrop.xaml;Cierre\AcuseOficina.xaml;Cierre\AcusePaqueteria.xaml;Cierre\Acuses.xaml;Cierre\Devolucion.xaml;Cierre\ExportarKiosko.xaml;Cierre\FechaAcuses.xaml;Cierre\FechaDistribucion.xaml;Cierre\MultAcuseOficina.xaml;Cierre\PadGenerados.xaml;Historial\HistorialFuncionarioObras.xaml;Historial\HistorialOrganismoObra.xaml;MainWindow.xaml;ManttoCatalogos\AcuerdosCatal.xaml;ManttoCatalogos\Funciones.xaml;ManttoCatalogos\TitulosControl.xaml;PadronWin.xaml;PermisosFolder\PermisosWin.xaml;Plantillas\GeneraNuevaPlantilla.xaml;Plantillas\IncluyeFuncionario.xaml;Plantillas\Plantilla.xaml;Plantillas\SeleccionaTiraje.xaml;Plantillas\VentanaChecaDistr.xaml;Reportes\DistPorTipo.xaml;Theme\Padrontheme.xaml;
 
-False
+True
 

@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\Luis\Documents\GitHub\Padron\Kiosko\obj\Debug\
+C:\Users\Luis.000\Documents\GitHub\Padron\Kiosko\obj\Debug\
 Kiosko
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 10583396308
 
 22-1021566127
-291257956750
+29-1229270460
 EstructuraKiosko\ArbolKiosko.xaml;Autores\ListadoAutores.xaml;Autores\ManageAutor.xaml;Ayudas\ColorAutor.xaml;Ayudas\ColorObras.xaml;ListaPublicaciones.xaml;ObrasKiosko.xaml;RelAutorObras.xaml;TextoColaboracion.xaml;UserControls\SetAutorObra.xaml;
 
 False

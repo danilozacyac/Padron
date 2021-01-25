@@ -465,7 +465,7 @@ namespace PadronApi.Reportes
 
             Paragraph oPara1 = aDoc.Content.Paragraphs.Add(ref oMissing);
             //oPara1.Range.ParagraphFormat.Space1;
-            oPara1.Range.Text = String.Format("Of. Núm. CCST/DDSJF-PAD-{0}-{1}-{2}", ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2));
+            oPara1.Range.Text = String.Format("Of. Núm. CCST/DDP-PAD-{0}-{1}-{2}", ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2));
             oPara1.Range.Font.Bold = 0;
             oPara1.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphRight;
             oPara1.Range.Font.Size = 10;
@@ -553,7 +553,7 @@ namespace PadronApi.Reportes
             oPara1.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
             oPara1.Range.Font.Size = 8;
             oPara1.Range.InsertParagraphAfter();
-            oPara1.Range.Text = "LVP/JJMM";
+            oPara1.Range.Text = "JZG/LVP/JJMM";
             oPara1.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
             oPara1.Range.Font.Size = 8;
             oPara1.Range.InsertParagraphAfter();
@@ -587,7 +587,7 @@ namespace PadronApi.Reportes
 
             Paragraph oPara1 = aDoc.Content.Paragraphs.Add(ref oMissing);
             //oPara1.Range.ParagraphFormat.Space1;
-            oPara1.Range.Text = String.Format("Of. Núm. CCST/DDSJF-PAD-{0}-{1}-{2}", ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2));
+            oPara1.Range.Text = String.Format("Of. Núm. CCST/DDP-PAD-{0}-{1}-{2}", ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2));
             oPara1.Range.Font.Bold = 0;
             oPara1.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphRight;
             oPara1.Range.Font.Size = 9;
@@ -711,7 +711,7 @@ namespace PadronApi.Reportes
                                            "Y CONFIRMAR AL 01 (55) 4113-1000 EXT. 2280";
             oTable1.Cell(6, 1).Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
 
-            oPara1.Range.Text = "LVP/JJMM";
+            oPara1.Range.Text = "JZG/LVP/JJMM";
             oPara1.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
             oPara1.Range.Font.Size = 8;
             oPara1.Range.InsertParagraphAfter();

@@ -56,7 +56,7 @@ namespace Obras {
     public partial class ObrasWin : Telerik.Windows.Controls.RadWindow, System.Windows.Markup.IComponentConnector {
         
         
-        #line 19 "..\..\ObrasWin.xaml"
+        #line 20 "..\..\ObrasWin.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid PanelCentral;
         
@@ -64,7 +64,7 @@ namespace Obras {
         #line hidden
         
         
-        #line 24 "..\..\ObrasWin.xaml"
+        #line 27 "..\..\ObrasWin.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox TxtTitulo;
         
@@ -72,7 +72,7 @@ namespace Obras {
         #line hidden
         
         
-        #line 36 "..\..\ObrasWin.xaml"
+        #line 41 "..\..\ObrasWin.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox TxtNumMaterial;
         
@@ -80,7 +80,7 @@ namespace Obras {
         #line hidden
         
         
-        #line 52 "..\..\ObrasWin.xaml"
+        #line 58 "..\..\ObrasWin.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox CbxPresentacion;
         
@@ -88,7 +88,7 @@ namespace Obras {
         #line hidden
         
         
-        #line 66 "..\..\ObrasWin.xaml"
+        #line 74 "..\..\ObrasWin.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox TxtIsbn;
         
@@ -96,7 +96,7 @@ namespace Obras {
         #line hidden
         
         
-        #line 86 "..\..\ObrasWin.xaml"
+        #line 96 "..\..\ObrasWin.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox CbxTipoObra;
         
@@ -104,7 +104,7 @@ namespace Obras {
         #line hidden
         
         
-        #line 112 "..\..\ObrasWin.xaml"
+        #line 126 "..\..\ObrasWin.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal Telerik.Windows.Controls.RadNumericUpDown NudYear;
         
@@ -112,7 +112,7 @@ namespace Obras {
         #line hidden
         
         
-        #line 125 "..\..\ObrasWin.xaml"
+        #line 139 "..\..\ObrasWin.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal Telerik.Windows.Controls.RadNumericUpDown NudTiraje;
         
@@ -120,7 +120,7 @@ namespace Obras {
         #line hidden
         
         
-        #line 146 "..\..\ObrasWin.xaml"
+        #line 161 "..\..\ObrasWin.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal Telerik.Windows.Controls.RadDatePicker DtpRecepcion;
         
@@ -128,7 +128,7 @@ namespace Obras {
         #line hidden
         
         
-        #line 156 "..\..\ObrasWin.xaml"
+        #line 173 "..\..\ObrasWin.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal Telerik.Windows.Controls.RadDatePicker DtpDistribucion;
         
@@ -136,7 +136,7 @@ namespace Obras {
         #line hidden
         
         
-        #line 163 "..\..\ObrasWin.xaml"
+        #line 181 "..\..\ObrasWin.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button BtnSalir;
         
@@ -144,7 +144,7 @@ namespace Obras {
         #line hidden
         
         
-        #line 173 "..\..\ObrasWin.xaml"
+        #line 192 "..\..\ObrasWin.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button BtnGuardar;
         
@@ -183,13 +183,13 @@ namespace Obras {
             {
             case 1:
             
-            #line 9 "..\..\ObrasWin.xaml"
+            #line 10 "..\..\ObrasWin.xaml"
             ((Obras.ObrasWin)(target)).Loaded += new System.Windows.RoutedEventHandler(this.Window_Loaded);
             
             #line default
             #line hidden
             
-            #line 10 "..\..\ObrasWin.xaml"
+            #line 11 "..\..\ObrasWin.xaml"
             ((Obras.ObrasWin)(target)).PreviewClosed += new System.EventHandler<Telerik.Windows.Controls.WindowPreviewClosedEventArgs>(this.RadWindow_PreviewClosed);
             
             #line default
@@ -201,7 +201,7 @@ namespace Obras {
             case 3:
             this.TxtTitulo = ((System.Windows.Controls.TextBox)(target));
             
-            #line 29 "..\..\ObrasWin.xaml"
+            #line 32 "..\..\ObrasWin.xaml"
             this.TxtTitulo.LostFocus += new System.Windows.RoutedEventHandler(this.TxtsLostFocus);
             
             #line default
@@ -210,19 +210,19 @@ namespace Obras {
             case 4:
             this.TxtNumMaterial = ((System.Windows.Controls.TextBox)(target));
             
-            #line 42 "..\..\ObrasWin.xaml"
+            #line 47 "..\..\ObrasWin.xaml"
             this.TxtNumMaterial.LostFocus += new System.Windows.RoutedEventHandler(this.TxtsLostFocus);
             
             #line default
             #line hidden
             
-            #line 43 "..\..\ObrasWin.xaml"
+            #line 48 "..\..\ObrasWin.xaml"
             this.TxtNumMaterial.PreviewKeyDown += new System.Windows.Input.KeyEventHandler(this.TxtsPreviewKeyDown);
             
             #line default
             #line hidden
             
-            #line 44 "..\..\ObrasWin.xaml"
+            #line 49 "..\..\ObrasWin.xaml"
             this.TxtNumMaterial.PreviewTextInput += new System.Windows.Input.TextCompositionEventHandler(this.TxtNumMaterial_PreviewTextInput);
             
             #line default
@@ -231,7 +231,7 @@ namespace Obras {
             case 5:
             this.CbxPresentacion = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 60 "..\..\ObrasWin.xaml"
+            #line 66 "..\..\ObrasWin.xaml"
             this.CbxPresentacion.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.CbxPresentacion_SelectionChanged);
             
             #line default
@@ -240,19 +240,19 @@ namespace Obras {
             case 6:
             this.TxtIsbn = ((System.Windows.Controls.TextBox)(target));
             
-            #line 72 "..\..\ObrasWin.xaml"
+            #line 80 "..\..\ObrasWin.xaml"
             this.TxtIsbn.LostFocus += new System.Windows.RoutedEventHandler(this.TxtIsbn_LostFocus);
             
             #line default
             #line hidden
             
-            #line 73 "..\..\ObrasWin.xaml"
+            #line 81 "..\..\ObrasWin.xaml"
             this.TxtIsbn.PreviewKeyDown += new System.Windows.Input.KeyEventHandler(this.TxtsPreviewKeyDown);
             
             #line default
             #line hidden
             
-            #line 74 "..\..\ObrasWin.xaml"
+            #line 82 "..\..\ObrasWin.xaml"
             this.TxtIsbn.PreviewTextInput += new System.Windows.Input.TextCompositionEventHandler(this.TxtIsbn_PreviewTextInput);
             
             #line default
@@ -276,7 +276,7 @@ namespace Obras {
             case 12:
             this.BtnSalir = ((System.Windows.Controls.Button)(target));
             
-            #line 169 "..\..\ObrasWin.xaml"
+            #line 187 "..\..\ObrasWin.xaml"
             this.BtnSalir.Click += new System.Windows.RoutedEventHandler(this.BtnSalir_Click);
             
             #line default
@@ -285,7 +285,7 @@ namespace Obras {
             case 13:
             this.BtnGuardar = ((System.Windows.Controls.Button)(target));
             
-            #line 179 "..\..\ObrasWin.xaml"
+            #line 198 "..\..\ObrasWin.xaml"
             this.BtnGuardar.Click += new System.Windows.RoutedEventHandler(this.BtnGuardar_Click);
             
             #line default
