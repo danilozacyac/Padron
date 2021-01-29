@@ -106,3 +106,5 @@ C:\Users\Luis.000\Documents\GitHub\Padron\Padron\obj\Debug\Padron.csproj.Generat
 C:\Users\Luis.000\Documents\GitHub\Padron\Padron\obj\Debug\Padron.exe.licenses
 C:\Users\Luis.000\Documents\GitHub\Padron\Padron\obj\Debug\Padron.exe.manifest
 C:\Users\Luis.000\Documents\GitHub\Padron\Padron\obj\Debug\Padron.application
+C:\Users\Luis.000\Documents\GitHub\Padron\Padron\obj\Debug\Configuracion\ConfigWindow.baml
+C:\Users\Luis.000\Documents\GitHub\Padron\Padron\obj\Debug\Configuracion\ConfigWindow.g.cs

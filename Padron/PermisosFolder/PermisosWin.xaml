@@ -3,36 +3,26 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-    Height="600"
     Width="500"
+    Height="600"
     Header="Asignar Permisos"
     Loaded="RadWindow_Loaded"
     WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Resources>
-            <HierarchicalDataTemplate
-                x:Key="CheckBoxItemTemplate"
-                ItemsSource="{Binding SeccionesHijo}">
+            <HierarchicalDataTemplate x:Key="CheckBoxItemTemplate" ItemsSource="{Binding SeccionesHijo}">
                 <StackPanel Orientation="Horizontal">
-                    <!-- These elements are bound to a FooViewModel object. -->
+                    <!--  These elements are bound to a FooViewModel object.  -->
                     <CheckBox
                         VerticalAlignment="Center"
                         Focusable="False"
                         IsChecked="{Binding IsSelected}" />
-                    <ContentPresenter
-                        Margin="2,0"
-                        Content="{Binding
-                            Seccion,
-                            Mode=OneTime}" />
+                    <ContentPresenter Margin="2,0" Content="{Binding Seccion, Mode=OneTime}" />
                 </StackPanel>
             </HierarchicalDataTemplate>
 
-            <Style
-                x:Key="TreeViewItemStyle"
-                TargetType="telerik:RadTreeViewItem">
-                <Setter
-                    Property="IsExpanded"
-                    Value="True" />
+            <Style x:Key="TreeViewItemStyle" TargetType="telerik:RadTreeViewItem">
+                <Setter Property="IsExpanded" Value="True" />
             </Style>
 
         </Grid.Resources>
@@ -47,7 +37,15 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <telerik:RadListBox x:Name="RLstUsuarios" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,50,10,0" DisplayMemberPath="Seccion" SelectedValuePath="IdSeccion" ItemsSource="{Binding}" SelectionChanged="RLstUsuarios_SelectionChanged"/>
+        <telerik:RadListBox
+            x:Name="RLstUsuarios"
+            Margin="10,50,10,0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            DisplayMemberPath="Seccion"
+            ItemsSource="{Binding}"
+            SelectedValuePath="IdSeccion"
+            SelectionChanged="RLstUsuarios_SelectionChanged" />
 
 
         <telerik:RadTreeView
@@ -60,15 +58,29 @@
             ItemsSource="{Binding}" />
         <Button
             x:Name="BtnGuardar"
-            Grid.Column="1"
             Grid.Row="1"
-            Width="75"
+            Grid.Column="1"
+            Width="87"
             Margin="0,15,20,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             Click="BtnGuardar_Click"
-            Content="Guardar" />
-        
+            Content="Guardar"
+            IsDefault="True"
+            Style="{StaticResource BlueButton}" />
+        <Button
+            x:Name="BtnCancelar"
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="82"
+            Margin="94,15,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="BtnCancelar_Click"
+            Content="Cancelar"
+            IsCancel="True"
+            Style="{StaticResource BlueButton}" />
+
 
     </Grid>
 </telerik:RadWindow>

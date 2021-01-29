@@ -60,6 +60,7 @@ namespace Padron.PermisosFolder
 
             foreach (int asignado in permisosAsignados)
                 model.InsertaPermisos(selectedUsuario.IdSeccion, asignado);
+
         }
 
         private void ObtenPermisos(ObservableCollection<Permisos> permisoRevisar)
@@ -81,6 +82,14 @@ namespace Padron.PermisosFolder
             permisos = new PermisosModel().GetPermisosTree(0);
             CargaPermisosUsuario(permisos);
             treePermisos.DataContext = permisos;
+        }
+
+        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Los cambios no guardados no serán aplicados. ¿Deseas continuar?", "Atención:", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+                this.Close();
         }
 
        

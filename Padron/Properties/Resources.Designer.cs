@@ -383,6 +383,16 @@ namespace Padron.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap configPaper {
+            get {
+                object obj = ResourceManager.GetObject("configPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ConSintesis {
             get {
                 object obj = ResourceManager.GetObject("ConSintesis", resourceCulture);

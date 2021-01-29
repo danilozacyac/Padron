@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Padron.exe" version="3.2.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Padron.exe" version="3.2.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="rocket.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Padron" version="3.2021.1.24000" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Padron" version="3.2021.1.29002" language="neutral" processorArchitecture="msil" />
     <commandLine file="Padron.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -254,7 +254,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jjKcfQq051L9rljQo463w/pIEu1wzDRN3anIrZf4ckw=</dsig:DigestValue>
+        <dsig:DigestValue>OzzsMPeI+k52M0Zh2wc8/owg1hifZ2c7+gQCEbi+OOU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -290,7 +290,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UNkTi66RRCkr9+rR+nEii9/6un3heRCibG3UDydrvrE=</dsig:DigestValue>
+        <dsig:DigestValue>x/yD7htuEB64O07PG4+IeUMC7okdWk7ka4eUSZU3hGg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -314,7 +314,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5J/rMMnkTq97rpSP1HM/LlqYuO4bZvr/6mL17yg831E=</dsig:DigestValue>
+        <dsig:DigestValue>yI3QAR55YTTm7XzblVAp98zasBv3Ly9f3A3nM/qjGW4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -326,31 +326,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2Y59vCSl5kF6z1GlEc+4zweaLzYv4oAskQDiXQAIcCQ=</dsig:DigestValue>
+        <dsig:DigestValue>20BGXvblir4XUn29xoLKDrX9Jf8DaDmJRe9vvpFByj4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Padron.exe" size="3511808">
-      <assemblyIdentity name="Padron" version="3.2021.1.24000" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Padron.exe" size="3621376">
+      <assemblyIdentity name="Padron" version="3.2021.1.29002" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qWPyzo+CQSpGdrP3aaIWrTdy4z0Ux1zwwgo0Ajd8f6U=</dsig:DigestValue>
+        <dsig:DigestValue>DzXukbcXYcxUoIS0LQuK8jlCZiudxdoCMZsJP0DULQY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PadronApi.dll" size="607232">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PadronApi.dll" size="609280">
       <assemblyIdentity name="PadronApi" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JN+XCgANQeGqT3RLQ9NTGirwJucmtbYncnZMxrlHBAg=</dsig:DigestValue>
+        <dsig:DigestValue>/zUkpxyhhkJgHLBVZsYfvySjbSNJGhTrYqbVDBF8OiM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

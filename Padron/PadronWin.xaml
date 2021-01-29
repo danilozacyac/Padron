@@ -1031,6 +1031,17 @@
                     </StackPanel>
 
                 </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Oficios Config">
+                    <telerik:RadRibbonButton
+                        x:Name="BtnConfOficio"
+                        Click="BtnConfOficio_Click"
+                        Content="Conf. Oficios"
+                        IsEnabled="True"
+                        LargeImage="Resources/configPaper.png"
+                        Size="Large"
+                        Tag="842" />
+
+                </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
         </telerik:RadRibbonView>
 

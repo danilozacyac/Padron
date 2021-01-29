@@ -23,9 +23,9 @@ namespace PadronApi.Reportes
 
         //private readonly int idAcuerdo;
 
-        readonly string aclaraciones = ConfigurationManager.AppSettings["Aclaraciones"];
-        readonly string titularCoord = ConfigurationManager.AppSettings["TitularCoord"];
-        readonly string leyendaYear = ConfigurationManager.AppSettings["LeyendaOficio"];
+        readonly string aclaraciones = PadConfiguracion.TxtAclaraciones;
+        readonly string titularCoord = PadConfiguracion.Titular;
+        readonly string leyendaYear = PadConfiguracion.LeyendaOficio;
 
 
         public PdfReports(ObservableCollection<Obra> obrasImprimir, string filepath)
@@ -829,7 +829,7 @@ namespace PadronApi.Reportes
                 para = new Paragraph(String.Format("{0}{1}{0}", "\"", leyendaYear), NormalFont(black, ArialFont, 10));
                 para.Alignment = Element.ALIGN_RIGHT;
                 myDocument.Add(para);
-                para = new Paragraph(String.Format("Of. Núm. CCST/DDP-PAD-{0}-{1}-{2}", ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2)), NormalFont(black, ArialFont, TamanoLetra));
+                para = new Paragraph(String.Format("Of. Núm. {0}-{1}-{2}-{3}",PadConfiguracion.NumOficio, ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2)), NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_RIGHT;
                 myDocument.Add(para);
                 para = new Paragraph(fechaDistribucion, NormalFont(black, ArialFont, TamanoLetra));
@@ -937,7 +937,7 @@ namespace PadronApi.Reportes
                 para = new Paragraph("c.c.p- El archivo.-", NormalFont(black, ArialFont, 8));
                 para.Alignment = Element.ALIGN_LEFT;
                 myDocument.Add(para);
-                para = new Paragraph("JZG/LVP/JJMM", NormalFont(black, ArialFont, 8));
+                para = new Paragraph(PadConfiguracion.Rubricas, NormalFont(black, ArialFont, 8));
                 myDocument.Add(para);
                 para = new Paragraph(String.Format("Folio {0}-{1}", plantilla.TipoDistribucion, folio), BoldFont(black, ArialFont, 8));
                 para.Alignment = Element.ALIGN_RIGHT;
@@ -982,7 +982,7 @@ namespace PadronApi.Reportes
                 para = new Paragraph(String.Format("{0}{1}{0}", "\"", leyendaYear), NormalFont(black, ArialFont, 10));
                 para.Alignment = Element.ALIGN_RIGHT;
                 myDocument.Add(para);
-                para = new Paragraph(String.Format("Of. Núm. CCST/DDP-PAD-{0}-{1}-{2}", ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2)), NormalFont(black, ArialFont, TamanoLetra));
+                para = new Paragraph(String.Format("Of. Núm. {0}-{1}-{2}-{3}", PadConfiguracion.NumOficio, ((DateTime.Now.Month < 10) ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()), contadorOficio, DateTime.Now.Year.ToString().Substring(2, 2)), NormalFont(black, ArialFont, TamanoLetra));
                 para.Alignment = Element.ALIGN_RIGHT;
                 myDocument.Add(para);
                 para = new Paragraph(fechaDistribucion, NormalFont(black, ArialFont, TamanoLetra));
@@ -1128,7 +1128,7 @@ namespace PadronApi.Reportes
                 myDocument.Add(tableAc);
 
                 //prv fin
-                para = new Paragraph("JZG/LVP/JJMM", NormalFont(black, ArialFont, 8));
+                para = new Paragraph(PadConfiguracion.Rubricas, NormalFont(black, ArialFont, 8));
                 myDocument.Add(para);
                 para = new Paragraph(String.Format("Folio {0}-{1}", plantilla.TipoDistribucion, folio), BoldFont(black, ArialFont, 8));
                 para.Alignment = Element.ALIGN_RIGHT;

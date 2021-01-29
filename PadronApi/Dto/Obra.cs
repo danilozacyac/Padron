@@ -177,7 +177,7 @@ namespace PadronApi.Dto
         }
 
 
-        [Range(1870,2018,ErrorMessage="El año de publicación debe estar entre el rango de 1870 y 2018" )]
+        [Range(1870,2021,ErrorMessage="El año de publicación debe estar entre el rango de 1870 y 2021" )]
         public int AnioPublicacion
         {
             get

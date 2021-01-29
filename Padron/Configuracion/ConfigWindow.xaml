@@ -1,0 +1,99 @@
+﻿<telerik:RadWindow
+    x:Class="Padron.Configuracion.ConfigWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    Width="602"
+    Height="396"
+    Header="Configuración"
+    Loaded="RadWindow_Loaded"
+    WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label
+            Margin="36,43,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Titular de la Coordinación" />
+        <TextBox
+            x:Name="TxtTitular"
+            Width="358"
+            Height="23"
+            Margin="201,43,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <Label
+            Margin="36,98,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Rúbricas" />
+        <TextBox
+            x:Name="TxtRubricas"
+            Width="358"
+            Height="23"
+            Margin="201,98,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <Label
+            Margin="36,148,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Leyenda del oficio" />
+        <TextBox
+            x:Name="TxtLeyendaOficio"
+            Width="358"
+            Height="23"
+            Margin="201,148,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <Label
+            Margin="36,240,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Texto Aclaraciones" />
+        <TextBox
+            x:Name="TxtAclaraciones"
+            Width="358"
+            Height="59"
+            Margin="201,240,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <Label
+            Margin="36,198,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Formato número de oficio" />
+        <TextBox
+            x:Name="TxtNumOficio"
+            Width="358"
+            Height="23"
+            Margin="201,198,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <Button
+            x:Name="BtnGuardar"
+            Width="89"
+            Margin="470,319,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="BtnGuardar_Click"
+            Content="Guardar"
+            IsDefault="True"
+            Style="{StaticResource BlueButton}" />
+        <Button
+            x:Name="BtnCancelar"
+            Width="81"
+            Margin="384,319,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="BtnCancelar_Click"
+            Content="Cancelar"
+            IsCancel="True"
+            Style="{StaticResource BlueButton}" />
+
+    </Grid>
+</telerik:RadWindow>

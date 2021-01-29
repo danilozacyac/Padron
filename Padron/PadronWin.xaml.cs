@@ -21,6 +21,7 @@ using PadronApi.Dto;
 using PadronApi.Model;
 using Telerik.Windows.Controls;
 using Padron.Reportes;
+using Padron.Configuracion;
 
 namespace Padron
 {
@@ -65,7 +66,8 @@ namespace Padron
                 AgregarOrganismo, ModificaOrganismo, BtnActivarOrganismo, DesactivaOrganismo, BtnOrgActivados, BtnOrgDesactivados, BtnLimpiaFiltro, HistorialOrganismo,
                 BtnHistOrgObras, BtnTotalSecretarios, IncluyeTitular,ExcluyeTitular, GuardarPadron, BtnGeneraAcuses, BtnGeneraEtiquetas, BtnListadoContraloria,
                 BtnVerDistribucion, DetalleAcuses, BtnClonarPlantilla, BtnPadronPorObra, BtnSinNumAcuerdo, BtnKioskoObras, BtnKioskoAutores,BtnVerInfoObraKiosko, BtnEditObraKiosko,
-                BtnAddImagen, BtnEstructura, BtnVerAutor,BtnAddAutor, RBtnCadenaControl,BtnAddFunciones, BtnCatTitulos,BtnAddTitulo,BtnExportaKiosko, BtnDeletePadron, BtnTitularEsAutor
+                BtnAddImagen, BtnEstructura, BtnVerAutor,BtnAddAutor, RBtnCadenaControl,BtnAddFunciones, BtnCatTitulos,BtnAddTitulo,BtnExportaKiosko, BtnDeletePadron, BtnTitularEsAutor,
+                BtnConfOficio
             };
 
             listadoOpciones = new List<RadRibbonDropDownButton>()
@@ -768,6 +770,11 @@ namespace Padron
         private void BtnDistNacional_Click(object sender, RoutedEventArgs e)
         {
             new DistPorTipo().ShowDialog();
+        }
+
+        private void BtnConfOficio_Click(object sender, RoutedEventArgs e)
+        {
+            new ConfigWindow().ShowDialog();
         }
 
 

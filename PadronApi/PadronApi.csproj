@@ -77,6 +77,7 @@
     <Compile Include="Dto\Obra.cs" />
     <Compile Include="Dto\Ordinales.cs" />
     <Compile Include="Dto\Organismo.cs" />
+    <Compile Include="Dto\PadConfiguracion.cs" />
     <Compile Include="Dto\PadronGenerado.cs" />
     <Compile Include="Dto\Pais.cs" />
     <Compile Include="Dto\Permisos.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Model\ExportarModel.cs" />
     <Compile Include="Model\ObraModel.cs" />
     <Compile Include="Model\OrganismoModel.cs" />
+    <Compile Include="Model\PadConfigModel.cs" />
     <Compile Include="Model\PaisEstadoModel.cs" />
     <Compile Include="Model\PermisosModel.cs" />
     <Compile Include="Model\PlantillaModel.cs" />
